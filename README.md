@@ -2,16 +2,17 @@
 
 A hand-drawn 2D cartoon life sim and sports team management game, seen from a 3/4 top-down view. You're a 3rd grader starting a sports team: you recruit kids from around town, earn money for shirts and the league fee, keep your grades up, and take a backyard team all the way to the championship.
 
-The full design is in [`GAME_DESIGN.md`](GAME_DESIGN.md). This folder holds a **playable build** of it.
+The full design is in [`GAME_DESIGN.md`](GAME_DESIGN.md). This repository holds a **playable build** of it.
 
 ## Play it
 
-A hosted build is at **https://claude.ai/artifact/91GKDai5uH5ttdYFT7dinr** (private until shared from the page's Share menu). It is the same single file as `dist/index.html`. Saves stay in your browser.
+**https://dempking.github.io/Neighborhood_Heroes/** once GitHub Pages is switched on for this repository (Settings → Pages → Source: **GitHub Actions**). Every push to `main` is tested, built and published there. It's the same single file as `dist/index.html`, and saves stay in your browser.
+
+An earlier hosted build is also at https://claude.ai/artifact/91GKDai5uH5ttdYFT7dinr (private until shared from the page's Share menu).
 
 ## Run it
 
 ```bash
-cd backyard-league
 npm install
 npm run build          # -> dist/index.html (one self-contained file, works offline)
 open dist/index.html   # or: npm run dev (serves it on localhost:8090)
@@ -95,7 +96,7 @@ node tests/e2e.mjs     # browser playthroughs (also e2e-jobs.mjs, e2e-input.mjs 
 
 ## Engine note
 
-The design doc recommends Unity. This build uses a **2D canvas renderer + Electron** instead, because it can be built and tested from this repository and it reuses the Steam pipeline French Fried already ships with. Maps are described as simple shapes that the renderer draws flat-shaded with ink outlines in the 3/4 view (cached in tiles); trees and bushes are painted 2D pieces, and every character is a sprite drawn from its character sheet (front and back views, walk cycle). All game rules are plain JavaScript in `src/game/`, separate from rendering, so they could be ported if you move engines.
+The design doc recommends Unity. This build uses a **2D canvas renderer + Electron** instead, because it can be built and tested from this repository and it uses the same Steam pipeline as French Fried. Maps are described as simple shapes that the renderer draws flat-shaded with ink outlines in the 3/4 view (cached in tiles); trees and bushes are painted 2D pieces, and every character is a sprite drawn from its character sheet (front and back views, walk cycle). All game rules are plain JavaScript in `src/game/`, separate from rendering, so they could be ported if you move engines.
 
 ## Layout
 
@@ -109,6 +110,7 @@ src/dev/                 dev-only pages for screenshots (gallery, scenes)
 tests/logic.test.mjs     simulation unit tests (npm test)
 tests/e2e*.mjs           headless-browser playthroughs that screenshot every screen
 electron/, steam/        desktop shell and Steam upload config
+.github/workflows/       deploy.yml (test, build, publish to GitHub Pages), desktop.yml (Steam-ready desktop builds)
 ```
 
 End-to-end tests need Playwright: `PLAYWRIGHT_PATH=/path/to/playwright/index.mjs node tests/e2e.mjs`.
