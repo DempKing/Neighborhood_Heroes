@@ -6,7 +6,7 @@ The full design is in [`GAME_DESIGN.md`](GAME_DESIGN.md). This repository holds 
 
 ## Play it
 
-**https://dempking.github.io/Neighborhood_Heroes/** once GitHub Pages is switched on for this repository (Settings → Pages → Source: **GitHub Actions**). Every push to `main` is tested, built and published there. It's the same single file as `dist/index.html`, and saves stay in your browser.
+**https://dempking.github.io/Neighborhood_Heroes/** — every push to `main` is tested, built and published there. It's the same single file as `dist/index.html`, and saves stay in your browser.
 
 An earlier hosted build is also at https://claude.ai/artifact/91GKDai5uH5ttdYFT7dinr (private until shared from the page's Share menu).
 
