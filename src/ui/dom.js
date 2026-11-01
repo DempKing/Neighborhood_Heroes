@@ -151,7 +151,7 @@ export function money(n) {
   return `$${(Math.round(n * 100) / 100).toFixed(2)}`;
 }
 
-/** A coloured chip showing a letter grade. */
+/** A colored chip showing a letter grade. */
 export function gradeChip(label, value) {
   if (label === '?' || value == null) return h('span', { class: 'grade unknown' }, '?');
   const i = [

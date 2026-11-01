@@ -317,7 +317,7 @@ function sendNote(game, id, message) {
   game.retag(id);
 }
 
-/** Whispering to a neighbour. */
+/** Whispering to a neighbor. */
 function whisperFlow(game) {
   const s = game.state;
   const seats = seatChart(s);

@@ -31,7 +31,7 @@ const GLYPHS = {
   settings: gear(),
 };
 
-/** Background colour for each phone app icon. */
+/** Background color for each phone app icon. */
 const BG = {
   team: ['#ff6b6b', '#c9184a'],
   training: ['#ffb347', '#f3722c'],

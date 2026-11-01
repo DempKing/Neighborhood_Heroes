@@ -477,7 +477,7 @@ function attendanceFor(s, g) {
   return g.playoff === 'Championship' ? base * 4 : g.playoff ? base * 2 : base;
 }
 
-/** How different two colours are. */
+/** How different two colors are. */
 function colorDist(a, b) {
   const ca = new THREE.Color(a);
   const cb = new THREE.Color(b);

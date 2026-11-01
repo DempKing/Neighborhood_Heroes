@@ -246,7 +246,7 @@ export function fadeGroups(engine, occ) {
     }
   }
 }
-/** The colour tint for the time of day. */
+/** The color tint for the time of day. */
 export function sceneTint(engine) {
   const m = engine.minute;
   const evening = m > 17 * 60 ? Math.min(1, (m - 17 * 60) / 180) : 0;

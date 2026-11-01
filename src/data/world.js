@@ -420,7 +420,7 @@ export const ADULTS = {
   mrs_pham: { name: 'Mrs. Pham', role: 'scout', pay: 6, loc: 'library', zone: 'homework tables', bonus: 0, ask: 'I played college softball. I can spot a late bloomer from across a parking lot.', needs: { attraction: 35 } },
 };
 
-/** Colours of the rival teams. */
+/** Colors of the rival teams. */
 export const RIVAL_COLORS = {
   'Sunnyside Sprinkler Squad': ['#00b4d8', '#ffd60a'], 'Old Town Owls FC': ['#5e548e', '#e0b1cb'], 'Maple Hollow Mudskippers': ['#7f4f24', '#a7c957'],
   'Riverside Rubber Duckies': ['#ffd60a', '#0077b6'], 'Sunnyside Sluggers': ['#d00000', '#ffba08'], 'Oakridge Acorns': ['#606c38', '#dda15e'],

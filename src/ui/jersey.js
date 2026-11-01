@@ -2,7 +2,7 @@
 // in your team colors. Plain tee -> iron-on numbers -> real jersey -> home & away -> pro kits.
 const INK = '#2a1e1a';
 
-/** Lightens or darkens a hex colour. */
+/** Lightens or darkens a hex color. */
 function shade(hex, k) {
   const n = parseInt(hex.slice(1), 16);
   const c = (v) => Math.max(0, Math.min(255, Math.round(v * k)));

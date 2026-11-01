@@ -56,7 +56,7 @@ The game paints faces from the bible (eyes, brows, nose and mouths for each
 expression, plus blink and talk), so heads keep a **front-projected face UV**:
 - Material named `Face`, UVs front-projected over the face area.
 - The bible head (x 151–249, y 80–183) maps to UV 0–1.
-- No modelled eyes or mouth.
+- No modeled eyes or mouth.
 
 ## Recolorable materials
 

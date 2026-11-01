@@ -248,7 +248,7 @@ export class Engine {
     this.view = { ...t };
   }
 
-  /** Eases the camera towards its target. */
+  /** Eases the camera toward its target. */
   _updateCamera(dt) {
     if (this.cine) {
       this.cine.angle = (this.cine.angle || 0) + dt * (this.cine.spin || 0);

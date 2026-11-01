@@ -8,7 +8,7 @@ const PZ = 0.8;
 const PY = 0.92;
 const LEAF = ['#4f9d3a', '#5fae45', '#3f8a46', '#7bb84a', '#d98e32', '#c0503a'];
 
-/** Mixes two hex colours. */
+/** Mixes two hex colors. */
 function hexMix(a, b, t) {
   const p = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
   const A = p(a);

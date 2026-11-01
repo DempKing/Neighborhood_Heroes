@@ -69,7 +69,7 @@ export function buildMuseum() {
   P.counter(mb, -18, 10, 6, 0, '#9d4edd');
   act(sc, 'shop', -18, 8.6, 'Museum Gift Shop', { shop: 'gift shop' });
   zone(sc, 'gift shop', -18, 7, 10, 3);
-  // exhibits: ropes + plaques round the dino, fossil plinths, a rocket, astronaut, meteorite and telescope in the
+  // exhibits: ropes + plaques around the dino, fossil plinths, a rocket, astronaut, meteorite and telescope in the
   // space wing, a painting gallery with benches, bug zoo plaques, gift shop shelves, ticket desk, plants and bins
   P.ropeLine(
     mb,

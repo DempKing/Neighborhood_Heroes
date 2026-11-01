@@ -581,7 +581,7 @@ const ERRANDS = [
   { text: 'check if the museum got the new T-Rex tooth', loc: 'museum', zone: 'dinosaur hall', pay: 2 },
 ];
 
-/** The favour a kid asks of you (picked every few days). */
+/** The favor a kid asks of you (picked every few days). */
 export function favorFor(state, id) {
   const ks = state.kids[id];
   if (ks.favor) return ks.favor;
@@ -619,7 +619,7 @@ export function favorFor(state, id) {
   return favor;
 }
 
-/** Agrees to do a kid's favour. */
+/** Agrees to do a kid's favor. */
 export function acceptFavor(state, id) {
   const f = favorFor(state, id);
   state.kids[id].favor = f;
@@ -637,7 +637,7 @@ export function acceptFavor(state, id) {
   return f;
 }
 
-/** Finishes a favour: friendship and reward. */
+/** Finishes a favor: friendship and reward. */
 export function completeFavor(state, id) {
   const ks = state.kids[id];
   const f = ks.favor;

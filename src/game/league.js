@@ -69,7 +69,7 @@ export function kitBottoms(state, name) {
   return ['baseball', 'football'].includes(state.team.sport) ? 'pants' : 'shorts';
 }
 
-/** A team's colours. */
+/** A team's colors. */
 export function teamColors(state, name) {
   if (name === state.team.name) return state.team.colors;
   if (name === HILLTOP_TEAM) return HILLTOP_COLORS;

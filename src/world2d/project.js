@@ -72,7 +72,7 @@ export const nodeMatrix = (o) =>
 
 // Colors
 const colCache = new Map();
-/** Hex colour to [r, g, b]. */
+/** Hex color to [r, g, b]. */
 function rgb(hex) {
   let c = colCache.get(hex);
   if (!c) {
@@ -82,7 +82,7 @@ function rgb(hex) {
   }
   return c;
 }
-/** [r, g, b] to a hex colour. */
+/** [r, g, b] to a hex color. */
 const toHex = (c) =>
   `#${c
     .map((v) =>
@@ -93,7 +93,7 @@ const toHex = (c) =>
     .join('')}`;
 const MAT_TINT = { glass: ['#bfe3ff', 0.55], water: ['#4aa3df', 0.85], glow: ['#fff4d6', 1] };
 
-/** Shades a face colour by which way it faces. */
+/** Shades a face color by which way it faces. */
 function faceColor(hex, n, mat) {
   const lam = Math.max(0, dot(n, LIGHT));
   let b = 0.66 + 0.4 * lam;

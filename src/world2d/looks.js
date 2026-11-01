@@ -20,7 +20,7 @@ export const TOPS = [
 ];
 export const BOTTOMS = ['shorts', 'cargo shorts', 'jeans', 'joggers', 'khakis', 'leggings', 'skirt'];
 export const SHOE_TYPES = ['sneakers', 'high-tops', 'slip-ons', 'cleats', 'boots', 'rain boots', 'sandals'];
-/** Shoe colours. */
+/** Shoe colors. */
 export const SHOE_COLORS = {
   white: C.white[0],
   black: C.charcoal[0],
@@ -33,7 +33,7 @@ export const SHOE_COLORS = {
   pink: C.pink[0],
   gray: C.gray[0],
 };
-/** Trouser colours. */
+/** Pants colors. */
 export const PANTS_COLORS = {
   denim: C.denim[0],
   'dark denim': C.navy[0],

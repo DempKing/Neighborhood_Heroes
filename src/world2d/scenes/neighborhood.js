@@ -1,4 +1,4 @@
-// The neighbourhood: streets, houses and the park.
+// The neighborhood: streets, houses and the park.
 import { hashString, mulberry32 } from '../../game/rng.js';
 import { PRISM } from '../build.js';
 import * as P from '../props.js';

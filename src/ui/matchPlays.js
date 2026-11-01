@@ -340,7 +340,7 @@ function courtSpot(ctx, side, pos, defending = false) {
   return { x: hoop.x - dir * Math.min(s[0] + back, f.L / 2 - 0.5), z: f.cz + s[1] * Math.min(1, f.W / 9) };
 }
 
-/** Moves the offence into position. */
+/** Moves the offense into position. */
 async function setOffense(ctx, off, sp = 4.6) {
   const out = [];
   for (const p of ctx.lineups[off])

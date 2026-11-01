@@ -1,4 +1,4 @@
-// Exports every character sheet as a transparent PNG for 3D modelling
+// Exports every character sheet as a transparent PNG for 3D modeling
 // (artists or image-to-3D tools): art/characters/png/{kids,adults}/*.png,
 // plus reference-pack.zip. Run `npm run art` first. Needs Playwright
 // (PLAYWRIGHT_PATH can point at its index.mjs).

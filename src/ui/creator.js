@@ -37,7 +37,7 @@ const ACCESSORIES = [
   'dinosaur hoodie',
   'friendship bracelets',
 ];
-/** Team colour pairs to choose from. */
+/** Team color pairs to choose from. */
 const TEAM_COLORS = [
   '#e63946',
   '#f4842a',

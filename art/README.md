@@ -15,7 +15,7 @@ npm run art   # -> art/characters/{kids,adults}/*.svg + manifest.json
 Kids are drawn at their roster `grade_at_start`. The in-game procedural 3D models follow the same proportions, faces and palette.
 
 ```
-npm run art:png   # -> art/characters/png/*.png + reference-pack.zip (cropped, transparent; for 3D modelling)
+npm run art:png   # -> art/characters/png/*.png + reference-pack.zip (cropped, transparent; for 3D modeling)
 ```
 
 See `3d/MODEL_SPEC.md` for how the sheets become real 3D models.

@@ -146,7 +146,7 @@ export class Builder {
 // Colors come from the Character Design Bible palette (art/charstyle/palette.js).
 const B = (map) => Object.fromEntries(Object.entries(map).map(([k, v]) => [k, v[0]]));
 export const SKIN = B(BIBLE.SKIN);
-/** Hair colours. */
+/** Hair colors. */
 export const HAIR = {
   ...Object.fromEntries(
     [
@@ -165,14 +165,14 @@ export const HAIR = {
   'dyed pink streak': BIBLE.HAIR.brown[0],
   'dyed green streak': BIBLE.HAIR.brown[0],
 };
-/** Hair highlight colours. */
+/** Hair highlight colors. */
 export const HAIR_ACCENT = {
   'dyed blue tips': BIBLE.DYE.blue[0],
   'dyed pink streak': BIBLE.DYE.pink[0],
   'dyed green streak': BIBLE.DYE.green[0],
 };
 export const EYES = { ...BIBLE.EYES };
-/** Outfit colours. */
+/** Outfit colors. */
 export const OUTFIT = Object.fromEntries(
   [
     'red',
@@ -196,7 +196,7 @@ export const OUTFIT = Object.fromEntries(
   ].map((k) => [k, BIBLE.CLOTH[BIBLE.FAVORITE[k][0]][0]]),
 );
 
-/** Lightens or darkens a hex colour. */
+/** Lightens or darkens a hex color. */
 export function shade(hex, f) {
   const c = new THREE.Color(hex);
   c.multiplyScalar(f);

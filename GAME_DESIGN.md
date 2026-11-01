@@ -39,7 +39,7 @@
   - **Winter:** Basketball
   - **Spring:** Baseball
   - **Summer:** No school. Jobs pay more, camps, tournaments, construction projects, big recruiting window.
-- Time only moves while you're inside a location (like _Stardew Valley_). The map screen pauses the clock. Travelling costs time based on distance and vehicle (walk → bike → scooter → parent ride → older sibling's car → your own car at 16).
+- Time only moves while you're inside a location (like _Stardew Valley_). The map screen pauses the clock. Traveling costs time based on distance and vehicle (walk → bike → scooter → parent ride → older sibling's car → your own car at 16).
 
 ---
 
