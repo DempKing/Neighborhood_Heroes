@@ -1,10 +1,10 @@
 // Where is every kid right now? Pure function of the kid's routine, the clock,
 // and a little save state (team practices).
-import { HOOD_BY_NAME, PLAYER_LUNCH, RECESS_ZONES, parseSpot, classFor } from '../data/world.js';
 import { KIDS } from '../data/kids.js';
-import { dayInfo, schoolBlockAt, nextClassBlock, DOW } from './time.js';
-import { kidGradeNow } from './stats.js';
+import { HOOD_BY_NAME, PLAYER_LUNCH, RECESS_ZONES, classFor, parseSpot } from '../data/world.js';
 import { hashString } from './rng.js';
+import { kidGradeNow } from './stats.js';
+import { DOW, dayInfo, nextClassBlock, schoolBlockAt } from './time.js';
 
 const PUBLIC = new Set(['Suncrest Academy']);
 
@@ -13,6 +13,7 @@ export function atHilltop(kid) {
   return kid.routine.school.startsWith('Hilltop');
 }
 
+/** Which kind of school a kid goes to at a grade. */
 export function schoolKind(kid, grade) {
   if (!PUBLIC.has(kid.routine.school)) return kid.routine.school === 'Homeschooled' ? 'home' : 'private';
   if (grade <= 5) return 'elem';
@@ -36,9 +37,21 @@ export function sectionOf(kid, grade) {
   const key = `${kid.grade_at_start}:${grade}`;
   let map = sectionCache.get(key);
   if (!map) {
-    const cohort = KIDS.filter((k) => k.grade_at_start === kid.grade_at_start && PUBLIC.has(k.routine.school));
-    const split = (salt) => new Map(cohort.slice().sort((a, b) => hashString(a.id + grade + salt) - hashString(b.id + grade + salt) || a.id.localeCompare(b.id)).map((k, i) => [k.id, i % 2]));
-    const xs = split(''); const ys = split('|y');
+    const cohort = KIDS.filter(
+      (k) => k.grade_at_start === kid.grade_at_start && PUBLIC.has(k.routine.school),
+    );
+    const split = (salt) =>
+      new Map(
+        cohort
+          .slice()
+          .sort(
+            (a, b) =>
+              hashString(a.id + grade + salt) - hashString(b.id + grade + salt) || a.id.localeCompare(b.id),
+          )
+          .map((k, i) => [k.id, i % 2]),
+      );
+    const xs = split('');
+    const ys = split('|y');
     map = new Map(cohort.map((k) => [k.id, xs.get(k.id) + 2 * ys.get(k.id)]));
     sectionCache.set(key, map);
   }
@@ -56,9 +69,12 @@ export function kidHood(kid) {
   return HOOD_BY_NAME[kid.residence.neighborhood];
 }
 
+/** Where a kid is in the evening (sometimes in the front yard). */
 function evening(kid, day, salt) {
   // Out in the front yard some evenings, inside on others.
-  return hashString(`${kid.id}${day}${salt}`) % 10 < 6 ? { loc: kidHood(kid), zone: 'front yard', activity: 'hanging out at home' } : null;
+  return hashString(`${kid.id}${day}${salt}`) % 10 < 6
+    ? { loc: kidHood(kid), zone: 'front yard', activity: 'hanging out at home' }
+    : null;
 }
 
 /**
@@ -81,41 +97,74 @@ export function whereIsKid(kid, ctx) {
     const sLoc = schoolLocFor(grade);
     const isPublic = kind === 'elem' || kind === 'middle' || kind === 'high';
     if (m < 7 * 60 + 45) {
-      if (['bus stop', 'walks with sibling', 'bikes'].includes(r.before_school)) return { loc: kidHood(kid), zone: 'street', activity: `heading to school (${r.before_school})` };
-      if (r.before_school === 'early breakfast club' && isPublic) return { loc: sLoc, zone: 'cafeteria', activity: 'breakfast club' };
+      if (['bus stop', 'walks with sibling', 'bikes'].includes(r.before_school))
+        return { loc: kidHood(kid), zone: 'street', activity: `heading to school (${r.before_school})` };
+      if (r.before_school === 'early breakfast club' && isPublic)
+        return { loc: sLoc, zone: 'cafeteria', activity: 'breakfast club' };
       return null;
     }
     if (isPublic && m < 14 * 60) {
       if (m < 8 * 60) {
         if (r.before_school === 'late again') return null;
-        return { loc: sLoc, zone: r.before_school === 'early breakfast club' ? 'cafeteria' : 'playground', activity: 'before the bell' };
+        return {
+          loc: sLoc,
+          zone: r.before_school === 'early breakfast club' ? 'cafeteria' : 'playground',
+          activity: 'before the bell',
+        };
       }
-      if (r.before_school === 'late again' && m < 8 * 60 + 6) return { loc: sLoc, zone: 'hallway', activity: 'running late (again)' };
+      if (r.before_school === 'late again' && m < 8 * 60 + 6)
+        return { loc: sLoc, zone: 'hallway', activity: 'running late (again)' };
       const block = schoolBlockAt(m);
       const roomAt = (b) => kidClass(kid, grade, (b && b.period) || 1).room;
       if (!block) return { loc: sLoc, zone: roomAt(null), activity: 'in class' };
       switch (block.kind) {
-        case 'class': return { loc: sLoc, zone: roomAt(block), activity: 'in class' };
-        case 'pass': { const nc = kidClass(kid, grade, nextClassBlock(m).period); return { loc: sLoc, zone: 'hallway', activity: `heading to ${nc.subject}`, toRoom: nc.room }; }
-        case 'recess': return { loc: sLoc, zone: RECESS_ZONES[r.recess_spot] || 'playground', activity: `recess (${r.recess_spot})` };
-        case 'lunch': return r.lunch === PLAYER_LUNCH || !r.lunch ? { loc: sLoc, zone: 'cafeteria', activity: 'lunch' } : { loc: sLoc, zone: roomAt(nextClassBlock(m)), activity: 'in class (different lunch)' };
-        default: return { loc: sLoc, zone: roomAt(null), activity: 'in class' };
+        case 'class':
+          return { loc: sLoc, zone: roomAt(block), activity: 'in class' };
+        case 'pass': {
+          const nc = kidClass(kid, grade, nextClassBlock(m).period);
+          return { loc: sLoc, zone: 'hallway', activity: `heading to ${nc.subject}`, toRoom: nc.room };
+        }
+        case 'recess':
+          return {
+            loc: sLoc,
+            zone: RECESS_ZONES[r.recess_spot] || 'playground',
+            activity: `recess (${r.recess_spot})`,
+          };
+        case 'lunch':
+          return r.lunch === PLAYER_LUNCH || !r.lunch
+            ? { loc: sLoc, zone: 'cafeteria', activity: 'lunch' }
+            : { loc: sLoc, zone: roomAt(nextClassBlock(m)), activity: 'in class (different lunch)' };
+        default:
+          return { loc: sLoc, zone: roomAt(null), activity: 'in class' };
       }
     }
     if (!isPublic && m < 15 * 60 + 30) {
       // Hilltop Prep kids are up at their campus; other private schools are off the map.
-      if (atHilltop(kid)) return { loc: 'hilltop', zone: m < 8 * 60 + 15 ? 'courtyard' : 'quad', activity: 'at Hilltop Prep' };
+      if (atHilltop(kid))
+        return { loc: 'hilltop', zone: m < 8 * 60 + 15 ? 'courtyard' : 'quad', activity: 'at Hilltop Prep' };
       return null;
     }
     if (m < 14 * 60 + 30 && isPublic) {
       const after = r.after_school[DOW[info.dow]];
-      if (after.startsWith('School')) return { ...parseSpot(after, kid), loc: sLoc, activity: 'after school' };
+      if (after.startsWith('School'))
+        return { ...parseSpot(after, kid), loc: sLoc, activity: 'after school' };
       return { loc: sLoc, zone: 'playground', activity: 'dismissal' };
     }
     if (m < 17 * 60 + 45) {
       const spot = parseSpot(r.after_school[DOW[info.dow]], kid);
-      if (spot.loc === 'school') { if (atHilltop(kid)) { spot.loc = 'hilltop'; spot.zone = 'field'; } else spot.loc = isPublic ? sLoc : kidHood(kid); }
-      if (!isPublic && spot.loc === kidHood(kid) && spot.zone !== 'front yard' && !['cul-de-sac', 'driveway hoop', 'creek'].includes(spot.zone)) spot.zone = 'front yard';
+      if (spot.loc === 'school') {
+        if (atHilltop(kid)) {
+          spot.loc = 'hilltop';
+          spot.zone = 'field';
+        } else spot.loc = isPublic ? sLoc : kidHood(kid);
+      }
+      if (
+        !isPublic &&
+        spot.loc === kidHood(kid) &&
+        spot.zone !== 'front yard' &&
+        !['cul-de-sac', 'driveway hoop', 'creek'].includes(spot.zone)
+      )
+        spot.zone = 'front yard';
       return { ...spot, activity: 'after school' };
     }
     return evening(kid, day, 'wk');
@@ -129,10 +178,20 @@ export function whereIsKid(kid, ctx) {
   return evening(kid, day, 'we');
 }
 
+/** Where a kid is at a weekend time slot. */
 function weekendSpot(kid, slot, grade) {
   const spot = parseSpot(kid.routine.weekend[slot], kid);
-  if (spot.loc === 'school' && atHilltop(kid)) return { loc: 'hilltop', zone: 'field', activity: slot.endsWith('AM') ? 'weekend practice at Hilltop' : 'hanging out at Hilltop' };
-  if (spot.loc === 'school') spot.loc = schoolKind(kid, grade) === 'elem' || schoolKind(kid, grade) === 'middle' ? schoolLocFor(grade) : kidHood(kid);
+  if (spot.loc === 'school' && atHilltop(kid))
+    return {
+      loc: 'hilltop',
+      zone: 'field',
+      activity: slot.endsWith('AM') ? 'weekend practice at Hilltop' : 'hanging out at Hilltop',
+    };
+  if (spot.loc === 'school')
+    spot.loc =
+      schoolKind(kid, grade) === 'elem' || schoolKind(kid, grade) === 'middle'
+        ? schoolLocFor(grade)
+        : kidHood(kid);
   if (spot.loc === 'school' || spot.loc === 'middleschool') spot.zone = 'playground';
   return { ...spot, activity: slot.endsWith('AM') ? 'weekend morning' : 'weekend afternoon' };
 }
@@ -147,11 +206,14 @@ export function routineSlots(kid) {
   return slots;
 }
 
+/** A sentence describing where a kid is at a time slot. */
 export function describeSlot(kid, slot, grade = kid.grade_at_start) {
   const r = kid.routine;
   if (slot === 'homeroom') {
     const classes = [1, 2, 3, 4].map((p) => kidClass(kid, grade, p)).filter(Boolean);
-    return classes.length ? `Classes: ${classes.map((c, i) => `P${i + 1} ${c.subject} (${c.teacher})`).join(', ')}` : `School: ${r.school}`;
+    return classes.length
+      ? `Classes: ${classes.map((c, i) => `P${i + 1} ${c.subject} (${c.teacher})`).join(', ')}`
+      : `School: ${r.school}`;
   }
   if (slot === 'lunch') return `Lunch: ${r.lunch}`;
   if (slot === 'recess') return `Recess: ${r.recess_spot}`;

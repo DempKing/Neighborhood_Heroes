@@ -1,22 +1,29 @@
 // Tryouts in the backyard: invited kids line up, run the drills you've unlocked
 // (Sprints is a real 3D race), and you decide who makes the team.
-import { $, h, clear, btn, modal, toast, gradeChip } from './dom.js';
 import { KID_BY_ID, shortName } from '../data/kids.js';
 import { STAT_NAMES } from '../data/world.js';
-import { availableDrills, runDrill, sprintTime, signKid, MAX_ROSTER } from '../game/team.js';
 import { addFriendship } from '../game/social.js';
-import { kidGrade, heightOf, playerGrade } from '../game/state.js';
+import { heightOf, kidGrade, playerGrade } from '../game/state.js';
+import { availableDrills, MAX_ROSTER, runDrill, signKid, sprintTime } from '../game/team.js';
 import { lookFromKid } from '../world2d/looks.js';
 import { sfx } from './audio.js';
+import { $, btn, clear, gradeChip, h, modal, toast } from './dom.js';
 
+/** Tryouts: kids run drills and stats are revealed. */
 export function startTryout(game) {
   const s = game.state;
   const t = s.team.tryout;
   if (!t || t.done) return;
   t.done = true;
-  if (s.school.sportsBan) { toast('You\'re grounded from sports. Tryout canceled!', 'bad'); return; }
+  if (s.school.sportsBan) {
+    toast("You're grounded from sports. Tryout canceled!", 'bad');
+    return;
+  }
   const ids = s.team.invites.filter((id) => KID_BY_ID.get(id));
-  if (!ids.length) { toast('Nobody was invited, so nobody came. Invite kids first!', 'bad'); return; }
+  if (!ids.length) {
+    toast('Nobody was invited, so nobody came. Invite kids first!', 'bad');
+    return;
+  }
   if (game.mode === 'class') return;
   game.mode = 'tryout';
   game.desired = new Map();
@@ -26,7 +33,15 @@ export function startTryout(game) {
   ids.forEach((id, i) => {
     const k = KID_BY_ID.get(id);
     const z = f.cz - (ids.length - 1) * 0.75 + i * 1.5;
-    game.engine.addNPC({ id, look: lookFromKid(k, kidGrade(s, id), heightOf(s, id)), tag: k.first_name, x: lineX, z, rot: Math.PI / 2, mode: 'stand' });
+    game.engine.addNPC({
+      id,
+      look: lookFromKid(k, kidGrade(s, id), heightOf(s, id)),
+      tag: k.first_name,
+      x: lineX,
+      z,
+      rot: Math.PI / 2,
+      mode: 'stand',
+    });
   });
   game.engine.teleport(lineX - 2.5, f.cz, Math.PI / 2);
   game.engine.cinematic({ x: f.cx - 2, z: f.cz }, 16, { height: 9, spin: 0.02, angle: -0.6 });
@@ -36,46 +51,107 @@ export function startTryout(game) {
   const table = h('div', {});
   const drillRow = h('div', { class: 'btn-row' });
   const draw = () => {
-    const codes = [...new Set([...ran].flatMap((d) => availableDrills(s).find((x) => x.id === d)?.stats || []))];
-    table.replaceChildren(h('table', { class: 'list' },
-      h('tr', {}, h('th', {}, 'Kid'), h('th', {}, 'Gr'), ...codes.map((c) => h('th', {}, STAT_NAMES[c])), h('th', {}, 'Notes')),
-      ...ids.map((id) => h('tr', {}, h('td', {}, shortName(KID_BY_ID.get(id))), h('td', {}, kidGrade(s, id)),
-        ...codes.map((c) => h('td', {}, results.get(id)[c] ? gradeChip(results.get(id)[c].label, 1) : '')),
-        h('td', { class: 'muted' }, results.get(id).sprint ? `${results.get(id).sprint}s sprint` : '')))));
-    drillRow.replaceChildren(...availableDrills(s).map((d) => btn(`${ran.has(d.id) ? '✓ ' : ''}${d.name}`, () => runOne(d), `small ${ran.has(d.id) ? 'white' : 'green'}`, ran.has(d.id) || busy ? { disabled: true } : {})),
-      btn('Done with drills ➜ Pick your team', () => picks(), 'small', busy ? { disabled: true } : {}));
+    const codes = [
+      ...new Set([...ran].flatMap((d) => availableDrills(s).find((x) => x.id === d)?.stats || [])),
+    ];
+    table.replaceChildren(
+      h(
+        'table',
+        { class: 'list' },
+        h(
+          'tr',
+          {},
+          h('th', {}, 'Kid'),
+          h('th', {}, 'Gr'),
+          ...codes.map((c) => h('th', {}, STAT_NAMES[c])),
+          h('th', {}, 'Notes'),
+        ),
+        ...ids.map((id) =>
+          h(
+            'tr',
+            {},
+            h('td', {}, shortName(KID_BY_ID.get(id))),
+            h('td', {}, kidGrade(s, id)),
+            ...codes.map((c) =>
+              h('td', {}, results.get(id)[c] ? gradeChip(results.get(id)[c].label, 1) : ''),
+            ),
+            h('td', { class: 'muted' }, results.get(id).sprint ? `${results.get(id).sprint}s sprint` : ''),
+          ),
+        ),
+      ),
+    );
+    drillRow.replaceChildren(
+      ...availableDrills(s).map((d) =>
+        btn(
+          `${ran.has(d.id) ? '✓ ' : ''}${d.name}`,
+          () => runOne(d),
+          `small ${ran.has(d.id) ? 'white' : 'green'}`,
+          ran.has(d.id) || busy ? { disabled: true } : {},
+        ),
+      ),
+      btn('Done with drills ➜ Pick your team', () => picks(), 'small', busy ? { disabled: true } : {}),
+    );
   };
   let busy = false;
   const runOne = async (d) => {
-    busy = true; draw();
+    busy = true;
+    draw();
     const res = runDrill(s, d.id, ids);
     try {
       if (d.id === 'sprints') await sprintRace(game, ids, res, lineX, results);
       else await genericDrill(game, ids, d);
-    } catch (err) { console.error(err); }
+    } catch (err) {
+      console.error(err);
+    }
     for (const r of res) for (const [c, v] of Object.entries(r.values)) results.get(r.id)[c] = v;
     ran.add(d.id);
     game.skip(10);
-    busy = false; draw();
+    busy = false;
+    draw();
   };
   const picks = () => {
     const box = h('div', {});
     const drawPicks = () => {
-      box.replaceChildren(h('p', {}, `Roster: ${s.team.roster.length}/${MAX_ROSTER}. Kids you pass on will be a little sad.`),
+      box.replaceChildren(
+        h('p', {}, `Roster: ${s.team.roster.length}/${MAX_ROSTER}. Kids you pass on will be a little sad.`),
         ...ids.map((id) => {
           const k = KID_BY_ID.get(id);
           const on = s.team.roster.includes(id);
-          return h('div', { class: 'row', style: { margin: '6px 0' } }, h('b', { style: { flex: 1 } }, shortName(k)),
-            ...Object.entries(results.get(id)).filter(([c]) => STAT_NAMES[c]).map(([c, v]) => h('span', { class: 'row' }, c, gradeChip(v.label, 1))),
-            on ? h('span', { class: 'pill good' }, 'On the team!') : btn('✍️ Sign', () => {
-              const r = signKid(s, id);
-              if (r.ok) { addFriendship(s, id, 6); sfx('cheer'); const n = game.engine.npc(id); if (n) n.animOverride = 'cheer'; } else toast(r.reason, 'bad');
-              drawPicks();
-            }, 'small green'));
-        }));
+          return h(
+            'div',
+            { class: 'row', style: { margin: '6px 0' } },
+            h('b', { style: { flex: 1 } }, shortName(k)),
+            ...Object.entries(results.get(id))
+              .filter(([c]) => STAT_NAMES[c])
+              .map(([c, v]) => h('span', { class: 'row' }, c, gradeChip(v.label, 1))),
+            on
+              ? h('span', { class: 'pill good' }, 'On the team!')
+              : btn(
+                  '✍️ Sign',
+                  () => {
+                    const r = signKid(s, id);
+                    if (r.ok) {
+                      addFriendship(s, id, 6);
+                      sfx('cheer');
+                      const n = game.engine.npc(id);
+                      if (n) n.animOverride = 'cheer';
+                    } else toast(r.reason, 'bad');
+                    drawPicks();
+                  },
+                  'small green',
+                ),
+          );
+        }),
+      );
     };
     drawPicks();
-    modal({ title: 'Pick your team', body: box, wide: true, dismissable: false, buttons: [{ label: 'Finish tryout', cls: 'green', onClick: finish }] });
+    modal({
+      title: 'Pick your team',
+      body: box,
+      wide: true,
+      dismissable: false,
+      buttons: [{ label: 'Finish tryout', cls: 'green', onClick: finish }],
+    });
   };
   const finish = () => {
     for (const id of ids) if (!s.team.roster.includes(id)) addFriendship(s, id, -3);
@@ -85,13 +161,29 @@ export function startTryout(game) {
     game.engine.follow();
     game.skip(30);
     game.refreshPresence(true);
-    toast(`Tryout over! Your roster has ${s.team.roster.length} kid${s.team.roster.length === 1 ? '' : 's'}.`, 'good');
+    toast(
+      `Tryout over! Your roster has ${s.team.roster.length} kid${s.team.roster.length === 1 ? '' : 's'}.`,
+      'good',
+    );
   };
-  panel.appendChild(h('div', { class: 'card' }, h('h3', {}, `🏃 Tryout Day! ${ids.length} kid${ids.length > 1 ? 's' : ''} showed up.`),
-    h('p', { class: 'muted' }, 'Run the drills you have unlocked. Each one reveals a stat. (Buy more drill equipment to learn more about the kids.)'), drillRow, table));
+  panel.appendChild(
+    h(
+      'div',
+      { class: 'card' },
+      h('h3', {}, `🏃 Tryout Day! ${ids.length} kid${ids.length > 1 ? 's' : ''} showed up.`),
+      h(
+        'p',
+        { class: 'muted' },
+        'Run the drills you have unlocked. Each one reveals a stat. (Buy more drill equipment to learn more about the kids.)',
+      ),
+      drillRow,
+      table,
+    ),
+  );
   draw();
 }
 
+/** The sprint drill. */
 async function sprintRace(game, ids, res, lineX, results) {
   const s = game.state;
   const e = game.engine;
@@ -108,23 +200,39 @@ async function sprintRace(game, ids, res, lineX, results) {
   await Promise.all(runs);
   sfx('cheer');
   await wait(600);
-  await Promise.all(ids.map((id) => { const n = e.npc(id); return n ? e.walkNPC(id, lineX, n.char.root.position.z, 3) : null; }));
-  for (const id of ids) { const n = e.npc(id); if (n) n.char.root.rotation.y = Math.PI / 2; }
+  await Promise.all(
+    ids.map((id) => {
+      const n = e.npc(id);
+      return n ? e.walkNPC(id, lineX, n.char.root.position.z, 3) : null;
+    }),
+  );
+  for (const id of ids) {
+    const n = e.npc(id);
+    if (n) n.char.root.rotation.y = Math.PI / 2;
+  }
 }
 
+/** A drill without its own animation. */
 async function genericDrill(game, ids, d) {
   const e = game.engine;
   sfx('whistle');
   for (const id of ids) {
     const n = e.npc(id);
     if (!n) continue;
-    n.animOverride = d.id === 'jump' || d.id === 'pressure' ? 'cheer' : d.id === 'longtoss' || d.id === 'bucket' || d.id === 'catch' ? 'throw' : 'run';
+    n.animOverride =
+      d.id === 'jump' || d.id === 'pressure'
+        ? 'cheer'
+        : d.id === 'longtoss' || d.id === 'bucket' || d.id === 'catch'
+          ? 'throw'
+          : 'run';
     await wait(Math.max(250, 900 / ids.length));
     n.animOverride = null;
   }
   sfx('pop');
 }
 
-function wait(ms) { return new Promise((r) => setTimeout(r, ms)); }
+function wait(ms) {
+  return new Promise((r) => setTimeout(r, ms));
+}
 
 export { playerGrade };

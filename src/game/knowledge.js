@@ -9,23 +9,38 @@ const store = () => globalThis.localStorage;
 
 /** Is the "remember what I learned" toggle on? (On unless switched off.) */
 export function knowledgeOn(storage = store()) {
-  try { return storage.getItem(ON_KEY) !== '0'; } catch { return true; }
+  try {
+    return storage.getItem(ON_KEY) !== '0';
+  } catch {
+    return true;
+  }
 }
 
+/** Turns carrying knowledge between saves on or off. */
 export function setKnowledgeOn(on, storage = store()) {
-  try { storage.setItem(ON_KEY, on ? '1' : '0'); } catch { /* storage optional */ }
+  try {
+    storage.setItem(ON_KEY, on ? '1' : '0');
+  } catch {
+    /* storage optional */
+  }
 }
 
 const better = (a, b) => (a === 'exact' || b === 'exact' ? 'exact' : a || b);
-const LIKES_AT = 30; const TRAIT1_AT = 45; const TRAIT2_AT = 65; // friendship that reveals likes / traits
+const LIKES_AT = 30;
+const TRAIT1_AT = 45;
+const TRAIT2_AT = 65; // friendship that reveals likes / traits
 
 /** What one kid's record in a save says you know about them. */
 function knownOf(ks) {
   if (!ks) return null;
   const named = !!(ks.met || ks.named);
-  const rev = ks.rev || {}; const known = ks.known || [];
-  const likes = !!(ks.knowLikes || ks.f >= LIKES_AT && ks.met);
-  const traits = Math.max(ks.knowTraits || 0, ks.met ? (ks.f >= TRAIT2_AT ? 2 : ks.f >= TRAIT1_AT ? 1 : 0) : 0);
+  const rev = ks.rev || {};
+  const known = ks.known || [];
+  const likes = !!(ks.knowLikes || (ks.f >= LIKES_AT && ks.met));
+  const traits = Math.max(
+    ks.knowTraits || 0,
+    ks.met ? (ks.f >= TRAIT2_AT ? 2 : ks.f >= TRAIT1_AT ? 1 : 0) : 0,
+  );
   const hook = !!ks.hookAsked;
   if (!named && !Object.keys(rev).length && !known.length && !likes && !traits && !hook) return null;
   return { named, rev, known, likes, traits, hook };
@@ -40,7 +55,9 @@ export function knowledgeSummary(save) {
     out.kids++;
     if (k.named) out.named++;
     const r = Object.values(k.rev);
-    out.stats += r.length; out.exact += r.filter((x) => x === 'exact').length; out.routines += k.known.length;
+    out.stats += r.length;
+    out.exact += r.filter((x) => x === 'exact').length;
+    out.routines += k.known.length;
   }
   return out;
 }
@@ -64,7 +81,11 @@ export function applyKnowledge(state, save) {
     ks.remembered = true;
     kids++;
   }
-  state.legacy = { from: save.player ? save.player.name : 'a past run', team: save.team ? save.team.name : '', kids };
+  state.legacy = {
+    from: save.player ? save.player.name : 'a past run',
+    team: save.team ? save.team.name : '',
+    kids,
+  };
   return kids;
 }
 

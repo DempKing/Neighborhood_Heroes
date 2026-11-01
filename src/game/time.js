@@ -9,9 +9,23 @@ export const SEASON_NAMES = ['Fall', 'Winter', 'Spring'];
 export const WEEKS_PER_SEASON = 15;
 export const SCHOOL_WEEKS = 45; // weeks 46-52 are summer vacation
 
-const MONTHS = [['September', 30], ['October', 31], ['November', 30], ['December', 31], ['January', 31], ['February', 28],
-  ['March', 31], ['April', 30], ['May', 31], ['June', 30], ['July', 31], ['August', 31]];
+/** Month names. */
+const MONTHS = [
+  ['September', 30],
+  ['October', 31],
+  ['November', 30],
+  ['December', 31],
+  ['January', 31],
+  ['February', 28],
+  ['March', 31],
+  ['April', 30],
+  ['May', 31],
+  ['June', 30],
+  ['July', 31],
+  ['August', 31],
+];
 
+/** Date, weekday, season and school day for a day number. */
 export function dayInfo(day) {
   const dow = (day - 1) % 7;
   const year = Math.floor((day - 1) / 364) + 1;
@@ -28,8 +42,16 @@ export function dayInfo(day) {
   let m = 0;
   while (m < 11 && rem >= MONTHS[m][1]) rem -= MONTHS[m++][1];
   return {
-    day, dow, dowName: DOW[dow], dowLong: DOW_LONG[dow], year, weekOfYear, isWeekend, isSummer,
-    isSchoolDay: !isWeekend && !isSummer, season,
+    day,
+    dow,
+    dowName: DOW[dow],
+    dowLong: DOW_LONG[dow],
+    year,
+    weekOfYear,
+    isWeekend,
+    isSummer,
+    isSchoolDay: !isWeekend && !isSummer,
+    season,
     dateLabel: `${DOW_LONG[dow]}, ${MONTHS[m][0]} ${rem + 1}`,
   };
 }
@@ -41,6 +63,7 @@ export function seasonId(day) {
   return (info.year - 1) * 3 + info.season.index + 1;
 }
 
+/** Minutes since midnight as "7:30 AM". */
 export function formatTime(minute) {
   const h = Math.floor(minute / 60);
   const m = Math.floor(minute % 60);

@@ -2,17 +2,19 @@
 // inline SVG (24-unit grid) so they stay crisp at any size.
 const W = '#fff';
 
+/** The settings gear icon. */
 function gear() {
   // 8 teeth around a ring, with a hole in the middle.
   const pts = [];
   for (let i = 0; i < 32; i++) {
     const a = (i / 32) * Math.PI * 2 - Math.PI / 16;
-    const r = (i % 4 < 2) ? 10 : 7.6;
+    const r = i % 4 < 2 ? 10 : 7.6;
     pts.push(`${(12 + Math.cos(a) * r).toFixed(2)},${(12 + Math.sin(a) * r).toFixed(2)}`);
   }
   return `<path fill-rule="evenodd" fill="${W}" d="M${pts.join('L')}Z M12 8.4a3.6 3.6 0 1 0 0.01 0Z"/>`;
 }
 
+/** Icon artwork for each phone app. */
 const GLYPHS = {
   team: `<path fill="${W}" d="M8.2 2.8l2-.6c.4 1.3 1 2 1.8 2s1.4-.7 1.8-2l2 .6 5 3.8-2.6 3.6-1.6-1V21H7.4V9.2l-1.6 1-2.6-3.6z"/><path fill="#c9184a" d="M9.6 11h4.8v1.6l-2.4 6h-2l2.3-5.9H9.6z"/>`,
   training: `<path fill="${W}" d="M2.5 10h2v4h-2zM5 7.5h3v9H5zM16 7.5h3v9h-3zM19.5 10h2v4h-2z"/><rect x="8" y="10.8" width="8" height="2.4" rx="1" fill="${W}"/>`,
@@ -29,10 +31,20 @@ const GLYPHS = {
   settings: gear(),
 };
 
+/** Background colour for each phone app icon. */
 const BG = {
-  team: ['#ff6b6b', '#c9184a'], training: ['#ffb347', '#f3722c'], league: ['#ffe066', '#f4a100'], field: ['#a7b4c6', '#5c677d'],
-  social: ['#ffb36b', '#ff5c8a', '#c13dc7'], contacts: ['#c9ced6', '#8d96a5'], calls: ['#6ee07a', '#1fa83a'], maps: ['#74b9ff', '#2f6fde'],
-  school: ['#ff9aa2', '#e5636b'], bank: ['#52b788', '#1b4332'], backpack: ['#d9915a', '#8c4a17'], diary: ['#e9d8a6', '#b08d57'],
+  team: ['#ff6b6b', '#c9184a'],
+  training: ['#ffb347', '#f3722c'],
+  league: ['#ffe066', '#f4a100'],
+  field: ['#a7b4c6', '#5c677d'],
+  social: ['#ffb36b', '#ff5c8a', '#c13dc7'],
+  contacts: ['#c9ced6', '#8d96a5'],
+  calls: ['#6ee07a', '#1fa83a'],
+  maps: ['#74b9ff', '#2f6fde'],
+  school: ['#ff9aa2', '#e5636b'],
+  bank: ['#52b788', '#1b4332'],
+  backpack: ['#d9915a', '#8c4a17'],
+  diary: ['#e9d8a6', '#b08d57'],
   settings: ['#adb5bd', '#5f676f'],
 };
 

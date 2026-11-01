@@ -25,6 +25,7 @@ export const SCIENCE = [
   ['What causes day and night?', 'Earth spinning', 'The Moon moving', 'Clouds', 'The Sun turning off'],
 ];
 
+/** Social studies quiz questions. */
 export const SOCIAL = [
   ['What do we call the leader of the United States?', 'The President', 'The King', 'The Mayor', 'The Principal'],
   ['How many continents are there?', '7', '5', '9', '12'],
@@ -46,6 +47,7 @@ export const SOCIAL = [
   ['What is a timeline used for?', 'Showing events in order', 'Measuring height', 'Counting money', 'Drawing maps'],
 ];
 
+/** Reading quiz questions. */
 export const READING = [
   ['Which word means the same as "happy"?', 'Joyful', 'Grumpy', 'Sleepy', 'Soggy'],
   ['Which word means the opposite of "ancient"?', 'Modern', 'Old', 'Dusty', 'Historic'],

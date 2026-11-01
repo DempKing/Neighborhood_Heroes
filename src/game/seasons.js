@@ -4,12 +4,12 @@
 // school year (entry is free), which starts a brand-new team to recruit, or
 // skip ahead to next school year. Fall sign-ups offer every sport, including
 // the one you already have (keep your team).
-import { SPORTS, SPORT_IDS } from '../data/world.js';
 import { KIDS } from '../data/kids.js';
-import { addLog, addNews, yearOf } from './state.js';
-import { dayInfo, seasonId, SEASON_NAMES, WEEKS_PER_SEASON } from './time.js';
-import { isRegistered } from './team.js';
+import { SPORTS, SPORT_IDS } from '../data/world.js';
 import { crestCupPending } from './rivalry.js';
+import { addLog, addNews, yearOf } from './state.js';
+import { isRegistered } from './team.js';
+import { SEASON_NAMES, WEEKS_PER_SEASON, dayInfo, seasonId } from './time.js';
 
 /** Last week a team can still sign up for a season that's already started. */
 export const LATE_SIGNUP_WEEK = 11;
@@ -20,10 +20,19 @@ export function sportsThisYear(state, year = yearOf(state)) {
   return ys[year] || [];
 }
 
+/** Info about one season of a year: dates and the sport played. */
 function seasonEntry(state, year, index) {
   const firstDay = (year - 1) * 364 + index * WEEKS_PER_SEASON * 7 + 1;
   const played = sportsThisYear(state, year);
-  return { name: SEASON_NAMES[index], index, year, newYear: year !== yearOf(state), sid: seasonId(firstDay), firstDay, options: SPORT_IDS.filter((id) => !played.includes(id)) };
+  return {
+    name: SEASON_NAMES[index],
+    index,
+    year,
+    newYear: year !== yearOf(state),
+    sid: seasonId(firstDay),
+    firstDay,
+    options: SPORT_IDS.filter((id) => !played.includes(id)),
+  };
 }
 
 /** The season after the current one (summer counts as before next Fall). */
@@ -48,9 +57,15 @@ export function signupOpen(state) {
   if (info.season) {
     const sid = seasonId(state.time.day);
     const signed = (t.signedSid ?? 1) === sid || isRegistered(state);
-    if (!signed && info.season.week <= LATE_SIGNUP_WEEK) return { ...seasonEntry(state, yearOf(state), info.season.index), now: true };
+    if (!signed && info.season.week <= LATE_SIGNUP_WEEK)
+      return { ...seasonEntry(state, yearOf(state), info.season.index), now: true };
     // Over once the champion is crowned and the Crest Cup has been played.
-    const over = info.season.week === WEEKS_PER_SEASON && state.league && state.league.sid === sid && state.league.done && !crestCupPending(state);
+    const over =
+      info.season.week === WEEKS_PER_SEASON &&
+      state.league &&
+      state.league.sid === sid &&
+      state.league.done &&
+      !crestCupPending(state);
     if (!over) return null;
   }
   const n = nextSeasonInfo(state);
@@ -60,9 +75,15 @@ export function signupOpen(state) {
 /** Pick a season's sport (free). Applied when the season starts, or right away if it already has. */
 export function chooseNextSport(state, sport, teamName) {
   const n = signupOpen(state);
-  if (!n) return { ok: false, reason: 'Sign-ups aren\'t open right now.' };
-  if (!SPORTS[sport] || !n.options.includes(sport)) return { ok: false, reason: 'That sport isn\'t open for sign-ups.' };
-  state.signup = { sid: n.sid, sport, name: (teamName || '').trim().slice(0, 28) || state.team.name, year: n.year };
+  if (!n) return { ok: false, reason: "Sign-ups aren't open right now." };
+  if (!SPORTS[sport] || !n.options.includes(sport))
+    return { ok: false, reason: "That sport isn't open for sign-ups." };
+  state.signup = {
+    sid: n.sid,
+    sport,
+    name: (teamName || '').trim().slice(0, 28) || state.team.name,
+    year: n.year,
+  };
   if (n.now) return { ok: true, now: true, ...applySignup(state) };
   return { ok: true, now: false, season: n.name };
 }
@@ -80,7 +101,10 @@ export function applySignup(state) {
   const fresh = su.sport !== t.sport || su.name !== t.name;
   if (fresh) {
     const old = t.roster.filter((id) => id !== 'PLAYER');
-    t.pastTeams = [...(t.pastTeams || []), { sport: t.sport, name: t.name, roster: old, year: yearOf(state) }];
+    t.pastTeams = [
+      ...(t.pastTeams || []),
+      { sport: t.sport, name: t.name, roster: old, year: yearOf(state) },
+    ];
     for (const id of old) if (state.kids[id] && state.kids[id].team === t.name) state.kids[id].team = null;
     for (const id of Object.keys(state.kids)) if (state.kids[id].ringer) state.kids[id].ringer = false;
     t.roster = ['PLAYER'];
@@ -98,12 +122,17 @@ export function applySignup(state) {
   t.yearSports[su.year] = [...new Set([...(t.yearSports[su.year] || []), su.sport])];
   state.signup = null;
   addLog(state, `Signed up for ${SPORTS[su.sport].name} as the ${su.name}.`);
-  if (fresh) addNews(state, `New team alert: ${state.player.name}'s ${su.name} (${SPORTS[su.sport].name}) are recruiting for the ${dayInfo(state.time.day).season.name} season.`);
+  if (fresh)
+    addNews(
+      state,
+      `New team alert: ${state.player.name}'s ${su.name} (${SPORTS[su.sport].name}) are recruiting for the ${dayInfo(state.time.day).season.name} season.`,
+    );
   return { sport: su.sport, name: su.name, fresh, changedSport: su.sport !== oldSport };
 }
 
 /** Friends who'd be easy to recruit for a new team. */
 export function likelyRecruits(state, n = 5) {
   return KIDS.filter((k) => state.kids[k.id].met && state.kids[k.id].f >= 40 && !state.kids[k.id].team)
-    .sort((a, b) => state.kids[b.id].f - state.kids[a.id].f).slice(0, n);
+    .sort((a, b) => state.kids[b.id].f - state.kids[a.id].f)
+    .slice(0, n);
 }

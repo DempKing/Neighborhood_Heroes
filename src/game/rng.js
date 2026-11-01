@@ -12,6 +12,7 @@ export function mulberry32(seed) {
   };
 }
 
+/** A number from a string (same string, same number). */
 export function hashString(str) {
   let h = 2166136261 >>> 0;
   for (let i = 0; i < str.length; i++) {
@@ -31,6 +32,7 @@ export const chance = (rng, p) => rng() < p;
 export const randInt = (rng, lo, hi) => lo + Math.floor(rng() * (hi - lo + 1));
 export const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
 
+/** Shuffles an array with a seeded random function. */
 export function shuffle(rng, arr) {
   const a = arr.slice();
   for (let i = a.length - 1; i > 0; i--) {

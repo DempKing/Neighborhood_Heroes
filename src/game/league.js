@@ -1,14 +1,30 @@
 // League seasons: rival teams, AI recruiting, schedule, games, playoffs, scandals.
-import { KIDS, KID_BY_ID, KIDS_META, shortName } from '../data/kids.js';
-import { RIVAL_COLORS, SPORTS, FIELDS, PRIZES } from '../data/world.js';
-import { addLog, addNews, getKid, kidGrade, playerGrade, statsOf, yearOf } from './state.js';
-import { bestLineup, eligibility, isRegistered, leagueBand, playerBand, homeGameRevenue, giveTrophy, attraction } from './team.js';
-import { simulateMatch } from './sim.js';
+import { KID_BY_ID, KIDS, KIDS_META, shortName } from '../data/kids.js';
+import { FIELDS, PRIZES, RIVAL_COLORS, SPORTS } from '../data/world.js';
 import { recordGameStats, seasonAwards } from './leagueStats.js';
-import { HILLTOP_TEAM, HILLTOP_COLORS, hilltopRoster, crestCupGame, recordCrestCup, CREST_CUP_WEEK } from './rivalry.js';
+import {
+  CREST_CUP_WEEK,
+  crestCupGame,
+  HILLTOP_COLORS,
+  HILLTOP_TEAM,
+  hilltopRoster,
+  recordCrestCup,
+} from './rivalry.js';
+import { clamp, hashString, seeded, shuffle } from './rng.js';
+import { simulateMatch } from './sim.js';
+import { addLog, addNews, getKid, kidGrade, playerGrade, statsOf, yearOf } from './state.js';
 import { positionRating } from './stats.js';
+import {
+  attraction,
+  bestLineup,
+  eligibility,
+  giveTrophy,
+  homeGameRevenue,
+  isRegistered,
+  leagueBand,
+  playerBand,
+} from './team.js';
 import { dayInfo, seasonId } from './time.js';
-import { seeded, shuffle, hashString, clamp } from './rng.js';
 
 // Teams that start the game with no kids; the AI fills their rosters each preseason.
 // With the 4 roster teams from the data, a league has up to 7 rivals (8 teams with yours).
@@ -20,16 +36,29 @@ export const EXTRA_JR_TEAMS = {
   Football: ['Maple Hollow Monster Trucks', 'Pickle Creek Crunch', 'Old Town Thunderbirds'],
 };
 
-export const slug = (name) => name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+/** A name made safe for ids, e.g. "Red Hawks" -> "red-hawks". */
+export const slug = (name) =>
+  name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
 
+/** The rival teams that play a sport. */
 export function rivalsFor(sport) {
   const sportName = SPORTS[sport].name.replace('Flag ', '');
-  return [...KIDS_META.rival_teams.filter((t) => t.sport === sportName && !t.name.includes('6-8')).map((t) => t.name), ...EXTRA_JR_TEAMS[sportName]];
+  return [
+    ...KIDS_META.rival_teams
+      .filter((t) => t.sport === sportName && !t.name.includes('6-8'))
+      .map((t) => t.name),
+    ...EXTRA_JR_TEAMS[sportName],
+  ];
 }
 
 /** How many rival teams a grade can fill: enough sporty kids for each to field a full side (3 to 7). */
 export function rivalCount(state, grade, sport) {
-  const pool = KIDS.filter((k) => kidGrade(state, k.id) === grade && k.recruitment.status !== 'Not Into Sports (Yet)').length;
+  const pool = KIDS.filter(
+    (k) => kidGrade(state, k.id) === grade && k.recruitment.status !== 'Not Into Sports (Yet)',
+  ).length;
   return clamp(Math.floor(pool / (SPORTS[sport].minRoster + 1)) - 1, 3, 7);
 }
 
@@ -40,12 +69,14 @@ export function kitBottoms(state, name) {
   return ['baseball', 'football'].includes(state.team.sport) ? 'pants' : 'shorts';
 }
 
+/** A team's colours. */
 export function teamColors(state, name) {
   if (name === state.team.name) return state.team.colors;
   if (name === HILLTOP_TEAM) return HILLTOP_COLORS;
   return RIVAL_COLORS[name] || ['#888888', '#ffffff'];
 }
 
+/** The kids on a team. */
 export function rosterOf(state, name) {
   if (name === state.team.name) return state.team.roster.slice();
   if (name === HILLTOP_TEAM) return hilltopRoster(state);
@@ -67,14 +98,24 @@ export function ensureSeason(state) {
     if (!names.has(ks.team) || kidGrade(state, k.id) !== band.lo) ks.team = null;
   }
   state.league = {
-    sid, band: band.id, prize: band.prize, bandName: band.name, sport: state.team.sport,
+    sid,
+    band: band.id,
+    prize: band.prize,
+    bandName: band.name,
+    sport: state.team.sport,
     teams: rivals.map((name) => ({ name, w: 0, l: 0, t: 0, pf: 0, pa: 0 })),
-    schedule: null, playoffs: null, done: false, ringerGames: [],
+    schedule: null,
+    playoffs: null,
+    done: false,
+    ringerGames: [],
   };
   const msgs = aiRecruit(state, 1);
   buildSchedule(state, 1); // games start right away; you can join any time up to week 11
   const info = dayInfo(state.time.day);
-  addNews(state, `${info.season.name} season is here! The ${band.name} kicks off this Saturday. Teams can join any time up to week 11.`);
+  addNews(
+    state,
+    `${info.season.name} season is here! The ${band.name} kicks off this Saturday. Teams can join any time up to week 11.`,
+  );
   return msgs;
 }
 
@@ -86,12 +127,24 @@ export function aiRecruit(state, fraction) {
   const sportName = sp.name.replace('Flag ', '');
   const band = leagueBand(playerGrade(state));
   const rng = seeded(state.seed, 'ai', lg.sid, fraction);
-  const pool = shuffle(rng, KIDS.filter((k) => {
-    const ks = state.kids[k.id];
-    const g = kidGrade(state, k.id);
-    return !ks.team && g >= band.lo && g <= band.hi && k.recruitment.status !== 'Not Into Sports (Yet)'
-      && ks.f < 50 && !state.team.roster.includes(k.id);
-  })).sort((a, b) => (b.sport_preferences.includes(sportName) ? 1 : 0) - (a.sport_preferences.includes(sportName) ? 1 : 0));
+  const pool = shuffle(
+    rng,
+    KIDS.filter((k) => {
+      const ks = state.kids[k.id];
+      const g = kidGrade(state, k.id);
+      return (
+        !ks.team &&
+        g >= band.lo &&
+        g <= band.hi &&
+        k.recruitment.status !== 'Not Into Sports (Yet)' &&
+        ks.f < 50 &&
+        !state.team.roster.includes(k.id)
+      );
+    }),
+  ).sort(
+    (a, b) =>
+      (b.sport_preferences.includes(sportName) ? 1 : 0) - (a.sport_preferences.includes(sportName) ? 1 : 0),
+  );
   const news = [];
   for (const t of lg.teams) {
     const have = rosterOf(state, t.name).filter((id) => eligibility(state, id).ok).length;
@@ -111,6 +164,7 @@ export function aiRecruit(state, fraction) {
   return news;
 }
 
+/** A round-robin schedule: every team plays every other once. */
 function roundRobin(ids, seed) {
   const list = shuffle(seeded(seed, 'rr'), ids);
   if (list.length % 2) list.push(null);
@@ -119,7 +173,8 @@ function roundRobin(ids, seed) {
   for (let r = 0; r < n - 1; r++) {
     const games = [];
     for (let i = 0; i < n / 2; i++) {
-      const a = list[i]; const b = list[n - 1 - i];
+      const a = list[i];
+      const b = list[n - 1 - i];
       if (a && b) games.push(r % 2 ? { home: a, away: b } : { home: b, away: a });
     }
     rounds.push(games);
@@ -139,7 +194,8 @@ export function buildSchedule(state, fromWeek) {
   const rounds = [...first, ...second, ...first];
   const kept = (lg.schedule || []).filter((r) => r.week < fromWeek);
   const fresh = [];
-  for (let w = fromWeek, i = 0; w <= LAST_REGULAR_WEEK; w++, i++) fresh.push({ week: w, games: rounds[i % rounds.length].map((g) => ({ ...g, result: null })) });
+  for (let w = fromWeek, i = 0; w <= LAST_REGULAR_WEEK; w++, i++)
+    fresh.push({ week: w, games: rounds[i % rounds.length].map((g) => ({ ...g, result: null })) });
   lg.schedule = [...kept, ...fresh];
 }
 
@@ -152,7 +208,9 @@ export function joinLeague(state) {
   // This week's games are already set once Saturday arrives; start from the next open week.
   const fromWeek = info.season.week + (info.dow >= 5 ? 1 : 0);
   buildSchedule(state, fromWeek);
-  return [`The ${state.team.name} are officially in the ${lg.bandName}! ${fromWeek <= LAST_REGULAR_WEEK ? `First game: week ${fromWeek}.` : ''}`];
+  return [
+    `The ${state.team.name} are officially in the ${lg.bandName}! ${fromWeek <= LAST_REGULAR_WEEK ? `First game: week ${fromWeek}.` : ''}`,
+  ];
 }
 
 /** Old saves: the schedule used to be made in week 4. */
@@ -163,6 +221,7 @@ export function finalizeSchedule(state) {
   return joinLeague(state);
 }
 
+/** The games in a given week. */
 export function weekGames(state, week) {
   const lg = state.league;
   if (!lg) return [];
@@ -177,13 +236,18 @@ export function weekGames(state, week) {
   return [];
 }
 
+/** Your team's game this week, if any. */
 export function playerGameThisWeek(state) {
   const info = dayInfo(state.time.day);
   if (!info.season) return null;
-  return weekGames(state, info.season.week).find((g) => (g.home === state.team.name || g.away === state.team.name) && !g.result) || null;
+  return (
+    weekGames(state, info.season.week).find(
+      (g) => (g.home === state.team.name || g.away === state.team.name) && !g.result,
+    ) || null
+  );
 }
 
-// ------------------------------------------------------------- lineups --
+// Lineups
 export function matchSide(state, name, opts = {}) {
   const ids = rosterOf(state, name);
   let { lineup } = bestLineup(state, ids);
@@ -198,14 +262,19 @@ export function matchSide(state, name, opts = {}) {
     const k = getKid(state, s.id);
     const stats = statsOf(state, s.id);
     return {
-      ...s, name: s.id === 'PLAYER' ? state.player.name : k.first_name, stats, isPlayer: s.id === 'PLAYER',
+      ...s,
+      name: s.id === 'PLAYER' ? state.player.name : k.first_name,
+      stats,
+      isPlayer: s.id === 'PLAYER',
       bat: sport === 'baseball' ? positionRating(stats, 'baseball', 'BAT') : undefined,
     };
   });
   let bonus = 0;
   if (isPlayerTeam) {
     if (state.team.staff.coach) bonus += state.team.staff.coach.startsWith('adult') ? 4 : 2;
-    const tmw = out.filter((p) => p.id).reduce((a, p) => a + p.stats.TMW, 0) / Math.max(1, out.filter((p) => p.id).length);
+    const tmw =
+      out.filter((p) => p.id).reduce((a, p) => a + p.stats.TMW, 0) /
+      Math.max(1, out.filter((p) => p.id).length);
     bonus += (tmw - 50) / 10;
   }
   if (opts.home) bonus += 1.5;
@@ -220,16 +289,25 @@ export function gameSeed(state, game, week) {
   return hashString(`${state.seed}|${state.league.sid}|${week}|${game.home}|${game.away}`);
 }
 
+/** Simulates one league game. */
 export function simGame(state, game, week, clutch = null) {
   const home = matchSide(state, game.home, { home: true });
   const away = matchSide(state, game.away);
   const involvesPlayer = game.home === state.team.name || game.away === state.team.name;
   const venue = game.home === state.team.name ? FIELDS[state.team.field].name : `${game.home} home field`;
   const res = simulateMatch({
-    sport: state.team.sport, home, away, seed: gameSeed(state, game, week), clutch,
-    tier: involvesPlayer ? announcerTier(state) : 2, venue,
+    sport: state.team.sport,
+    home,
+    away,
+    seed: gameSeed(state, game, week),
+    clutch,
+    tier: involvesPlayer ? announcerTier(state) : 2,
+    venue,
   });
-  res.lineups = { home: home.lineup.filter((p) => p.id).map((p) => p.id), away: away.lineup.filter((p) => p.id).map((p) => p.id) };
+  res.lineups = {
+    home: home.lineup.filter((p) => p.id).map((p) => p.id),
+    away: away.lineup.filter((p) => p.id).map((p) => p.id),
+  };
   return res;
 }
 
@@ -244,6 +322,7 @@ export function teamOverall(state, name) {
   return Math.round(sum / lineup.length);
 }
 
+/** The result of a forfeited game. */
 export function forfeitResult(state, game, loser) {
   const home = loser === 'home' ? 0 : forfeitScore(state);
   const away = loser === 'away' ? 0 : forfeitScore(state);
@@ -254,13 +333,16 @@ function forfeitScore(state) {
   return { soccer: 3, basketball: 20, baseball: 7, football: 14 }[state.team.sport];
 }
 
+/** Why your team would have to forfeit (or null). */
 export function playerForfeitReason(state) {
   if (state.school.sportsBan) return 'grounded from sports because of grades';
   const ok = state.team.roster.filter((id) => eligibility(state, id).ok).length;
-  if (ok < SPORTS[state.team.sport].minRoster) return `only ${ok} eligible players (need ${SPORTS[state.team.sport].minRoster})`;
+  if (ok < SPORTS[state.team.sport].minRoster)
+    return `only ${ok} eligible players (need ${SPORTS[state.team.sport].minRoster})`;
   return null;
 }
 
+/** Records a game result: standings, stats, money and news. */
 export function recordResult(state, game, result, week) {
   game.result = { score: result.score, forfeit: result.forfeit || null, mvp: result.mvp || null };
   const lg = state.league;
@@ -269,8 +351,20 @@ export function recordResult(state, game, result, week) {
   const A = lg.teams.find((t) => t.name === game.away);
   const [h, a] = result.score;
   if (!game.playoff && H && A) {
-    H.pf += h; H.pa += a; A.pf += a; A.pa += h;
-    if (h > a) { H.w++; A.l++; } else if (a > h) { A.w++; H.l++; } else { H.t++; A.t++; }
+    H.pf += h;
+    H.pa += a;
+    A.pf += a;
+    A.pa += h;
+    if (h > a) {
+      H.w++;
+      A.l++;
+    } else if (a > h) {
+      A.w++;
+      H.l++;
+    } else {
+      H.t++;
+      A.t++;
+    }
   }
   const mine = game.home === state.team.name ? 'home' : game.away === state.team.name ? 'away' : null;
   const msgs = [];
@@ -278,10 +372,15 @@ export function recordResult(state, game, result, week) {
     const won = (mine === 'home' && h > a) || (mine === 'away' && a > h);
     const tie = h === a;
     state.team.recent = [...(state.team.recent || []), won ? 'W' : tie ? 'T' : 'L'].slice(-8);
-    if (won) state.team.wins += 1; else if (!tie) state.team.losses += 1;
+    if (won) state.team.wins += 1;
+    else if (!tie) state.team.losses += 1;
     if (won && !state.team.firstWin) {
       state.team.firstWin = true;
-      giveTrophy(state, `Game Ball: First Ever Win (${game.home === state.team.name ? 'vs' : 'at'} ${mine === 'home' ? game.away : game.home})`, lg.sid);
+      giveTrophy(
+        state,
+        `Game Ball: First Ever Win (${game.home === state.team.name ? 'vs' : 'at'} ${mine === 'home' ? game.away : game.home})`,
+        lg.sid,
+      );
       msgs.push('You got the GAME BALL from your first win! Put it in your trophy room.');
     }
     if (mine === 'home' && !result.forfeit) {
@@ -292,12 +391,17 @@ export function recordResult(state, game, result, week) {
       const parts = [`tickets $${rev.tickets.toFixed(2)}`];
       if (rev.snackBuyers) parts.push(`concessions $${rev.concessions.toFixed(2)}`);
       if (rev.merchBuyers) parts.push(`merch $${rev.merch.toFixed(2)}`);
-      msgs.push(`Home game: ${rev.fans} fans. ${parts.join(' + ')}${rev.parents ? ` - Mom & Dad's cut $${rev.parents.toFixed(2)}` : ''}${rev.rent ? ` - rent $${rev.rent}` : ''}${rev.staffPay ? ` - staff $${rev.staffPay}` : ''} = $${rev.net.toFixed(2)}`);
+      msgs.push(
+        `Home game: ${rev.fans} fans. ${parts.join(' + ')}${rev.parents ? ` - Mom & Dad's cut $${rev.parents.toFixed(2)}` : ''}${rev.rent ? ` - rent $${rev.rent}` : ''}${rev.staffPay ? ` - staff $${rev.staffPay}` : ''} = $${rev.net.toFixed(2)}`,
+      );
     }
     // League prize money for results, home or away.
     const pz = PRIZES[lg.prize] || PRIZES.jr;
     const prize = result.forfeit ? 0 : won ? pz.win : tie ? pz.tie : 0;
-    if (prize) { state.money = +(state.money + prize).toFixed(2); msgs.push(`League ${won ? 'win' : 'tie'} bonus: +$${prize}`); }
+    if (prize) {
+      state.money = +(state.money + prize).toFixed(2);
+      msgs.push(`League ${won ? 'win' : 'tie'} bonus: +$${prize}`);
+    }
     state.player.rep += won ? 2 : 0.5;
     const ringers = state.team.roster.filter((id) => id !== 'PLAYER' && state.kids[id].ringer);
     if (ringers.length && !result.forfeit) {
@@ -323,32 +427,53 @@ export function simOtherGames(state, week) {
   }
 }
 
+/** League table, best first. */
 export function standings(state) {
   const lg = state.league;
   if (!lg) return [];
   // Points (2 per win, 1 per tie). Joining late means fewer games to earn them.
-  return lg.teams.slice().sort((a, b) => (b.w * 2 + b.t) - (a.w * 2 + a.t) || (b.pf - b.pa) - (a.pf - a.pa) || b.pf - a.pf);
+  return lg.teams
+    .slice()
+    .sort((a, b) => b.w * 2 + b.t - (a.w * 2 + a.t) || b.pf - b.pa - (a.pf - a.pa) || b.pf - a.pf);
 }
 
+/** Sets up the playoffs from the standings. */
 export function startPlayoffs(state) {
   const lg = state.league;
   if (!lg || lg.playoffs || !lg.schedule) return [];
   const sid = lg.sid;
   const ban = state.scandal.playoffBanUntil >= sid;
-  const seeds = standings(state).filter((t) => !(t.player && ban)).slice(0, 4).map((t) => t.name);
-  if (seeds.length < 4) { lg.playoffs = []; return []; }
-  lg.playoffs = [{ week: 14, games: [{ home: seeds[0], away: seeds[3], playoff: 'Semifinal', result: null }, { home: seeds[1], away: seeds[2], playoff: 'Semifinal', result: null }] }];
+  const seeds = standings(state)
+    .filter((t) => !(t.player && ban))
+    .slice(0, 4)
+    .map((t) => t.name);
+  if (seeds.length < 4) {
+    lg.playoffs = [];
+    return [];
+  }
+  lg.playoffs = [
+    {
+      week: 14,
+      games: [
+        { home: seeds[0], away: seeds[3], playoff: 'Semifinal', result: null },
+        { home: seeds[1], away: seeds[2], playoff: 'Semifinal', result: null },
+      ],
+    },
+  ];
   const msgs = [`Playoffs! Semifinals: ${seeds[0]} vs ${seeds[3]}, ${seeds[1]} vs ${seeds[2]}.`];
-  if (ban && lg.teams.some((t) => t.player)) msgs.push('Your team is BANNED from the playoffs (paperwork scandal). Ouch.');
+  if (ban && lg.teams.some((t) => t.player))
+    msgs.push('Your team is BANNED from the playoffs (paperwork scandal). Ouch.');
   return msgs;
 }
 
+/** Winner of a played game. */
 function winnerOf(g) {
   const [h, a] = g.result.score;
   if (h === a) return hashString(g.home + g.away) % 2 ? g.home : g.away; // "shootout"
   return h > a ? g.home : g.away;
 }
 
+/** Schedules the championship game. */
 export function scheduleFinal(state) {
   const lg = state.league;
   if (!lg || !lg.playoffs || !lg.playoffs.length || lg.playoffs.length > 1) return [];
@@ -359,6 +484,7 @@ export function scheduleFinal(state) {
   return [`Championship game set: ${a} vs ${b}!`];
 }
 
+/** End of season: champion, prizes, awards and history. */
 export function endSeason(state) {
   const lg = state.league;
   if (!lg || lg.done) return [];
@@ -371,38 +497,79 @@ export function endSeason(state) {
   const info = dayInfo(state.time.day);
   const label = `${info.season ? info.season.name : 'Season'} ${2026 + yearOf(state) - 1}`;
   lg.champion = champ;
-  if (champ) addNews(state, `The ${champ} are ${lg.bandName} champions! (${label}) They'll represent Suncrest Academy against the ${HILLTOP_TEAM} in tomorrow's Crest Cup.`);
-  if (champ === state.team.name) msgs.push(`🏆 As league champs, YOU represent Suncrest Academy in the CREST CUP tomorrow at 1:00 PM vs the ${HILLTOP_TEAM} at Hilltop Prep!`);
+  if (champ)
+    addNews(
+      state,
+      `The ${champ} are ${lg.bandName} champions! (${label}) They'll represent Suncrest Academy against the ${HILLTOP_TEAM} in tomorrow's Crest Cup.`,
+    );
+  if (champ === state.team.name)
+    msgs.push(
+      `🏆 As league champs, YOU represent Suncrest Academy in the CREST CUP tomorrow at 1:00 PM vs the ${HILLTOP_TEAM} at Hilltop Prep!`,
+    );
   // Season awards from the league stats.
   const awards = seasonAwards(state);
   lg.awards = awards;
   if (awards) {
     const who = (a) => (a.id === 'PLAYER' ? 'YOU' : a.name);
-    addNews(state, `${lg.bandName} MVP: ${who(awards.mvp)} (${awards.mvp.team})! ${awards.leaders.map((a) => `${a.title}: ${who(a)}`).join('. ')}.`);
+    addNews(
+      state,
+      `${lg.bandName} MVP: ${who(awards.mvp)} (${awards.mvp.team})! ${awards.leaders.map((a) => `${a.title}: ${who(a)}`).join('. ')}.`,
+    );
     if (awards.mvp.id === 'PLAYER') {
       giveTrophy(state, `${lg.bandName} MVP - ${label}`, lg.sid);
       msgs.push(`🏅 YOU are the ${lg.bandName} MVP! An MVP trophy is in your backpack.`);
-    } else if (awards.mvp.team === state.team.name) msgs.push(`🏅 Your teammate ${awards.mvp.name} is the ${lg.bandName} MVP!`);
+    } else if (awards.mvp.team === state.team.name)
+      msgs.push(`🏅 Your teammate ${awards.mvp.name} is the ${lg.bandName} MVP!`);
     for (const a of awards.leaders) {
-      if (a.id === 'PLAYER') { giveTrophy(state, `${a.title.replace(/ \(.*\)/, '')} - ${label}`, lg.sid); msgs.push(`🏅 You won the ${a.title} award with ${a.n}!`); }
+      if (a.id === 'PLAYER') {
+        giveTrophy(state, `${a.title.replace(/ \(.*\)/, '')} - ${label}`, lg.sid);
+        msgs.push(`🏅 You won the ${a.title} award with ${a.n}!`);
+      }
     }
   }
   if (mine) {
     const place = standings(state).findIndex((t) => t.player) + 1;
-    const playoffs = !!(lg.playoffs && lg.playoffs.some((r) => r.games.some((g) => g.home === state.team.name || g.away === state.team.name)));
-    state.team.history.push({ sid: lg.sid, label, w: mine.w, l: mine.l, t: mine.t, place, playoffs, champion: champ === state.team.name, mvp: awards ? awards.mvp.name : null });
+    const playoffs = !!(
+      lg.playoffs &&
+      lg.playoffs.some((r) => r.games.some((g) => g.home === state.team.name || g.away === state.team.name))
+    );
+    state.team.history.push({
+      sid: lg.sid,
+      label,
+      w: mine.w,
+      l: mine.l,
+      t: mine.t,
+      place,
+      playoffs,
+      champion: champ === state.team.name,
+      mvp: awards ? awards.mvp.name : null,
+    });
     const pz = PRIZES[lg.prize] || PRIZES.jr;
-    const purse = champ === state.team.name ? pz.champion : runner === state.team.name ? pz.runnerUp : playoffs ? pz.semifinal : 0;
-    if (purse) { state.money = +(state.money + purse).toFixed(2); msgs.push(`League prize money: +$${purse}!`); }
+    const purse =
+      champ === state.team.name
+        ? pz.champion
+        : runner === state.team.name
+          ? pz.runnerUp
+          : playoffs
+            ? pz.semifinal
+            : 0;
+    if (purse) {
+      state.money = +(state.money + purse).toFixed(2);
+      msgs.push(`League prize money: +$${purse}!`);
+    }
     if (champ === state.team.name) {
       state.team.championships += 1;
       giveTrophy(state, `${lg.bandName} Champions - ${label}`, lg.sid);
-      msgs.push(`CHAMPIONS!!! The ${state.team.name} won the ${lg.bandName}! A shiny trophy is in your backpack. Put it in the trophy room!`);
+      msgs.push(
+        `CHAMPIONS!!! The ${state.team.name} won the ${lg.bandName}! A shiny trophy is in your backpack. Put it in the trophy room!`,
+      );
     } else if (runner === state.team.name) {
       giveTrophy(state, `${lg.bandName} Runner-Up - ${label}`, lg.sid);
       msgs.push('Runner-up! So close. You got a (slightly smaller) trophy.');
     } else {
-      msgs.push(`Season over. The ${state.team.name} finished ${mine.w}-${mine.l}${mine.t ? `-${mine.t}` : ''} (${ordinal(place)} place).`);
+      msgs.push(
+        `Season over. The ${state.team.name} finished ${mine.w}-${mine.l}${mine.t ? `-${mine.t}` : ''} (${ordinal(place)} place).`,
+      );
     }
   }
   state.scandal.points = Math.max(0, state.scandal.points - 5);
@@ -412,14 +579,16 @@ export function endSeason(state) {
 }
 
 function ordinal(n) {
-  return `${n}${['th', 'st', 'nd', 'rd'][(n % 100 > 10 && n % 100 < 14) ? 0 : Math.min(n % 10, 4) % 4] || 'th'}`;
+  return `${n}${['th', 'st', 'nd', 'rd'][n % 100 > 10 && n % 100 < 14 ? 0 : Math.min(n % 10, 4) % 4] || 'th'}`;
 }
 
-// ------------------------------------------------------------- scandal --
+// Scandal
 export function ringerCandidate(state) {
   const band = playerBand(state);
   if (band.lo >= 8) return null;
-  const cands = KIDS.filter((k) => kidGrade(state, k.id) === band.hi + 1 && !state.team.roster.includes(k.id));
+  const cands = KIDS.filter(
+    (k) => kidGrade(state, k.id) === band.hi + 1 && !state.team.roster.includes(k.id),
+  );
   if (!cands.length) return null;
   cands.sort((a, b) => sumStats(state, b.id) - sumStats(state, a.id));
   return cands[hashString(`${state.seed}${state.league?.sid}`) % Math.min(5, cands.length)].id;
@@ -443,6 +612,7 @@ export function maybeScandalOffer(state) {
   return state.scandal.offer;
 }
 
+/** Pays for an over-age ringer to join your team. */
 export function acceptRinger(state) {
   const o = state.scandal.offer;
   if (!o) return { ok: false };
@@ -464,6 +634,7 @@ export function declineRinger(state) {
   state.player.rep += 1;
 }
 
+/** After a game with ringers: might the league find out? */
 function ringerCheck(state, ringers, won) {
   const lg = state.league;
   const rng = seeded(state.seed, 'ringer', lg.sid, lg.ringerGames.length);
@@ -471,12 +642,17 @@ function ringerCheck(state, ringers, won) {
   const suspicion = 0.03 * (state.team.recent || []).filter((r) => r === 'W').length;
   for (const id of ringers) {
     const gap = kidGrade(state, id) - band.hi;
-    const p = clamp(0.08 + 0.06 * gap + (won ? 0.04 : 0) + suspicion - (state.player.sneak - 40) / 300, 0.03, 0.8);
+    const p = clamp(
+      0.08 + 0.06 * gap + (won ? 0.04 : 0) + suspicion - (state.player.sneak - 40) / 300,
+      0.03,
+      0.8,
+    );
     if (rng() < p) return busted(state, id);
   }
   return [];
 }
 
+/** Caught using a ringer: the games they played are forfeited. */
 function busted(state, id) {
   const lg = state.league;
   const sid = lg.sid;
@@ -493,7 +669,12 @@ function busted(state, id) {
         flipped++;
         const me = lg.teams.find((t) => t.player);
         const opp = lg.teams.find((t) => t.name === (mine === 'home' ? g.away : g.home));
-        if (me && opp) { me.w--; me.l++; opp.l--; opp.w++; }
+        if (me && opp) {
+          me.w--;
+          me.l++;
+          opp.l--;
+          opp.w++;
+        }
         g.result.forfeit = mine;
       }
     }
@@ -508,11 +689,16 @@ function busted(state, id) {
   if (state.scandal.caught >= 2) state.scandal.expelledUntil = sid + 3;
   state.money = Math.max(0, state.money - 20);
   state.parents.groundedUntil = state.time.day + 3;
-  addNews(state, `SCANDAL! The ${state.team.name} used a ${kidGrade(state, id)}th grader (${shortName(kid)}) with FAKE paperwork!`);
+  addNews(
+    state,
+    `SCANDAL! The ${state.team.name} used a ${kidGrade(state, id)}th grader (${shortName(kid)}) with FAKE paperwork!`,
+  );
   return [
     `BUSTED! The league found out ${kid.first_name} is a ${kidGrade(state, id)}th grader!`,
     `${flipped} win${flipped === 1 ? '' : 's'} turned into forfeits. You play one kid short for the rest of the season, you're banned from the playoffs for 3 YEARS, a $20 fine, and Mom & Dad grounded you for 3 days.`,
-    state.scandal.caught >= 2 ? 'Second offense: the team is EXPELLED from the league for 3 seasons!' : 'Kids are whispering. Recruiting just got a lot harder.',
+    state.scandal.caught >= 2
+      ? 'Second offense: the team is EXPELLED from the league for 3 seasons!'
+      : 'Kids are whispering. Recruiting just got a lot harder.',
   ];
 }
 

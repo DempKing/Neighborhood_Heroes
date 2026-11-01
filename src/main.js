@@ -1,22 +1,22 @@
 // Boot: 3D engine, title screen, creator, then the game.
-import { knowledgeOn, applyKnowledge } from './game/knowledge.js';
-import { loadSlot } from './game/state.js';
-import { Engine } from './world2d/engine.js';
-import { $, clear, modal, closeAllModals } from './ui/dom.js';
-import { showTitle, showCreator, stopTitleBackdrop, showcaseArena } from './ui/creator.js';
-import { Game } from './ui/game.js';
-import { newGame, saveToStorage } from './game/state.js';
+import { applyKnowledge, knowledgeOn } from './game/knowledge.js';
 import { ensureSeason } from './game/league.js';
+import { loadSlot, newGame, saveToStorage } from './game/state.js';
 import { setVolume, startMusic } from './ui/audio.js';
+import { showcaseArena, showCreator, showTitle, stopTitleBackdrop } from './ui/creator.js';
+import { $, clear, closeAllModals, modal } from './ui/dom.js';
+import { Game } from './ui/game.js';
 import { setupInput } from './ui/input.js';
-import { buildVenue } from './world2d/scenes.js';
 import { openTalk } from './ui/talk.js';
+import { Engine } from './world2d/engine.js';
+import { buildVenue } from './world2d/scenes.js';
 
 let engine;
 try {
   engine = new Engine($('#view3d'));
 } catch (err) {
-  document.body.innerHTML = '<div class="loading">Neighborhood Heroes needs WebGL (3D graphics). Try another browser or update your graphics drivers.</div>';
+  document.body.innerHTML =
+    '<div class="loading">Neighborhood Heroes needs WebGL (3D graphics). Try another browser or update your graphics drivers.</div>';
   throw err;
 }
 
@@ -34,7 +34,20 @@ window.__bl = {
   talk: (id) => openTalk(window.__game, id),
   /** Show a sport's field at an upgrade tier (0-4) from above. */
   venue(sport, tier = 2) {
-    const ups = Object.fromEntries(['goals', 'lines', 'flags', 'benches', 'seating', 'scoreboard', 'announcer', 'concessions', 'uniforms', 'training'].map((k) => [k, tier]));
+    const ups = Object.fromEntries(
+      [
+        'goals',
+        'lines',
+        'flags',
+        'benches',
+        'seating',
+        'scoreboard',
+        'announcer',
+        'concessions',
+        'uniforms',
+        'training',
+      ].map((k) => [k, tier]),
+    );
     const desc = buildVenue(sport, ups, ['#e63946', '#ffffff'], 'Debug Field');
     engine.loadWorld(desc, { x: 0, z: 60, rot: 0 });
     if (engine.player) engine.player.root.visible = false;
@@ -43,27 +56,52 @@ window.__bl = {
   },
 };
 
+/** Loads the saved settings. */
 function loadSettings() {
-  try { return JSON.parse(localStorage.getItem('bl-settings')) || {}; } catch { return {}; }
+  try {
+    return JSON.parse(localStorage.getItem('bl-settings')) || {};
+  } catch {
+    return {};
+  }
 }
 
+/** Shows the title screen. */
 function title() {
   const current = game ? game.state : null;
-  if (game) { saveToStorage(game.state); game.destroy(); game = null; }
+  if (game) {
+    saveToStorage(game.state);
+    game.destroy();
+    game = null;
+  }
   clear($('#panel'));
   clear($('#hud'));
   $('#prompt').classList.remove('show');
-  showTitle(engine, (slot) => showCreator(engine, (cfg) => {
-    // Knowledge from a past run: the new game takes over that run's save slot.
-    const legacy = knowledgeOn() && cfg.legacySlot != null ? loadSlot(cfg.legacySlot) : null;
-    const state = newGame({ ...cfg, slot: legacy ? cfg.legacySlot : slot, seed: Math.floor(Math.random() * 2 ** 31) });
-    if (legacy) state.rememberedKids = applyKnowledge(state, legacy);
-    ensureSeason(state);
-    saveToStorage(state);
-    start(state);
-  }, slot), (state) => start(state), current);
+  showTitle(
+    engine,
+    (slot) =>
+      showCreator(
+        engine,
+        (cfg) => {
+          // Knowledge from a past run: the new game takes over that run's save slot.
+          const legacy = knowledgeOn() && cfg.legacySlot != null ? loadSlot(cfg.legacySlot) : null;
+          const state = newGame({
+            ...cfg,
+            slot: legacy ? cfg.legacySlot : slot,
+            seed: Math.floor(Math.random() * 2 ** 31),
+          });
+          if (legacy) state.rememberedKids = applyKnowledge(state, legacy);
+          ensureSeason(state);
+          saveToStorage(state);
+          start(state);
+        },
+        slot,
+      ),
+    (state) => start(state),
+    current,
+  );
 }
 
+/** Starts playing a save. */
 function start(state) {
   const settings = loadSettings();
   if (settings.volume != null) setVolume(settings.volume);
@@ -73,14 +111,21 @@ function start(state) {
 }
 
 // Save whenever the page goes away: phones rarely fire beforeunload.
-const saveNow = () => { if (game) saveToStorage(game.state); };
+const saveNow = () => {
+  if (game) saveToStorage(game.state);
+};
 window.addEventListener('beforeunload', saveNow);
 window.addEventListener('pagehide', saveNow);
-document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') saveNow(); });
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'hidden') saveNow();
+});
 window.addEventListener('error', (e) => {
   console.error(e.error || e.message);
   if (game && !document.querySelector('.modal-card.crash')) {
-    const m = modal({ title: 'Whoops!', body: `Something went wrong: ${e.message}\nYour game was auto-saved this morning. You can keep playing or reload.` });
+    const m = modal({
+      title: 'Whoops!',
+      body: `Something went wrong: ${e.message}\nYour game was auto-saved this morning. You can keep playing or reload.`,
+    });
     m.el.classList.add('crash');
   }
 });

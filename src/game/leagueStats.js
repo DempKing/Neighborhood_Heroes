@@ -4,10 +4,30 @@ import { KID_BY_ID, shortName } from '../data/kids.js';
 
 /** Stat columns shown for each sport: [key, label]. */
 export const STAT_COLS = {
-  soccer: [['G', 'Goals'], ['A', 'Assists'], ['SV', 'Saves'], ['TK', 'Tackles']],
-  basketball: [['PTS', 'Points'], ['3PM', 'Threes'], ['AST', 'Assists'], ['STL', 'Steals']],
-  baseball: [['H', 'Hits'], ['HR', 'Home runs'], ['RBI', 'RBI'], ['K', 'Strikeouts']],
-  football: [['TD', 'Touchdowns'], ['PTD', 'TD passes'], ['INT', 'Interceptions'], ['FS', 'Flag stops']],
+  soccer: [
+    ['G', 'Goals'],
+    ['A', 'Assists'],
+    ['SV', 'Saves'],
+    ['TK', 'Tackles'],
+  ],
+  basketball: [
+    ['PTS', 'Points'],
+    ['3PM', 'Threes'],
+    ['AST', 'Assists'],
+    ['STL', 'Steals'],
+  ],
+  baseball: [
+    ['H', 'Hits'],
+    ['HR', 'Home runs'],
+    ['RBI', 'RBI'],
+    ['K', 'Strikeouts'],
+  ],
+  football: [
+    ['TD', 'Touchdowns'],
+    ['PTD', 'TD passes'],
+    ['INT', 'Interceptions'],
+    ['FS', 'Flag stops'],
+  ],
 };
 // MVP score: what each stat is worth, plus a bonus for team wins.
 const MVP_WEIGHTS = {
@@ -19,21 +39,37 @@ const MVP_WEIGHTS = {
 // Award names for the leader in each stat.
 export const LEADER_AWARDS = {
   soccer: { G: 'Golden Boot (most goals)', A: 'Playmaker (most assists)', SV: 'Golden Glove (most saves)' },
-  basketball: { PTS: 'Scoring Title (most points)', AST: 'Dime Dropper (most assists)', STL: 'Pickpocket (most steals)' },
+  basketball: {
+    PTS: 'Scoring Title (most points)',
+    AST: 'Dime Dropper (most assists)',
+    STL: 'Pickpocket (most steals)',
+  },
   baseball: { HR: 'Home Run King', H: 'Hit Machine (most hits)', K: 'Strikeout Ace' },
-  football: { TD: 'Touchdown Leader', INT: 'Ball Hawk (most interceptions)', FS: 'Flag Snatcher (most flag stops)' },
+  football: {
+    TD: 'Touchdown Leader',
+    INT: 'Ball Hawk (most interceptions)',
+    FS: 'Flag Snatcher (most flag stops)',
+  },
 };
 
 /** [id, stat, amount] credits for one sim event. */
 export function eventCredits(sport, e) {
   const out = [];
-  const add = (id, k, n = 1) => { if (id) out.push([id, k, n]); };
+  const add = (id, k, n = 1) => {
+    if (id) out.push([id, k, n]);
+  };
   if (sport === 'soccer') {
-    if (e.type === 'goal') { add(e.actor, 'G'); add(e.assist, 'A'); }
+    if (e.type === 'goal') {
+      add(e.actor, 'G');
+      add(e.assist, 'A');
+    }
     if (e.type === 'save') add(e.gk, 'SV');
     if (e.type === 'tackle') add(e.actor, 'TK');
   } else if (sport === 'basketball') {
-    if (e.type === 'bucket' || e.type === 'three') { add(e.actor, 'PTS', e.points || 2); add(e.assist, 'AST'); }
+    if (e.type === 'bucket' || e.type === 'three') {
+      add(e.actor, 'PTS', e.points || 2);
+      add(e.assist, 'AST');
+    }
     if (e.type === 'three') add(e.actor, '3PM');
     if (e.type === 'steal') add(e.actor, 'STL');
   } else if (sport === 'baseball') {
@@ -42,7 +78,10 @@ export function eventCredits(sport, e) {
     if (e.points && e.batter && e.type !== 'error') add(e.batter, 'RBI', e.points);
     if (e.type === 'strikeout' || e.how === 'k') add(e.pitcher, 'K');
   } else if (sport === 'football') {
-    if (e.type === 'td') { add(e.actor, 'TD'); if (e.qb && e.qb !== e.actor) add(e.qb, 'PTD'); }
+    if (e.type === 'td') {
+      add(e.actor, 'TD');
+      if (e.qb && e.qb !== e.actor) add(e.qb, 'PTD');
+    }
     if (e.type === 'pick') add(e.actor, 'INT');
     if (e.type === 'stop') add(e.actor, 'FS');
   }
@@ -57,17 +96,29 @@ export function recordGameStats(state, game, result) {
   lg.stats = lg.stats || {};
   const line = (id, team) => (lg.stats[id] = lg.stats[id] || { team, gp: 0 });
   const teamOf = {};
-  for (const [side, name] of [['home', game.home], ['away', game.away]]) {
-    for (const id of (result.lineups && result.lineups[side]) || []) { teamOf[id] = name; const l = line(id, name); l.team = name; l.gp += 1; }
+  for (const [side, name] of [
+    ['home', game.home],
+    ['away', game.away],
+  ]) {
+    for (const id of (result.lineups && result.lineups[side]) || []) {
+      teamOf[id] = name;
+      const l = line(id, name);
+      l.team = name;
+      l.gp += 1;
+    }
   }
   for (const e of result.events) {
     for (const [id, k, n] of eventCredits(sport, e)) {
-      const l = line(id, teamOf[id] || (id === 'PLAYER' ? state.team.name : (state.kids[id] && state.kids[id].team) || null));
+      const l = line(
+        id,
+        teamOf[id] || (id === 'PLAYER' ? state.team.name : (state.kids[id] && state.kids[id].team) || null),
+      );
       l[k] = (l[k] || 0) + n;
     }
   }
 }
 
+/** Display name for a stat. */
 export function statName(state, id) {
   if (id === 'PLAYER') return state.player.name;
   const k = KID_BY_ID.get(id);
@@ -77,19 +128,28 @@ export function statName(state, id) {
 /** Top players in one stat: [{id, name, team, n, gp}]. */
 export function leagueLeaders(state, key, n = 5) {
   const st = (state.league && state.league.stats) || {};
-  return Object.entries(st).filter(([, l]) => l[key]).map(([id, l]) => ({ id, name: statName(state, id), team: l.team, n: l[key], gp: l.gp }))
-    .sort((a, b) => b.n - a.n || a.gp - b.gp).slice(0, n);
+  return Object.entries(st)
+    .filter(([, l]) => l[key])
+    .map(([id, l]) => ({ id, name: statName(state, id), team: l.team, n: l[key], gp: l.gp }))
+    .sort((a, b) => b.n - a.n || a.gp - b.gp)
+    .slice(0, n);
 }
 
 /** One team's season: player stat lines (sorted by games) and the team totals. */
 export function teamStats(state, name) {
   const st = (state.league && state.league.stats) || {};
-  const players = Object.entries(st).filter(([, l]) => l.team === name).map(([id, l]) => ({ id, name: statName(state, id), ...l })).sort((a, b) => b.gp - a.gp);
+  const players = Object.entries(st)
+    .filter(([, l]) => l.team === name)
+    .map(([id, l]) => ({ id, name: statName(state, id), ...l }))
+    .sort((a, b) => b.gp - a.gp);
   const totals = {};
-  for (const p of players) for (const [k, v] of Object.entries(p)) if (typeof v === 'number' && k !== 'gp') totals[k] = (totals[k] || 0) + v;
+  for (const p of players)
+    for (const [k, v] of Object.entries(p))
+      if (typeof v === 'number' && k !== 'gp') totals[k] = (totals[k] || 0) + v;
   return { players, totals };
 }
 
+/** A kid's MVP score for the season. */
 export function mvpScore(state, id) {
   const lg = state.league;
   const l = lg && lg.stats && lg.stats[id];

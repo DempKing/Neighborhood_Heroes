@@ -8,8 +8,6 @@ The full design is in [`GAME_DESIGN.md`](GAME_DESIGN.md). This repository holds 
 
 **https://dempking.github.io/Neighborhood_Heroes/** — every push to `main` is tested, built and published there. It's the same single file as `dist/index.html`, and saves stay in your browser.
 
-An earlier hosted build is also at https://claude.ai/artifact/91GKDai5uH5ttdYFT7dinr (private until shared from the page's Share menu).
-
 ## Run it
 
 ```bash
@@ -22,6 +20,7 @@ node tests/e2e.mjs     # browser playthroughs (also e2e-jobs.mjs, e2e-input.mjs 
 ```
 
 **Controls** (it plays with any of these, and switches as soon as you use one):
+
 - **Keyboard & mouse:** WASD or arrows to walk (Shift to run), or click the ground to walk there (click a kid, door or counter to walk over and use it). **E** to talk and interact. **M** for the town map. **Tab** for your phone (a home screen of apps: Team, League, Social, Bank, School, Maps and more). **I** opens your backpack. **Z** passes time, including skipping to your next game. Drag the mouse or use Q/R to turn the camera, and the mouse wheel to zoom. **Esc** closes windows.
 - **Touch (phones & tablets):** drag anywhere on the left side for a thumbstick (push it to the edge to run), tap the ✋ button to talk or interact, drag the right side to look around, tap the ground to walk there, pinch to zoom. The paper route gets big throw buttons. Settings → Controls can force touch controls on or off.
 - **Controller:** left stick to walk (RT to run), right stick for the camera, **A** talk / select, **B** back, **X** clutch moments, **Y** map, **Start** phone, **LB/RB** turn the camera, switch phone apps and throw papers. Every menu works with the d-pad: it moves a highlight and A presses it.
@@ -29,11 +28,13 @@ node tests/e2e.mjs     # browser playthroughs (also e2e-jobs.mjs, e2e-input.mjs 
 ## What's in this build
 
 **The town and its kids**
+
 - **216 unique kids** generated from `data/kids.json`, the same in every playthrough. Each one has their own name, look (skin, hair style and color, eyes, build, height, accessories), home address, siblings, personality, traits, likes, 14 stats, a growth curve, and a full weekday and weekend routine.
 - **Every kid can be talked to.** Chatting raises friendship and reveals one fact about their routine. Gifts matter: they love items tied to what they like. You can also play minigames with them, invite them to tryouts, ask "what would it take?" (each kid has their own condition), do favors, hire them as staff, or tutor them.
 - **Kids are where their routine says they are.** Each grade is split into two class sections that move together from room to room. During class kids sit at their desks, between classes they crowd the hallway by their next door, at recess they're at their favorite playground spot, lunch is in the cafeteria, after school they go to the mall, library, museum, grocery store or their own front yard, and weekends have their own spots. Private-school and homeschooled kids can only be found outside school. The map shows which kids you know should be at each place right now.
 
 **Places** (pick a destination on the map, then explore it)
+
 - **Your house:** seen from outside, it's a roofed house. Step inside and the roof lifts off and the walls drop, Sims-style. Inside are Mom & Dad (ask for money, do chores), your bed, your computer (team HQ, homework), the garage, a basement trophy shelf, and the backyard field.
 - **6 neighborhoods**, each with its own style: houses for every kid's address, a cul-de-sac, a driveway hoop, a creek, lemonade stand spots, paper routes and mowing jobs.
 - **School:** a main hallway lined with blue lockers, with a classroom for every subject at every grade. Each room has a chalkboard, a teacher's desk, a flag, subject posters and 24 desks facing the front. There's also a cafeteria, gym, library, band room, nurse, principal's office, detention, and a playground with swings, tetherball, four square, a kickball diamond and more.
@@ -43,6 +44,7 @@ node tests/e2e.mjs     # browser playthroughs (also e2e-jobs.mjs, e2e-input.mjs 
 - **Grocery store:** checkout, bottle return (5¢ per can), free samples, and a bulletin board with jobs.
 
 **School**
+
 - **Four subjects: Math, Language Arts, Science and History**, each taught by its own teacher in its own room. Classes are at least 90% full: the same classmates move with you all day.
 - **Passing periods:** when the bell rings you're out in the hallway with a countdown to reach your next room. Chat with kids on the way, but get there before the timer runs out or you're **tardy**. Walk into the right room and you sit down as the bell rings. Skip a class and you're **absent**, and the school calls home.
 - Classes are seen from the back of the room, looking past the desks to the chalkboard. Only your room is drawn while you're inside it.
@@ -52,6 +54,7 @@ node tests/e2e.mjs     # browser playthroughs (also e2e-jobs.mjs, e2e-input.mjs 
 - **Grades gate your team.** Two weeks below a C- and you're **grounded from sports**: no practices or tryouts, and your games are forfeited. An F grounds you from everything.
 
 **Money**
+
 - Ask Mom & Dad (asking for too much backfires), do chores, pick up cans, find loose change, and do favors for kids.
 - **Lemonade stand:** set the price and recipe. The stand faces the road, and customers walking the sidewalk step up to buy. Weather and price decide how many.
 - **Paper route:** unlocks after you've earned $50, and you need to **buy a bike** ($45, which also makes travel faster). Every house on your street, at least 10, gets a paper. Ride and throw left and right at the porches. Hit a window and you pay for it.
@@ -59,6 +62,7 @@ node tests/e2e.mjs     # browser playthroughs (also e2e-jobs.mjs, e2e-input.mjs 
 - Home games earn admission and concessions money. In the backyard, Mom & Dad take 50%.
 
 **Your team**
+
 - Pick soccer, baseball, basketball or flag football. Each has its own roster minimum and startup costs.
 - **Tryouts:** invited kids line up in your backyard. **Sprints is a real race** and reveals Speed. Buy equipment to unlock the other 13 drills, one per stat. Grades run from **A++ to F--**, shown as a range until you buy Laser Timing Gates.
 - Roster, auto lineup (you always start), practice days and focus skill, and eligibility (age band and school grades).
@@ -67,9 +71,10 @@ node tests/e2e.mjs     # browser playthroughs (also e2e-jobs.mjs, e2e-input.mjs 
 - **Team gear:** footwear (cleats, court shoes), balls and bats, gloves, and conditioning gear, each with 3 tiers named for your sport. Gear boosts the stats it fits (cleats add Speed and Agility, bats add Hand-Eye and Strength, and so on) for every kid on your roster.
 - **Uniforms:** choose shorts or pants. Baseball and football default to pants with a team-color stripe.
 - **Staff:** hire kids as announcer, ticket gate, assistant coach or scout. Grown-ups like Coach Dave at the mall and Mrs. Pham at the library cost more, and won't sign until your team is attractive enough.
-- **Team attraction** combines roster, results, history, trophies *on display*, facilities, how much kids like you, fan buzz and coaching, minus any scandal penalty.
+- **Team attraction** combines roster, results, history, trophies _on display_, facilities, how much kids like you, fan buzz and coaching, minus any scandal penalty.
 
 **The league**
+
 - **One league per grade** (the Grade 3 League for third graders), with up to **8 teams** counting yours. Season stats (goals, assists, saves...), league leaders, team OVR ratings, and an MVP plus stat awards at season's end. The 10-week season is a round robin with no byes. **They sign free agents before each season**, competing with you for the same kids. Some kids are poachable, and some are loyal to their team.
 - Preseason registration, then 8 Saturday games, then semifinals and a final. The game simulation is event-based for all four sports.
 - **Game day:** both teams take the field in uniform with fans watching. Play-by-play commentary gets better as you upgrade your announcer, and the scoreboard updates live. **Clutch moments put you in control** with a timing minigame that decides the play.

@@ -1,12 +1,27 @@
 // Letter grades, growth, and position ratings.
-import { POSITIONS, SPORTS, STAT_CODES } from '../data/world.js';
 import { KIDS_META } from '../data/kids.js';
+import { POSITIONS, SPORTS, STAT_CODES } from '../data/world.js';
 import { hashString } from './rng.js';
 
+/** Letter grades for stat values. */
 export const LETTERS = [
-  [97, 'A++'], [93, 'A+'], [89, 'A'], [85, 'A-'], [81, 'B+'], [76, 'B'], [71, 'B-'],
-  [66, 'C+'], [60, 'C'], [54, 'C-'], [48, 'D+'], [42, 'D'], [36, 'D-'],
-  [29, 'F+'], [21, 'F'], [12, 'F-'], [0, 'F--'],
+  [97, 'A++'],
+  [93, 'A+'],
+  [89, 'A'],
+  [85, 'A-'],
+  [81, 'B+'],
+  [76, 'B'],
+  [71, 'B-'],
+  [66, 'C+'],
+  [60, 'C'],
+  [54, 'C-'],
+  [48, 'D+'],
+  [42, 'D'],
+  [36, 'D-'],
+  [29, 'F+'],
+  [21, 'F'],
+  [12, 'F-'],
+  [0, 'F--'],
 ];
 
 export function letterIndex(v) {
@@ -37,6 +52,7 @@ export function kidGradeNow(kid, year) {
   return kid.grade_at_start + (year - 1);
 }
 
+/** A kid's height at a grade. */
 export function kidHeight(kid, grade) {
   const years = grade - kid.grade_at_start;
   const spurt = kid.hidden.growth_curve === 'Growth Spurt' && grade >= 7 ? 3 : 0;
@@ -76,6 +92,7 @@ export function kidStats(kid, grade, train = null) {
   return out;
 }
 
+/** How good a kid is at a position. */
 export function positionRating(stats, sport, pos, heightS = 50) {
   const w = POSITIONS[sport][pos].w;
   let r = 0;
@@ -83,6 +100,7 @@ export function positionRating(stats, sport, pos, heightS = 50) {
   return Math.round(r);
 }
 
+/** A kid's best position in a sport. */
 export function bestPosition(stats, sport, heightS) {
   let best = null;
   for (const pos of new Set(SPORTS[sport].lineup)) {
@@ -101,7 +119,9 @@ export function sportStatImportance(sport) {
   const tot = {};
   const spots = [...SPORTS[sport].lineup];
   if (POSITIONS[sport].BAT) spots.push(...SPORTS[sport].lineup.map(() => 'BAT')); // everybody bats in baseball
-  for (const pos of spots) for (const [code, w] of Object.entries(POSITIONS[sport][pos].w)) if (code !== 'HGT') tot[code] = (tot[code] || 0) + w;
+  for (const pos of spots)
+    for (const [code, w] of Object.entries(POSITIONS[sport][pos].w))
+      if (code !== 'HGT') tot[code] = (tot[code] || 0) + w;
   const max = Math.max(...Object.values(tot));
   return Object.fromEntries(Object.entries(tot).map(([c, v]) => [c, v / max]));
 }

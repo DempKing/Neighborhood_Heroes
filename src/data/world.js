@@ -55,6 +55,7 @@ export const POSITIONS = {
   },
 };
 
+/** Display names for the stats. */
 export const STAT_NAMES = {
   SPD: 'Speed', AGI: 'Agility', STR: 'Strength', STA: 'Stamina', LEP: 'Leaping', HND: 'Hands',
   ARM: 'Arm Power', ACC: 'Accuracy', BCL: 'Ball Control', EYE: 'Hand-Eye', IQ: 'Game Smarts',
@@ -62,7 +63,7 @@ export const STAT_NAMES = {
 };
 export const STAT_CODES = Object.keys(STAT_NAMES);
 
-// ------------------------------------------------------------- places ---
+// Places
 export const NEIGHBORHOODS = [
   { id: 'maple', name: 'Maple Hollow', color: '#e8833a' },
   { id: 'sunnyside', name: 'Sunnyside Acres', color: '#f2c94c' },
@@ -98,6 +99,7 @@ export function parseSpot(text, kid) {
   return { loc: table[place], zone };
 }
 
+/** Recess spots and which area of the school each is in. */
 export const RECESS_ZONES = {
   'tetherball pole': 'playground', swings: 'playground', 'monkey bars': 'playground',
   'blacktop four square': 'playground', 'kickball diamond': 'playground', 'under the slide': 'playground',
@@ -105,7 +107,7 @@ export const RECESS_ZONES = {
   'library (indoor recess kid)': 'school library', "nurse's office (frequent flyer)": 'nurse',
 };
 
-// ------------------------------------------------------------- school ---
+// School
 // Times are minutes after midnight.
 const t = (h, m) => h * 60 + m;
 // Four core subjects, each taught by its own teacher in their own classroom.
@@ -121,6 +123,7 @@ export function sectionSubjects(section) {
   const x = section & 1; const y = (section >> 1) & 1;
   return [PAIR_A[x], PAIR_B[y], PAIR_A[1 - x], PAIR_B[1 - y]];
 }
+/** The school day timetable (minutes from midnight). */
 export const SCHOOL_BLOCKS = [
   { start: t(7, 45), end: t(8, 0), kind: 'arrival', label: 'Before school' },
   { start: t(8, 0), end: t(9, 10), kind: 'class', period: 1 },
@@ -148,6 +151,7 @@ export const SUBJECT_TEACHERS = {
   8: { Math: 'Mr. Petrakis', 'Language Arts': 'Ms. Oduya', Science: 'Mr. Vance', History: 'Mrs. Whitlock' },
 };
 
+/** Teachers by grade and subject. */
 export const TEACHERS = {
   'Ms. Puddle': { alert: 0.3, tardyGrace: 3, vibe: 'counts on her fingers and lets you do it too' },
   'Mr. Hopper': { alert: 0.4, tardyGrace: 2, vibe: 'does all the voices during read-aloud' },
@@ -192,7 +196,7 @@ export function roomNumber(grade, subject) {
   return `${grade}${String(CORE_SUBJECTS.indexOf(subject) + 1).padStart(2, '0')}`;
 }
 
-// ------------------------------------------------------------- items ----
+// Items
 // shop: where it is sold. kind: gift | equipment | consumable | drill | team
 export const ITEMS = {
   // Grocery
@@ -263,6 +267,7 @@ export const ITEMS = {
   trophy: { name: 'Trophy', price: 0, kind: 'trophy', icon: '🏆' },
 };
 
+/** Shops and what they sell. */
 export const SHOPS = {
   grocery: { name: 'Grub-N-Go Checkout', loc: 'grocery', zone: 'checkout' },
   'sporting goods': { name: 'Sporty Spice Sporting Goods', loc: 'mall', zone: 'sporting goods' },
@@ -275,7 +280,7 @@ export const SHOPS = {
   'book sale': { name: 'Friends of the Library Book Cart', loc: 'library', zone: 'reading nook' },
 };
 
-// ------------------------------------------------------------- drills ---
+// Drills
 export const DRILLS = [
   { id: 'sprints', name: 'Sprints', stats: ['SPD'], needs: [] },
   { id: 'cones', name: 'Cone Weave', stats: ['AGI'], needs: ['cones'] },
@@ -293,7 +298,7 @@ export const DRILLS = [
   { id: 'relay', name: 'Three-Legged Relay', stats: ['TMW'], needs: ['rope', 'team_spirit_book'] },
 ];
 
-// ------------------------------------------------------------ upgrades --
+// Upgrades
 export const UPGRADES = {
   goals: {
     label: 'Goals / Hoops / Bases',
@@ -376,6 +381,7 @@ export const GEAR = {
 };
 export const GEAR_IDS = Object.keys(GEAR);
 
+/** Home fields to choose from: rent, the parents' cut and limits. */
 export const FIELDS = {
   backyard: {
     name: "Mom & Dad's Backyard", rent: 0, parentCut: 0.5, maxAdmission: 1, caps: { seating: 1, concessions: 1 }, maxTier: 3,
@@ -395,14 +401,14 @@ export const FIELDS = {
   },
 };
 
-// ------------------------------------------------------------- jobs ----
+// Jobs
 export const JOBS = {
   lemonade: { name: 'Lemonade Stand', needs: ['pitcher'], unlock: { earned: 0 }, desc: 'Buy a pitcher, cups and ingredients at the grocery store, then set up your stand on any street.' },
   paper: { name: 'Paper Route', needs: ['bike', 'paper_bag'], unlock: { earned: 50 }, desc: 'Needs a bike. Mornings in your neighborhood: every house on your street (10+) gets a paper. Hit porches, not windows. $0.50 per paper.' },
   mowing: { name: 'Lawn Mowing', needs: ['push_mower'], unlock: { earned: 150 }, desc: 'Customers post on the grocery store bulletin board. Neat stripes earn tips.' },
 };
 
-// ------------------------------------------------------------- staff ---
+// Staff
 export const STAFF_ROLES = {
   announcer: { name: 'Announcer', kidPay: 2, effect: 'More fans and funnier commentary' },
   gate: { name: 'Ticket Gate', kidPay: 1, effect: '+30% admission (no sneaking in!)' },
@@ -414,6 +420,7 @@ export const ADULTS = {
   mrs_pham: { name: 'Mrs. Pham', role: 'scout', pay: 6, loc: 'library', zone: 'homework tables', bonus: 0, ask: 'I played college softball. I can spot a late bloomer from across a parking lot.', needs: { attraction: 35 } },
 };
 
+/** Colours of the rival teams. */
 export const RIVAL_COLORS = {
   'Sunnyside Sprinkler Squad': ['#00b4d8', '#ffd60a'], 'Old Town Owls FC': ['#5e548e', '#e0b1cb'], 'Maple Hollow Mudskippers': ['#7f4f24', '#a7c957'],
   'Riverside Rubber Duckies': ['#ffd60a', '#0077b6'], 'Sunnyside Sluggers': ['#d00000', '#ffba08'], 'Oakridge Acorns': ['#606c38', '#dda15e'],
@@ -432,6 +439,7 @@ export const RIVAL_COLORS = {
   'Middle School Mega Moose (6-8)': ['#6d4c41', '#ffcc80'], 'Suncrest Middle Meteors (6-8)': ['#512da8', '#ff7043'],
 };
 
+/** Character traits to choose from in the creator. */
 export const PERKS = {
   none: { name: 'No trait', desc: 'Just a regular kid. No bonuses, no drawbacks.' },
   smooth: { name: 'Smooth Talker', desc: 'Start with more charisma: chats go better, friendships grow faster and more kids say yes to hanging out.' },

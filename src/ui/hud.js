@@ -1,17 +1,15 @@
 // Heads-up display: clock, money, grades, current school period, goal.
-import { $, h, clear, btn, money } from './dom.js';
-import { openWait } from './wait.js';
-import { dayInfo, formatTime, schoolBlockAt, nextClassBlock } from '../game/time.js';
-import { playerClass } from '../game/school.js';
-import { roomNumber } from '../data/world.js';
-import { gradeAverage, registrationChecklist, isRegistered } from '../game/team.js';
-import { letterFor } from '../game/school.js';
+import { roomNumber, SPORTS } from '../data/world.js';
 import { weatherFor } from '../game/economy.js';
 import { playerGameThisWeek } from '../game/league.js';
-import { SPORTS } from '../data/world.js';
-import { openMap } from './mapview.js';
+import { letterFor, playerClass } from '../game/school.js';
+import { gradeAverage, isRegistered, registrationChecklist } from '../game/team.js';
+import { dayInfo, formatTime, nextClassBlock, schoolBlockAt } from '../game/time.js';
+import { $, btn, clear, h, money } from './dom.js';
 import { inputMode } from './input.js';
+import { openMap } from './mapview.js';
 import { openPhone } from './phone.js';
+import { openWait } from './wait.js';
 
 export class Hud {
   constructor(game) {
@@ -24,6 +22,7 @@ export class Hud {
     });
   }
 
+  /** Builds the HUD elements. */
   render() {
     const g = this.game;
     const s = g.state;
@@ -34,22 +33,55 @@ export class Hud {
     this.timeEl = h('span', { class: 'big' }, formatTime(s.time.minute));
     this.moneyEl = h('span', { class: 'big' }, money(s.money));
     this.root.append(
-      h('div', { class: 'hud-chip' }, h('span', {}, `${w.icon}`), h('div', {}, h('div', { style: { fontSize: '12px' } }, info.dateLabel), this.timeEl)),
+      h(
+        'div',
+        { class: 'hud-chip' },
+        h('span', {}, `${w.icon}`),
+        h('div', {}, h('div', { style: { fontSize: '12px' } }, info.dateLabel), this.timeEl),
+      ),
       h('div', { class: 'hud-chip money' }, '💰', this.moneyEl),
-      h('div', { class: 'hud-chip', title: 'Your grade average (last 6 quizzes)' }, '📝', h('span', { class: 'big', style: { color: avg < 70 ? '#e63946' : avg >= 85 ? '#2d6a4f' : '#2a1e1a' } }, letterFor(avg)), s.school.sportsBan ? h('span', { class: 'pill bad' }, 'GROUNDED') : null),
+      h(
+        'div',
+        { class: 'hud-chip', title: 'Your grade average (last 6 quizzes)' },
+        '📝',
+        h(
+          'span',
+          { class: 'big', style: { color: avg < 70 ? '#e63946' : avg >= 85 ? '#2d6a4f' : '#2a1e1a' } },
+          letterFor(avg),
+        ),
+        s.school.sportsBan ? h('span', { class: 'pill bad' }, 'GROUNDED') : null,
+      ),
     );
     this.blockEl = h('div', { class: 'hud-chip hud-block' });
     this.root.append(this.blockEl);
     this.goalEl = h('div', { class: 'hud-chip hud-goal' });
     this.root.append(this.goalEl);
     this.root.append(h('div', { class: 'hud-spacer' }));
-    this.root.append(h('div', { class: 'hud-btns' },
-      btn('🗺️ Map (M)', () => { if (g.mode === 'free') openMap(g); }, 'small white'),
-      btn('⏳ Wait (Z)', () => openWait(g), 'small white'),
-      btn('📱 Phone (Tab)', () => { if (g.mode === 'free' || g.mode === 'class') openPhone(g); }, 'small white')));
+    this.root.append(
+      h(
+        'div',
+        { class: 'hud-btns' },
+        btn(
+          '🗺️ Map (M)',
+          () => {
+            if (g.mode === 'free') openMap(g);
+          },
+          'small white',
+        ),
+        btn('⏳ Wait (Z)', () => openWait(g), 'small white'),
+        btn(
+          '📱 Phone (Tab)',
+          () => {
+            if (g.mode === 'free' || g.mode === 'class') openPhone(g);
+          },
+          'small white',
+        ),
+      ),
+    );
     this.update();
   }
 
+  /** Refreshes the HUD: time, money, grades and goal. */
   update() {
     const g = this.game;
     const s = g.state;
@@ -70,7 +102,10 @@ export class Hud {
         const n = nb && playerClass(s, nb.period);
         if (n) text += ` · Next: ${n.subject}, Room ${roomNumber(n.grade, n.subject)}`;
       }
-      if (c && g.period && !g.period.attended) { text = `⚠️ GET TO ${subj.toUpperCase()} (ROOM ${roomNumber(c.grade, c.subject)})!`; alert = true; }
+      if (c && g.period && !g.period.attended) {
+        text = `⚠️ GET TO ${subj.toUpperCase()} (ROOM ${roomNumber(c.grade, c.subject)})!`;
+        alert = true;
+      }
       if (block.kind === 'pass' && g.passing) {
         const secs = Math.ceil(g.passingSecondsLeft());
         const n = g.passing.next;
@@ -89,6 +124,7 @@ export class Hud {
     this.goalEl.replaceChildren(...this.goal());
   }
 
+  /** The current goal to show. */
   goal() {
     const s = this.game.state;
     const sp = SPORTS[s.team.sport];
@@ -96,18 +132,38 @@ export class Hud {
       const list = registrationChecklist(s);
       const done = list.filter((c) => c.done).length;
       const next = list.find((c) => !c.done);
-      return [h('b', {}, `Start the ${s.team.name} (${done}/${list.length})`), h('br'), next ? `Next: ${next.label}${next.detail ? ` [${next.detail}]` : ''}` : 'Ready to register!'];
+      return [
+        h('b', {}, `Start the ${s.team.name} (${done}/${list.length})`),
+        h('br'),
+        next ? `Next: ${next.label}${next.detail ? ` [${next.detail}]` : ''}` : 'Ready to register!',
+      ];
     }
     const g = playerGameThisWeek(s);
-    if (g) return [h('b', {}, `Next game: ${g.home === s.team.name ? 'vs' : '@'} ${g.home === s.team.name ? g.away : g.home}`), h('br'), 'Saturday 10:00 AM'];
+    if (g)
+      return [
+        h(
+          'b',
+          {},
+          `Next game: ${g.home === s.team.name ? 'vs' : '@'} ${g.home === s.team.name ? g.away : g.home}`,
+        ),
+        h('br'),
+        'Saturday 10:00 AM',
+      ];
     return [h('b', {}, `${sp.icon} ${s.team.name}`), h('br'), 'Recruit, practice, and upgrade your field!'];
   }
 
+  /** Shows the "E to talk" style prompt for what the player faces. */
   prompt(f) {
     const el = this.promptEl;
-    if (!f || this.game.mode !== 'free') { el.classList.remove('show'); return; }
+    if (!f || this.game.mode !== 'free') {
+      el.classList.remove('show');
+      return;
+    }
     const m = inputMode();
-    el.replaceChildren(h('span', { class: 'key' }, m === 'pad' ? 'A' : m === 'touch' ? '👆' : 'E'), h('span', {}, f.label));
+    el.replaceChildren(
+      h('span', { class: 'key' }, m === 'pad' ? 'A' : m === 'touch' ? '👆' : 'E'),
+      h('span', {}, f.label),
+    );
     el.classList.add('show');
   }
 }

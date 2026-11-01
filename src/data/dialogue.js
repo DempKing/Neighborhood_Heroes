@@ -124,6 +124,7 @@ export const LINES = {
   },
 };
 
+/** Lines any kid can say, by situation. */
 export const GENERIC = {
   giftLove: ['WHOA. {item}?! I LOVE {like}! You\'re the best!', 'How did you know I like {like}?! Thank you!!'],
   giftOk: ['Oh, {item}. Thanks, I guess!', 'Cool, thanks {p}!'],
@@ -137,6 +138,7 @@ export const GENERIC = {
   bye: ['See ya!', 'Later, {p}!', 'Bye-bye!'],
 };
 
+/** What Mom and Dad say. */
 export const PARENT_LINES = {
   yes: ['Here you go, sweetie. Spend it wisely!', 'Okay, okay. But you\'re doing the dishes tonight.', 'Fine. Don\'t tell your father. *wink*'],
   no: ['Do you think money grows on trees?!', 'Not right now, kiddo. Maybe if your grades were better.', 'We just gave you money! Go recycle some cans!'],
