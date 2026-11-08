@@ -1,0 +1,772 @@
+{
+  ".github/workflows/deploy.yml": {
+    "mtime": 1793539059.6527019,
+    "seen": 1794098622.5587502,
+    "ast_hash": "bb0cfb9663ee493a40010ffcdf00b5da",
+    "semantic_hash": "bb0cfb9663ee493a40010ffcdf00b5da"
+  },
+  ".github/workflows/desktop.yml": {
+    "mtime": 1793539059.6529067,
+    "seen": 1794098622.5588076,
+    "ast_hash": "a3b401ea88d10e52b3f92b296d14d769",
+    "semantic_hash": "a3b401ea88d10e52b3f92b296d14d769"
+  },
+  ".prettierrc.json": {
+    "mtime": 1793541643.352564,
+    "seen": 1794098622.5588293,
+    "ast_hash": "6f1fab0433f94a579c44789dbc3242c5",
+    "semantic_hash": "6f1fab0433f94a579c44789dbc3242c5"
+  },
+  "art/characters/manifest.json": {
+    "mtime": 1793539059.6675158,
+    "seen": 1794098622.558846,
+    "ast_hash": "91be0fc05e9e745fc9d663f19a2fcd8f",
+    "semantic_hash": "91be0fc05e9e745fc9d663f19a2fcd8f"
+  },
+  "art/charstyle/adults.js": {
+    "mtime": 1793539059.6675158,
+    "seen": 1794098622.5588644,
+    "ast_hash": "fd6f22057d816abe99e7774bd995f01c",
+    "semantic_hash": "fd6f22057d816abe99e7774bd995f01c"
+  },
+  "art/charstyle/build.mjs": {
+    "mtime": 1793539059.6723568,
+    "seen": 1794098622.5588815,
+    "ast_hash": "92124140267628d6925566d258310aff",
+    "semantic_hash": "92124140267628d6925566d258310aff"
+  },
+  "art/charstyle/figure.js": {
+    "mtime": 1793539059.6723568,
+    "seen": 1794098622.5588977,
+    "ast_hash": "a77c8b1513cb0c96e3de1bc13c5c17ae",
+    "semantic_hash": "a77c8b1513cb0c96e3de1bc13c5c17ae"
+  },
+  "art/charstyle/hair.js": {
+    "mtime": 1793539059.6723568,
+    "seen": 1794098622.5589147,
+    "ast_hash": "2069222e50197fb58a688073161f8bdf",
+    "semantic_hash": "2069222e50197fb58a688073161f8bdf"
+  },
+  "art/charstyle/palette.js": {
+    "mtime": 1793539059.6723568,
+    "seen": 1794098622.558931,
+    "ast_hash": "6c98bf6a3be4af87df7f2a8157a658a3",
+    "semantic_hash": "6c98bf6a3be4af87df7f2a8157a658a3"
+  },
+  "art/charstyle/png.mjs": {
+    "mtime": 1793544391.526262,
+    "seen": 1794098622.558948,
+    "ast_hash": "d238394341287e13da08a3dc4d754ba4",
+    "semantic_hash": "d238394341287e13da08a3dc4d754ba4"
+  },
+  "art/charstyle/prompts.mjs": {
+    "mtime": 1793539059.6723568,
+    "seen": 1794098622.5589643,
+    "ast_hash": "d2d195587b80b2b0b029a20097275081",
+    "semantic_hash": "d2d195587b80b2b0b029a20097275081"
+  },
+  "art/charstyle/util.js": {
+    "mtime": 1793539059.6723568,
+    "seen": 1794098622.5589805,
+    "ast_hash": "7f8922a615e2420d28fc0223e036c2d7",
+    "semantic_hash": "7f8922a615e2420d28fc0223e036c2d7"
+  },
+  "art/renders/sources.json": {
+    "mtime": 1793539059.673093,
+    "seen": 1794098622.5589964,
+    "ast_hash": "206d98381029f0691f48da2933727d14",
+    "semantic_hash": "206d98381029f0691f48da2933727d14",
+    "ast_empty": true
+  },
+  "data/kids.json": {
+    "mtime": 1793539059.6835158,
+    "seen": 1794098622.5589988,
+    "ast_hash": "bec158ea726496eaa9b482712b395fe4",
+    "semantic_hash": "bec158ea726496eaa9b482712b395fe4",
+    "ast_empty": true
+  },
+  "electron/main.cjs": {
+    "mtime": 1793541672.3014386,
+    "seen": 1794098622.5590003,
+    "ast_hash": "65679703ab52e45310eb4226897f5d77",
+    "semantic_hash": "65679703ab52e45310eb4226897f5d77"
+  },
+  "electron/preload.cjs": {
+    "mtime": 1793539059.6884685,
+    "seen": 1794098622.5590186,
+    "ast_hash": "82cfd294dcfdb45c32402383a7b46dbc",
+    "semantic_hash": "82cfd294dcfdb45c32402383a7b46dbc"
+  },
+  "eslint.config.mjs": {
+    "mtime": 1793541672.3153985,
+    "seen": 1794098622.5590384,
+    "ast_hash": "7ba67e490b0fade22a7f63c07c1353b6",
+    "semantic_hash": "7ba67e490b0fade22a7f63c07c1353b6"
+  },
+  "package.json": {
+    "mtime": 1793542525.01936,
+    "seen": 1794098622.5590525,
+    "ast_hash": "43da1bbcbb0a8890329329d98eb21d83",
+    "semantic_hash": "43da1bbcbb0a8890329329d98eb21d83"
+  },
+  "scripts/build.mjs": {
+    "mtime": 1793542338.3713686,
+    "seen": 1794098622.5590656,
+    "ast_hash": "d2e8a6b452c28f45ba78d0083373412d",
+    "semantic_hash": "d2e8a6b452c28f45ba78d0083373412d"
+  },
+  "src/data/dialogue.js": {
+    "mtime": 1793542230.6466138,
+    "seen": 1794098622.559081,
+    "ast_hash": "c32e63d8d1de248a231bcbf90ee78c39",
+    "semantic_hash": "c32e63d8d1de248a231bcbf90ee78c39"
+  },
+  "src/data/kids.js": {
+    "mtime": 1793542071.5473804,
+    "seen": 1794098622.559131,
+    "ast_hash": "de7ae850970300273327487daa60489c",
+    "semantic_hash": "de7ae850970300273327487daa60489c"
+  },
+  "src/data/questions.js": {
+    "mtime": 1793542230.647026,
+    "seen": 1794098622.55915,
+    "ast_hash": "852f3918707407a434daa1395351c17c",
+    "semantic_hash": "852f3918707407a434daa1395351c17c"
+  },
+  "src/data/renders.js": {
+    "mtime": 1793542071.5713806,
+    "seen": 1794098622.559166,
+    "ast_hash": "be994d6ebba9bbf01562e23c5a4b5906",
+    "semantic_hash": "be994d6ebba9bbf01562e23c5a4b5906"
+  },
+  "src/data/world.js": {
+    "mtime": 1793544391.6013615,
+    "seen": 1794098622.5591822,
+    "ast_hash": "4e4b00a3e5517602240fe78ad4cbf94d",
+    "semantic_hash": "4e4b00a3e5517602240fe78ad4cbf94d"
+  },
+  "src/dev/scenes.js": {
+    "mtime": 1793542296.5811589,
+    "seen": 1794098622.5591977,
+    "ast_hash": "58caab1594e3523a03310979d27388b7",
+    "semantic_hash": "58caab1594e3523a03310979d27388b7"
+  },
+  "src/game/achievements.js": {
+    "mtime": 1793542230.651341,
+    "seen": 1794098622.559214,
+    "ast_hash": "efb929493e29a9e41e740f59f7b7b0b9",
+    "semantic_hash": "efb929493e29a9e41e740f59f7b7b0b9"
+  },
+  "src/game/clock.js": {
+    "mtime": 1793542230.6516414,
+    "seen": 1794098622.5592313,
+    "ast_hash": "a02db53e521cd90d975abcaf83f4b605",
+    "semantic_hash": "a02db53e521cd90d975abcaf83f4b605"
+  },
+  "src/game/economy.js": {
+    "mtime": 1793542248.8240557,
+    "seen": 1794098622.5592468,
+    "ast_hash": "4a93e2d2cf0cdde4f6fbde5eef90b147",
+    "semantic_hash": "4a93e2d2cf0cdde4f6fbde5eef90b147"
+  },
+  "src/game/knowledge.js": {
+    "mtime": 1793542230.6539993,
+    "seen": 1794098622.559262,
+    "ast_hash": "9535511323aea1e151768d9df1837a9b",
+    "semantic_hash": "9535511323aea1e151768d9df1837a9b"
+  },
+  "src/game/league.js": {
+    "mtime": 1793544391.6086297,
+    "seen": 1794098622.5592773,
+    "ast_hash": "051ae7b8bef10324b589cae20ffb4814",
+    "semantic_hash": "051ae7b8bef10324b589cae20ffb4814"
+  },
+  "src/game/leagueStats.js": {
+    "mtime": 1793542230.6602721,
+    "seen": 1794098622.5592923,
+    "ast_hash": "f5abbfeb82a267ef973e80e1b4a74ce5",
+    "semantic_hash": "f5abbfeb82a267ef973e80e1b4a74ce5"
+  },
+  "src/game/rivalry.js": {
+    "mtime": 1793542096.7473793,
+    "seen": 1794098622.5593088,
+    "ast_hash": "b4aa84d07843a197cb1d4f8ac074d1a1",
+    "semantic_hash": "b4aa84d07843a197cb1d4f8ac074d1a1"
+  },
+  "src/game/rng.js": {
+    "mtime": 1793542230.6605902,
+    "seen": 1794098622.5593245,
+    "ast_hash": "52f0ffca3b6fd3e859fed034b127b7b6",
+    "semantic_hash": "52f0ffca3b6fd3e859fed034b127b7b6"
+  },
+  "src/game/routines.js": {
+    "mtime": 1793542230.661305,
+    "seen": 1794098622.55934,
+    "ast_hash": "ec59bca5d3ea38fa2991ece7529190dd",
+    "semantic_hash": "ec59bca5d3ea38fa2991ece7529190dd"
+  },
+  "src/game/school.js": {
+    "mtime": 1793542230.6642687,
+    "seen": 1794098622.5593557,
+    "ast_hash": "8ed070102986643c847e06abfeb06e3d",
+    "semantic_hash": "8ed070102986643c847e06abfeb06e3d"
+  },
+  "src/game/seasons.js": {
+    "mtime": 1793542230.664471,
+    "seen": 1794098622.5593708,
+    "ast_hash": "d93d3ec1f273bf3a8941a1e4ac0be71b",
+    "semantic_hash": "d93d3ec1f273bf3a8941a1e4ac0be71b"
+  },
+  "src/game/sim.js": {
+    "mtime": 1793542230.6656175,
+    "seen": 1794098622.559387,
+    "ast_hash": "e5bfc1f82e8b70a2e6efb2609bf08d3d",
+    "semantic_hash": "e5bfc1f82e8b70a2e6efb2609bf08d3d"
+  },
+  "src/game/social.js": {
+    "mtime": 1793544391.6210268,
+    "seen": 1794098622.5594032,
+    "ast_hash": "ea64718aaae156014f320ecb7500df51",
+    "semantic_hash": "ea64718aaae156014f320ecb7500df51"
+  },
+  "src/game/state.js": {
+    "mtime": 1793542230.6718712,
+    "seen": 1794098622.5594184,
+    "ast_hash": "f32e9526b799d0d6487bba1c34f2feb9",
+    "semantic_hash": "f32e9526b799d0d6487bba1c34f2feb9"
+  },
+  "src/game/stats.js": {
+    "mtime": 1793542230.6725316,
+    "seen": 1794098622.5594344,
+    "ast_hash": "4310dccd004a50173a239b8bc8b972d7",
+    "semantic_hash": "4310dccd004a50173a239b8bc8b972d7"
+  },
+  "src/game/team.js": {
+    "mtime": 1793542248.8233807,
+    "seen": 1794098622.5594597,
+    "ast_hash": "7fb851b77fcadfc74bef82af521cb0cf",
+    "semantic_hash": "7fb851b77fcadfc74bef82af521cb0cf"
+  },
+  "src/game/time.js": {
+    "mtime": 1793542230.6779969,
+    "seen": 1794098622.5594776,
+    "ast_hash": "338de3db49718de0d549bc2a6026884b",
+    "semantic_hash": "338de3db49718de0d549bc2a6026884b"
+  },
+  "src/main.js": {
+    "mtime": 1793542230.67855,
+    "seen": 1794098622.5594935,
+    "ast_hash": "933491f8c9c96b827fbb6d4d045a0d19",
+    "semantic_hash": "933491f8c9c96b827fbb6d4d045a0d19"
+  },
+  "src/ui/appicons.js": {
+    "mtime": 1793544391.6272283,
+    "seen": 1794098622.5595117,
+    "ast_hash": "f6f13ffc2df4b733ac7cf57825a665eb",
+    "semantic_hash": "f6f13ffc2df4b733ac7cf57825a665eb"
+  },
+  "src/ui/audio.js": {
+    "mtime": 1793542230.6811063,
+    "seen": 1794098622.559529,
+    "ast_hash": "95f29ca5ed75f428dd18c0b0712c1749",
+    "semantic_hash": "95f29ca5ed75f428dd18c0b0712c1749"
+  },
+  "src/ui/classroom.js": {
+    "mtime": 1793544391.630683,
+    "seen": 1794098622.559545,
+    "ast_hash": "224456f77c00387a5b1aedf5c826eb6f",
+    "semantic_hash": "224456f77c00387a5b1aedf5c826eb6f"
+  },
+  "src/ui/creator.js": {
+    "mtime": 1793544391.6326075,
+    "seen": 1794098622.5595613,
+    "ast_hash": "92650945edb234e83143cfaff27ba85b",
+    "semantic_hash": "92650945edb234e83143cfaff27ba85b"
+  },
+  "src/ui/creator/title.js": {
+    "mtime": 1793542296.5832736,
+    "seen": 1794098622.559577,
+    "ast_hash": "ca1db53bc0265dd1cda90c9109722ce9",
+    "semantic_hash": "ca1db53bc0265dd1cda90c9109722ce9"
+  },
+  "src/ui/dom.js": {
+    "mtime": 1793544391.634838,
+    "seen": 1794098622.5595949,
+    "ast_hash": "460f238cb9ad1063deeedf59c1cd9e7b",
+    "semantic_hash": "460f238cb9ad1063deeedf59c1cd9e7b"
+  },
+  "src/ui/game.js": {
+    "mtime": 1793542296.5900552,
+    "seen": 1794098622.5596106,
+    "ast_hash": "be20a1e270ab50279c2dbcb6df257b19",
+    "semantic_hash": "be20a1e270ab50279c2dbcb6df257b19"
+  },
+  "src/ui/game/locations.js": {
+    "mtime": 1793542296.5905855,
+    "seen": 1794098622.5596266,
+    "ast_hash": "2b21b650e14f00dd808f9513ca6b08d4",
+    "semantic_hash": "2b21b650e14f00dd808f9513ca6b08d4"
+  },
+  "src/ui/game/schoolday.js": {
+    "mtime": 1793542296.5915515,
+    "seen": 1794098622.559643,
+    "ast_hash": "c7bf0eb6a084ab73419b857776f65d67",
+    "semantic_hash": "c7bf0eb6a084ab73419b857776f65d67"
+  },
+  "src/ui/hud.js": {
+    "mtime": 1793542296.5924673,
+    "seen": 1794098622.5596604,
+    "ast_hash": "449ddca3231ccf6527a11ab2013e52be",
+    "semantic_hash": "449ddca3231ccf6527a11ab2013e52be"
+  },
+  "src/ui/input.js": {
+    "mtime": 1793542296.593746,
+    "seen": 1794098622.559677,
+    "ast_hash": "9cd60cd2f9cd886ac4887286dc599c7b",
+    "semantic_hash": "9cd60cd2f9cd886ac4887286dc599c7b"
+  },
+  "src/ui/jersey.js": {
+    "mtime": 1793544391.64242,
+    "seen": 1794098622.5596924,
+    "ast_hash": "8e6945e8c0d1bb8dbc87060461587fa7",
+    "semantic_hash": "8e6945e8c0d1bb8dbc87060461587fa7"
+  },
+  "src/ui/jobs.js": {
+    "mtime": 1793542296.594268,
+    "seen": 1794098622.5597086,
+    "ast_hash": "92eaafbb06202ccc1929483dadc33f62",
+    "semantic_hash": "92eaafbb06202ccc1929483dadc33f62"
+  },
+  "src/ui/logo.js": {
+    "mtime": 1793542296.5957742,
+    "seen": 1794098622.5597246,
+    "ast_hash": "f4c0cc0de3ec78375a600d8bbb046a29",
+    "semantic_hash": "f4c0cc0de3ec78375a600d8bbb046a29"
+  },
+  "src/ui/mapview.js": {
+    "mtime": 1793542296.5966938,
+    "seen": 1794098622.55974,
+    "ast_hash": "c8ec5fc1ccd43950d00d06f9ba0560ae",
+    "semantic_hash": "c8ec5fc1ccd43950d00d06f9ba0560ae"
+  },
+  "src/ui/match.js": {
+    "mtime": 1793544391.6489296,
+    "seen": 1794098622.5597565,
+    "ast_hash": "dac0b3108c5dcbbc32cdbd93d78c4f7e",
+    "semantic_hash": "dac0b3108c5dcbbc32cdbd93d78c4f7e"
+  },
+  "src/ui/matchPlays.js": {
+    "mtime": 1793544391.6513414,
+    "seen": 1794098622.559772,
+    "ast_hash": "d67b80c48de2dd4c87cfd51b1f8f913b",
+    "semantic_hash": "d67b80c48de2dd4c87cfd51b1f8f913b"
+  },
+  "src/ui/minigames.js": {
+    "mtime": 1793542296.599399,
+    "seen": 1794098622.559788,
+    "ast_hash": "9a21ae0607e36c6d24d8d1ccbcc0a346",
+    "semantic_hash": "9a21ae0607e36c6d24d8d1ccbcc0a346"
+  },
+  "src/ui/newspaper.js": {
+    "mtime": 1793542296.5998106,
+    "seen": 1794098622.5598028,
+    "ast_hash": "296723903d30ec4030b46f54fb54cbee",
+    "semantic_hash": "296723903d30ec4030b46f54fb54cbee"
+  },
+  "src/ui/phone.js": {
+    "mtime": 1793542072.6993804,
+    "seen": 1794098622.5598185,
+    "ast_hash": "00ce4207d7e35e68cc6d47729fd826af",
+    "semantic_hash": "00ce4207d7e35e68cc6d47729fd826af"
+  },
+  "src/ui/phone/contacts.js": {
+    "mtime": 1793542150.367377,
+    "seen": 1794098622.559834,
+    "ast_hash": "3f165850b389d3720ab9f7b81b3de7b3",
+    "semantic_hash": "3f165850b389d3720ab9f7b81b3de7b3"
+  },
+  "src/ui/phone/field.js": {
+    "mtime": 1793542296.6003172,
+    "seen": 1794098622.5598514,
+    "ast_hash": "7a3895a3f871424f211fef602eb2b7a5",
+    "semantic_hash": "7a3895a3f871424f211fef602eb2b7a5"
+  },
+  "src/ui/phone/home.js": {
+    "mtime": 1793542296.6005874,
+    "seen": 1794098622.5598683,
+    "ast_hash": "ca3368e25387c33b99345f18933b27ab",
+    "semantic_hash": "ca3368e25387c33b99345f18933b27ab"
+  },
+  "src/ui/phone/league.js": {
+    "mtime": 1793542296.6009266,
+    "seen": 1794098622.5598853,
+    "ast_hash": "36af19df6333e75623415498e6f84e65",
+    "semantic_hash": "36af19df6333e75623415498e6f84e65"
+  },
+  "src/ui/phone/money.js": {
+    "mtime": 1793542296.6017592,
+    "seen": 1794098622.559902,
+    "ast_hash": "afc9e08905afc68116508fcd0d29f5c8",
+    "semantic_hash": "afc9e08905afc68116508fcd0d29f5c8"
+  },
+  "src/ui/phone/registry.js": {
+    "mtime": 1793542296.601985,
+    "seen": 1794098622.5599189,
+    "ast_hash": "ade94d3a0908aaaf33f01901003f59d7",
+    "semantic_hash": "ade94d3a0908aaaf33f01901003f59d7"
+  },
+  "src/ui/phone/school.js": {
+    "mtime": 1793542296.6022353,
+    "seen": 1794098622.559936,
+    "ast_hash": "af4da7db3090e30e452f747d2913e7dd",
+    "semantic_hash": "af4da7db3090e30e452f747d2913e7dd"
+  },
+  "src/ui/phone/settings.js": {
+    "mtime": 1793542150.379377,
+    "seen": 1794098622.5599515,
+    "ast_hash": "db8daede10b63172fbcd655ea02bbbbf",
+    "semantic_hash": "db8daede10b63172fbcd655ea02bbbbf"
+  },
+  "src/ui/phone/social.js": {
+    "mtime": 1793542296.6026032,
+    "seen": 1794098622.5599678,
+    "ast_hash": "7157676ad8068b99cf7d216cc33c9dce",
+    "semantic_hash": "7157676ad8068b99cf7d216cc33c9dce"
+  },
+  "src/ui/phone/team.js": {
+    "mtime": 1793542296.6041505,
+    "seen": 1794098622.5599844,
+    "ast_hash": "83714d08efeb2ddd61fb128009747ae6",
+    "semantic_hash": "83714d08efeb2ddd61fb128009747ae6"
+  },
+  "src/ui/phone/training.js": {
+    "mtime": 1793542150.387377,
+    "seen": 1794098622.560002,
+    "ast_hash": "b4106b5142336cd1c0ee7cb2d0386b24",
+    "semantic_hash": "b4106b5142336cd1c0ee7cb2d0386b24"
+  },
+  "src/ui/places.js": {
+    "mtime": 1793542296.605191,
+    "seen": 1794098622.5600178,
+    "ast_hash": "5b683eb4b74e683722ca730dc999c508",
+    "semantic_hash": "5b683eb4b74e683722ca730dc999c508"
+  },
+  "src/ui/signup.js": {
+    "mtime": 1793542296.605392,
+    "seen": 1794098622.560033,
+    "ast_hash": "2660395f8445f1a658e4d0c9ccbc1e1b",
+    "semantic_hash": "2660395f8445f1a658e4d0c9ccbc1e1b"
+  },
+  "src/ui/talk.js": {
+    "mtime": 1793542296.6098874,
+    "seen": 1794098622.5600493,
+    "ast_hash": "0d246a4b466c6ee40fda8bf2df16bc99",
+    "semantic_hash": "0d246a4b466c6ee40fda8bf2df16bc99"
+  },
+  "src/ui/tryout.js": {
+    "mtime": 1793542296.6106064,
+    "seen": 1794098622.5600648,
+    "ast_hash": "b92cc340eef1f72487aa0f028c9fd1a1",
+    "semantic_hash": "b92cc340eef1f72487aa0f028c9fd1a1"
+  },
+  "src/ui/wait.js": {
+    "mtime": 1793542296.6108122,
+    "seen": 1794098622.5600812,
+    "ast_hash": "dc55d8dce95edd23e555fe13bca70d53",
+    "semantic_hash": "dc55d8dce95edd23e555fe13bca70d53"
+  },
+  "src/world2d/arenas.js": {
+    "mtime": 1793542296.6118603,
+    "seen": 1794098622.5600975,
+    "ast_hash": "40d58b15b7e3e33869e908f7f328326a",
+    "semantic_hash": "40d58b15b7e3e33869e908f7f328326a"
+  },
+  "src/world2d/build.js": {
+    "mtime": 1793544391.6716301,
+    "seen": 1794098622.5601137,
+    "ast_hash": "5e7c17e0638836e2a4947145cb60395a",
+    "semantic_hash": "5e7c17e0638836e2a4947145cb60395a"
+  },
+  "src/world2d/buildings.js": {
+    "mtime": 1793542098.0713794,
+    "seen": 1794098622.560129,
+    "ast_hash": "8925f07d7ff5dfda9eb7427cac6cd6c1",
+    "semantic_hash": "8925f07d7ff5dfda9eb7427cac6cd6c1"
+  },
+  "src/world2d/engine.js": {
+    "mtime": 1793544391.674569,
+    "seen": 1794098622.5601454,
+    "ast_hash": "2aa05de1d5d091e58a7211be71cac575",
+    "semantic_hash": "2aa05de1d5d091e58a7211be71cac575"
+  },
+  "src/world2d/engine/input.js": {
+    "mtime": 1793542296.6184282,
+    "seen": 1794098622.5601609,
+    "ast_hash": "746f7cf692279d3b63f08b1354531f87",
+    "semantic_hash": "746f7cf692279d3b63f08b1354531f87"
+  },
+  "src/world2d/engine/motion.js": {
+    "mtime": 1793542296.6187768,
+    "seen": 1794098622.560179,
+    "ast_hash": "de697eef22e36cfdae2b5fb07df0d19d",
+    "semantic_hash": "de697eef22e36cfdae2b5fb07df0d19d"
+  },
+  "src/world2d/engine/render.js": {
+    "mtime": 1793544391.6772764,
+    "seen": 1794098622.5601964,
+    "ast_hash": "3cbd200d2128f28c9937abe8e87acc36",
+    "semantic_hash": "3cbd200d2128f28c9937abe8e87acc36"
+  },
+  "src/world2d/engine/world.js": {
+    "mtime": 1793542098.1793795,
+    "seen": 1794098622.5602145,
+    "ast_hash": "fc31b57407c0b0c805b5b477865da869",
+    "semantic_hash": "fc31b57407c0b0c805b5b477865da869"
+  },
+  "src/world2d/fields.js": {
+    "mtime": 1793542296.6212363,
+    "seen": 1794098622.5602307,
+    "ast_hash": "5a84095e774d6bdb35603be73838f62f",
+    "semantic_hash": "5a84095e774d6bdb35603be73838f62f"
+  },
+  "src/world2d/looks.js": {
+    "mtime": 1793544391.7382529,
+    "seen": 1794098622.560246,
+    "ast_hash": "3ad28f18ae6ec7b2c44d35e78f378588",
+    "semantic_hash": "3ad28f18ae6ec7b2c44d35e78f378588"
+  },
+  "src/world2d/paint.js": {
+    "mtime": 1793544391.6820698,
+    "seen": 1794098622.5602605,
+    "ast_hash": "3c2d3dbb459dd566fb6ba7a9d33e9ece",
+    "semantic_hash": "3c2d3dbb459dd566fb6ba7a9d33e9ece"
+  },
+  "src/world2d/patterns.js": {
+    "mtime": 1793542296.6226823,
+    "seen": 1794098622.5602756,
+    "ast_hash": "3247edfd5f108639b1c8ed2346e31d61",
+    "semantic_hash": "3247edfd5f108639b1c8ed2346e31d61"
+  },
+  "src/world2d/project.js": {
+    "mtime": 1793544391.6847403,
+    "seen": 1794098622.560292,
+    "ast_hash": "d3fecd871975946190458692a859d85e",
+    "semantic_hash": "d3fecd871975946190458692a859d85e"
+  },
+  "src/world2d/props.js": {
+    "mtime": 1793542073.4593804,
+    "seen": 1794098622.560308,
+    "ast_hash": "7ea03c1a8e743671d8a1d597d7f53dba",
+    "semantic_hash": "7ea03c1a8e743671d8a1d597d7f53dba"
+  },
+  "src/world2d/props/furniture.js": {
+    "mtime": 1793542150.451377,
+    "seen": 1794098622.5603242,
+    "ast_hash": "f8b2f17ebdeed74525277263589054f3",
+    "semantic_hash": "f8b2f17ebdeed74525277263589054f3"
+  },
+  "src/world2d/props/houses.js": {
+    "mtime": 1793542150.451377,
+    "seen": 1794098622.560343,
+    "ast_hash": "e09e9e262563077f48c072f41fb9c740",
+    "semantic_hash": "e09e9e262563077f48c072f41fb9c740"
+  },
+  "src/world2d/props/nature.js": {
+    "mtime": 1793542150.455377,
+    "seen": 1794098622.5603602,
+    "ast_hash": "01f907e347f81dc957db6112aed2588e",
+    "semantic_hash": "01f907e347f81dc957db6112aed2588e"
+  },
+  "src/world2d/props/objects.js": {
+    "mtime": 1793542098.3513794,
+    "seen": 1794098622.560378,
+    "ast_hash": "41357c1a5f85016aadcfe71d34ffeb19",
+    "semantic_hash": "41357c1a5f85016aadcfe71d34ffeb19"
+  },
+  "src/world2d/props/playground.js": {
+    "mtime": 1793542098.3593793,
+    "seen": 1794098622.560396,
+    "ast_hash": "0ff28751f328f8ab184455683ffc56a5",
+    "semantic_hash": "0ff28751f328f8ab184455683ffc56a5"
+  },
+  "src/world2d/props/school.js": {
+    "mtime": 1793542098.3753793,
+    "seen": 1794098622.5604131,
+    "ast_hash": "48b8050eea77b31e578f34c8b229c79c",
+    "semantic_hash": "48b8050eea77b31e578f34c8b229c79c"
+  },
+  "src/world2d/props/stores.js": {
+    "mtime": 1793542098.3833795,
+    "seen": 1794098622.5604298,
+    "ast_hash": "cd251186aa5a4cf4806a6b390d35309b",
+    "semantic_hash": "cd251186aa5a4cf4806a6b390d35309b"
+  },
+  "src/world2d/props/street.js": {
+    "mtime": 1793542098.3873794,
+    "seen": 1794098622.5604467,
+    "ast_hash": "20d3932ab37a7f9fcbf5dbbbb68d5f89",
+    "semantic_hash": "20d3932ab37a7f9fcbf5dbbbb68d5f89"
+  },
+  "src/world2d/scenes.js": {
+    "mtime": 1793542098.3913794,
+    "seen": 1794098622.560464,
+    "ast_hash": "dc2c414780e044226ceab138108b0682",
+    "semantic_hash": "dc2c414780e044226ceab138108b0682"
+  },
+  "src/world2d/scenes/common.js": {
+    "mtime": 1793542098.4033794,
+    "seen": 1794098622.5604792,
+    "ast_hash": "7e7d41184333e2a26922c4343068a9c4",
+    "semantic_hash": "7e7d41184333e2a26922c4343068a9c4"
+  },
+  "src/world2d/scenes/grocery.js": {
+    "mtime": 1793542098.4233794,
+    "seen": 1794098622.5604968,
+    "ast_hash": "75ee84535476712c8cd1e612d143e6b8",
+    "semantic_hash": "75ee84535476712c8cd1e612d143e6b8"
+  },
+  "src/world2d/scenes/home.js": {
+    "mtime": 1793542150.483377,
+    "seen": 1794098622.5605137,
+    "ast_hash": "e9e2bcd785d0fbe5c499b97fe216df7e",
+    "semantic_hash": "e9e2bcd785d0fbe5c499b97fe216df7e"
+  },
+  "src/world2d/scenes/library.js": {
+    "mtime": 1793542098.4953794,
+    "seen": 1794098622.560531,
+    "ast_hash": "d3c483ea16c582c64dff045881b63088",
+    "semantic_hash": "d3c483ea16c582c64dff045881b63088"
+  },
+  "src/world2d/scenes/mall.js": {
+    "mtime": 1793542098.5153794,
+    "seen": 1794098622.560548,
+    "ast_hash": "77c8ff41e8c14900894c3e55c47cf699",
+    "semantic_hash": "77c8ff41e8c14900894c3e55c47cf699"
+  },
+  "src/world2d/scenes/museum.js": {
+    "mtime": 1793544462.5784163,
+    "seen": 1794098622.5605648,
+    "ast_hash": "0d607dde021ca459f64db04b6f2a239f",
+    "semantic_hash": "0d607dde021ca459f64db04b6f2a239f"
+  },
+  "src/world2d/scenes/neighborhood.js": {
+    "mtime": 1793544391.7024055,
+    "seen": 1794098622.5605812,
+    "ast_hash": "6da1fac4f9575530236d447e6b406e8a",
+    "semantic_hash": "6da1fac4f9575530236d447e6b406e8a"
+  },
+  "src/world2d/scenes/school.js": {
+    "mtime": 1793542098.5713794,
+    "seen": 1794098622.5605984,
+    "ast_hash": "426a6df1bd7e7eecf4c641950db9d557",
+    "semantic_hash": "426a6df1bd7e7eecf4c641950db9d557"
+  },
+  "src/world2d/scenes/school/classroom.js": {
+    "mtime": 1793542098.5913794,
+    "seen": 1794098622.5606143,
+    "ast_hash": "a353bc719f6c376e15c47f0901c9090d",
+    "semantic_hash": "a353bc719f6c376e15c47f0901c9090d"
+  },
+  "src/world2d/scenes/school/serviceRoom.js": {
+    "mtime": 1793542150.507377,
+    "seen": 1794098622.5606344,
+    "ast_hash": "1dcb5605a1476121509f4764f7c91e55",
+    "semantic_hash": "1dcb5605a1476121509f4764f7c91e55"
+  },
+  "src/world2d/scenes/turning.js": {
+    "mtime": 1793542150.511377,
+    "seen": 1794098622.5606532,
+    "ast_hash": "3292cc3ddd06ef709573ee89a7c027e9",
+    "semantic_hash": "3292cc3ddd06ef709573ee89a7c027e9"
+  },
+  "src/world2d/scenes/venues.js": {
+    "mtime": 1793542098.6273794,
+    "seen": 1794098622.5606706,
+    "ast_hash": "00d3b0749b351e43f0722b1a24c6bb62",
+    "semantic_hash": "00d3b0749b351e43f0722b1a24c6bb62"
+  },
+  "src/world2d/sprites.js": {
+    "mtime": 1793542098.6353793,
+    "seen": 1794098622.5606868,
+    "ast_hash": "2d03039d4ec700f3a2a5eb7040d66707",
+    "semantic_hash": "2d03039d4ec700f3a2a5eb7040d66707"
+  },
+  "src/world2d/textures.js": {
+    "mtime": 1793542073.8713803,
+    "seen": 1794098622.5607023,
+    "ast_hash": "854c507b0206423d3262d16d9e842828",
+    "semantic_hash": "854c507b0206423d3262d16d9e842828"
+  },
+  "src/world2d/three2d.js": {
+    "mtime": 1793542150.519377,
+    "seen": 1794098622.5607176,
+    "ast_hash": "e0255f593e84e4752c14ef50d712c44d",
+    "semantic_hash": "e0255f593e84e4752c14ef50d712c44d"
+  },
+  "tests/e2e-input.mjs": {
+    "mtime": 1793542150.523377,
+    "seen": 1794098622.5607338,
+    "ast_hash": "4ba66eb8d06f4855853922abea7fcdd6",
+    "semantic_hash": "4ba66eb8d06f4855853922abea7fcdd6"
+  },
+  "tests/e2e-jobs.mjs": {
+    "mtime": 1793542150.527377,
+    "seen": 1794098622.560749,
+    "ast_hash": "3a900ba1328febcaa9acb37d0ea9f3d9",
+    "semantic_hash": "3a900ba1328febcaa9acb37d0ea9f3d9"
+  },
+  "tests/e2e.mjs": {
+    "mtime": 1793542129.011378,
+    "seen": 1794098622.5607626,
+    "ast_hash": "0421071cc978bbca032b642ff03bdd4a",
+    "semantic_hash": "0421071cc978bbca032b642ff03bdd4a"
+  },
+  "tests/economy.test.mjs": {
+    "mtime": 1793542098.7833793,
+    "seen": 1794098622.5607777,
+    "ast_hash": "b1da88d2d8ddb380a23bc01f0725dc85",
+    "semantic_hash": "b1da88d2d8ddb380a23bc01f0725dc85"
+  },
+  "tests/helpers.mjs": {
+    "mtime": 1793542074.0033805,
+    "seen": 1794098622.5607922,
+    "ast_hash": "30fb0f7f708cae77440edaf90457fb18",
+    "semantic_hash": "30fb0f7f708cae77440edaf90457fb18"
+  },
+  "tests/league.test.mjs": {
+    "mtime": 1793542098.8113794,
+    "seen": 1794098622.5608058,
+    "ast_hash": "599a7624a0499d685033be9a128436b9",
+    "semantic_hash": "599a7624a0499d685033be9a128436b9"
+  },
+  "tests/sim.test.mjs": {
+    "mtime": 1793542098.8353794,
+    "seen": 1794098622.5608208,
+    "ast_hash": "1eca90e17906a6cdc7dd8a37f3944ed4",
+    "semantic_hash": "1eca90e17906a6cdc7dd8a37f3944ed4"
+  },
+  "tests/social.test.mjs": {
+    "mtime": 1793542098.8393793,
+    "seen": 1794098622.5608354,
+    "ast_hash": "213b935d2e20d91657458b3d59be8dfc",
+    "semantic_hash": "213b935d2e20d91657458b3d59be8dfc"
+  },
+  "tests/world.test.mjs": {
+    "mtime": 1793542098.8553793,
+    "seen": 1794098622.560849,
+    "ast_hash": "d01ea3fb6be3c446cdd3efa999dfa57c",
+    "semantic_hash": "d01ea3fb6be3c446cdd3efa999dfa57c"
+  },
+  "tools/cut_renders.py": {
+    "mtime": 1793539059.7069135,
+    "seen": 1794098622.560864,
+    "ast_hash": "69add7816069e35fd1c551b87706fada",
+    "semantic_hash": "69add7816069e35fd1c551b87706fada"
+  },
+  "tools/generate_kids.py": {
+    "mtime": 1793539059.7078364,
+    "seen": 1794098622.5608811,
+    "ast_hash": "7a0a21f81771bd6bd27de8f6710f4cae",
+    "semantic_hash": "7a0a21f81771bd6bd27de8f6710f4cae"
+  }
+}

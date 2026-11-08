@@ -4,3 +4,4 @@ node_modules
 art
 data
 package-lock.json
+graphify-out/
