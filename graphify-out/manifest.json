@@ -1,772 +1,2428 @@
 {
   ".github/workflows/deploy.yml": {
-    "mtime": 1793539059.6527019,
-    "seen": 1794098622.5587502,
+    "mtime": 1794100526.2560818,
+    "seen": 1794100585.2904897,
     "ast_hash": "bb0cfb9663ee493a40010ffcdf00b5da",
     "semantic_hash": "bb0cfb9663ee493a40010ffcdf00b5da"
   },
   ".github/workflows/desktop.yml": {
-    "mtime": 1793539059.6529067,
-    "seen": 1794098622.5588076,
+    "mtime": 1794100526.2560818,
+    "seen": 1794100585.2904925,
     "ast_hash": "a3b401ea88d10e52b3f92b296d14d769",
     "semantic_hash": "a3b401ea88d10e52b3f92b296d14d769"
   },
   ".prettierrc.json": {
-    "mtime": 1793541643.352564,
-    "seen": 1794098622.5588293,
+    "mtime": 1794100526.2560818,
+    "seen": 1794100585.290495,
     "ast_hash": "6f1fab0433f94a579c44789dbc3242c5",
     "semantic_hash": "6f1fab0433f94a579c44789dbc3242c5"
   },
   "art/characters/manifest.json": {
-    "mtime": 1793539059.6675158,
-    "seen": 1794098622.558846,
+    "mtime": 1794100526.276279,
+    "seen": 1794100585.2904968,
     "ast_hash": "91be0fc05e9e745fc9d663f19a2fcd8f",
     "semantic_hash": "91be0fc05e9e745fc9d663f19a2fcd8f"
   },
   "art/charstyle/adults.js": {
-    "mtime": 1793539059.6675158,
-    "seen": 1794098622.5588644,
+    "mtime": 1794100526.276279,
+    "seen": 1794100585.2904985,
     "ast_hash": "fd6f22057d816abe99e7774bd995f01c",
     "semantic_hash": "fd6f22057d816abe99e7774bd995f01c"
   },
   "art/charstyle/build.mjs": {
-    "mtime": 1793539059.6723568,
-    "seen": 1794098622.5588815,
+    "mtime": 1794100526.2770922,
+    "seen": 1794100585.2905002,
     "ast_hash": "92124140267628d6925566d258310aff",
     "semantic_hash": "92124140267628d6925566d258310aff"
   },
   "art/charstyle/figure.js": {
-    "mtime": 1793539059.6723568,
-    "seen": 1794098622.5588977,
+    "mtime": 1794100526.2770922,
+    "seen": 1794100585.2905014,
     "ast_hash": "a77c8b1513cb0c96e3de1bc13c5c17ae",
     "semantic_hash": "a77c8b1513cb0c96e3de1bc13c5c17ae"
   },
   "art/charstyle/hair.js": {
-    "mtime": 1793539059.6723568,
-    "seen": 1794098622.5589147,
+    "mtime": 1794100526.2770922,
+    "seen": 1794100585.290503,
     "ast_hash": "2069222e50197fb58a688073161f8bdf",
     "semantic_hash": "2069222e50197fb58a688073161f8bdf"
   },
   "art/charstyle/palette.js": {
-    "mtime": 1793539059.6723568,
-    "seen": 1794098622.558931,
+    "mtime": 1794100526.2770922,
+    "seen": 1794100585.2905045,
     "ast_hash": "6c98bf6a3be4af87df7f2a8157a658a3",
     "semantic_hash": "6c98bf6a3be4af87df7f2a8157a658a3"
   },
   "art/charstyle/png.mjs": {
-    "mtime": 1793544391.526262,
-    "seen": 1794098622.558948,
+    "mtime": 1794100526.277279,
+    "seen": 1794100585.2905056,
     "ast_hash": "d238394341287e13da08a3dc4d754ba4",
     "semantic_hash": "d238394341287e13da08a3dc4d754ba4"
   },
   "art/charstyle/prompts.mjs": {
-    "mtime": 1793539059.6723568,
-    "seen": 1794098622.5589643,
+    "mtime": 1794100526.277279,
+    "seen": 1794100585.2905073,
     "ast_hash": "d2d195587b80b2b0b029a20097275081",
     "semantic_hash": "d2d195587b80b2b0b029a20097275081"
   },
   "art/charstyle/util.js": {
-    "mtime": 1793539059.6723568,
-    "seen": 1794098622.5589805,
+    "mtime": 1794100526.277279,
+    "seen": 1794100585.2905087,
     "ast_hash": "7f8922a615e2420d28fc0223e036c2d7",
     "semantic_hash": "7f8922a615e2420d28fc0223e036c2d7"
   },
   "art/renders/sources.json": {
-    "mtime": 1793539059.673093,
-    "seen": 1794098622.5589964,
+    "mtime": 1794100526.277778,
+    "seen": 1794100585.2905107,
     "ast_hash": "206d98381029f0691f48da2933727d14",
     "semantic_hash": "206d98381029f0691f48da2933727d14",
     "ast_empty": true
   },
   "data/kids.json": {
-    "mtime": 1793539059.6835158,
-    "seen": 1794098622.5589988,
+    "mtime": 1794100526.2792788,
+    "seen": 1794100585.2905126,
     "ast_hash": "bec158ea726496eaa9b482712b395fe4",
     "semantic_hash": "bec158ea726496eaa9b482712b395fe4",
     "ast_empty": true
   },
   "electron/main.cjs": {
-    "mtime": 1793541672.3014386,
-    "seen": 1794098622.5590003,
+    "mtime": 1794100526.2792788,
+    "seen": 1794100585.290515,
     "ast_hash": "65679703ab52e45310eb4226897f5d77",
     "semantic_hash": "65679703ab52e45310eb4226897f5d77"
   },
   "electron/preload.cjs": {
-    "mtime": 1793539059.6884685,
-    "seen": 1794098622.5590186,
+    "mtime": 1794100526.280253,
+    "seen": 1794100585.2905164,
     "ast_hash": "82cfd294dcfdb45c32402383a7b46dbc",
     "semantic_hash": "82cfd294dcfdb45c32402383a7b46dbc"
   },
   "eslint.config.mjs": {
-    "mtime": 1793541672.3153985,
-    "seen": 1794098622.5590384,
+    "mtime": 1794100526.280253,
+    "seen": 1794100585.290518,
     "ast_hash": "7ba67e490b0fade22a7f63c07c1353b6",
     "semantic_hash": "7ba67e490b0fade22a7f63c07c1353b6"
   },
   "package.json": {
-    "mtime": 1793542525.01936,
-    "seen": 1794098622.5590525,
+    "mtime": 1794100526.2872787,
+    "seen": 1794100585.2905197,
     "ast_hash": "43da1bbcbb0a8890329329d98eb21d83",
     "semantic_hash": "43da1bbcbb0a8890329329d98eb21d83"
   },
   "scripts/build.mjs": {
-    "mtime": 1793542338.3713686,
-    "seen": 1794098622.5590656,
+    "mtime": 1794100526.2872787,
+    "seen": 1794100585.2905211,
     "ast_hash": "d2e8a6b452c28f45ba78d0083373412d",
     "semantic_hash": "d2e8a6b452c28f45ba78d0083373412d"
   },
   "src/data/dialogue.js": {
-    "mtime": 1793542230.6466138,
-    "seen": 1794098622.559081,
+    "mtime": 1794100526.2883904,
+    "seen": 1794100585.2905226,
     "ast_hash": "c32e63d8d1de248a231bcbf90ee78c39",
     "semantic_hash": "c32e63d8d1de248a231bcbf90ee78c39"
   },
   "src/data/kids.js": {
-    "mtime": 1793542071.5473804,
-    "seen": 1794098622.559131,
+    "mtime": 1794100526.2884972,
+    "seen": 1794100585.290524,
     "ast_hash": "de7ae850970300273327487daa60489c",
     "semantic_hash": "de7ae850970300273327487daa60489c"
   },
   "src/data/questions.js": {
-    "mtime": 1793542230.647026,
-    "seen": 1794098622.55915,
+    "mtime": 1794100526.2884972,
+    "seen": 1794100585.2905254,
     "ast_hash": "852f3918707407a434daa1395351c17c",
     "semantic_hash": "852f3918707407a434daa1395351c17c"
   },
   "src/data/renders.js": {
-    "mtime": 1793542071.5713806,
-    "seen": 1794098622.559166,
+    "mtime": 1794100526.2892785,
+    "seen": 1794100585.2905269,
     "ast_hash": "be994d6ebba9bbf01562e23c5a4b5906",
     "semantic_hash": "be994d6ebba9bbf01562e23c5a4b5906"
   },
   "src/data/world.js": {
-    "mtime": 1793544391.6013615,
-    "seen": 1794098622.5591822,
+    "mtime": 1794100526.2892785,
+    "seen": 1794100585.2905285,
     "ast_hash": "4e4b00a3e5517602240fe78ad4cbf94d",
     "semantic_hash": "4e4b00a3e5517602240fe78ad4cbf94d"
   },
   "src/dev/scenes.js": {
-    "mtime": 1793542296.5811589,
-    "seen": 1794098622.5591977,
+    "mtime": 1794100526.2892785,
+    "seen": 1794100585.2905297,
     "ast_hash": "58caab1594e3523a03310979d27388b7",
     "semantic_hash": "58caab1594e3523a03310979d27388b7"
   },
   "src/game/achievements.js": {
-    "mtime": 1793542230.651341,
-    "seen": 1794098622.559214,
+    "mtime": 1794100526.2892785,
+    "seen": 1794100585.2905314,
     "ast_hash": "efb929493e29a9e41e740f59f7b7b0b9",
     "semantic_hash": "efb929493e29a9e41e740f59f7b7b0b9"
   },
   "src/game/clock.js": {
-    "mtime": 1793542230.6516414,
-    "seen": 1794098622.5592313,
+    "mtime": 1794100526.2902336,
+    "seen": 1794100585.2905328,
     "ast_hash": "a02db53e521cd90d975abcaf83f4b605",
     "semantic_hash": "a02db53e521cd90d975abcaf83f4b605"
   },
   "src/game/economy.js": {
-    "mtime": 1793542248.8240557,
-    "seen": 1794098622.5592468,
+    "mtime": 1794100526.2902336,
+    "seen": 1794100585.2905345,
     "ast_hash": "4a93e2d2cf0cdde4f6fbde5eef90b147",
     "semantic_hash": "4a93e2d2cf0cdde4f6fbde5eef90b147"
   },
   "src/game/knowledge.js": {
-    "mtime": 1793542230.6539993,
-    "seen": 1794098622.559262,
+    "mtime": 1794100526.2902336,
+    "seen": 1794100585.2905357,
     "ast_hash": "9535511323aea1e151768d9df1837a9b",
     "semantic_hash": "9535511323aea1e151768d9df1837a9b"
   },
   "src/game/league.js": {
-    "mtime": 1793544391.6086297,
-    "seen": 1794098622.5592773,
+    "mtime": 1794100526.2902787,
+    "seen": 1794100585.290537,
     "ast_hash": "051ae7b8bef10324b589cae20ffb4814",
     "semantic_hash": "051ae7b8bef10324b589cae20ffb4814"
   },
   "src/game/leagueStats.js": {
-    "mtime": 1793542230.6602721,
-    "seen": 1794098622.5592923,
+    "mtime": 1794100526.2902787,
+    "seen": 1794100585.2905388,
     "ast_hash": "f5abbfeb82a267ef973e80e1b4a74ce5",
     "semantic_hash": "f5abbfeb82a267ef973e80e1b4a74ce5"
   },
   "src/game/rivalry.js": {
-    "mtime": 1793542096.7473793,
-    "seen": 1794098622.5593088,
+    "mtime": 1794100526.2902787,
+    "seen": 1794100585.2905402,
     "ast_hash": "b4aa84d07843a197cb1d4f8ac074d1a1",
     "semantic_hash": "b4aa84d07843a197cb1d4f8ac074d1a1"
   },
   "src/game/rng.js": {
-    "mtime": 1793542230.6605902,
-    "seen": 1794098622.5593245,
+    "mtime": 1794100526.2902787,
+    "seen": 1794100585.290542,
     "ast_hash": "52f0ffca3b6fd3e859fed034b127b7b6",
     "semantic_hash": "52f0ffca3b6fd3e859fed034b127b7b6"
   },
   "src/game/routines.js": {
-    "mtime": 1793542230.661305,
-    "seen": 1794098622.55934,
+    "mtime": 1794100526.2902787,
+    "seen": 1794100585.2905698,
     "ast_hash": "ec59bca5d3ea38fa2991ece7529190dd",
     "semantic_hash": "ec59bca5d3ea38fa2991ece7529190dd"
   },
   "src/game/school.js": {
-    "mtime": 1793542230.6642687,
-    "seen": 1794098622.5593557,
+    "mtime": 1794100526.2902787,
+    "seen": 1794100585.290572,
     "ast_hash": "8ed070102986643c847e06abfeb06e3d",
     "semantic_hash": "8ed070102986643c847e06abfeb06e3d"
   },
   "src/game/seasons.js": {
-    "mtime": 1793542230.664471,
-    "seen": 1794098622.5593708,
+    "mtime": 1794100526.2902787,
+    "seen": 1794100585.2905736,
     "ast_hash": "d93d3ec1f273bf3a8941a1e4ac0be71b",
     "semantic_hash": "d93d3ec1f273bf3a8941a1e4ac0be71b"
   },
   "src/game/sim.js": {
-    "mtime": 1793542230.6656175,
-    "seen": 1794098622.559387,
+    "mtime": 1794100526.2902787,
+    "seen": 1794100585.290575,
     "ast_hash": "e5bfc1f82e8b70a2e6efb2609bf08d3d",
     "semantic_hash": "e5bfc1f82e8b70a2e6efb2609bf08d3d"
   },
   "src/game/social.js": {
-    "mtime": 1793544391.6210268,
-    "seen": 1794098622.5594032,
+    "mtime": 1794100526.2902787,
+    "seen": 1794100585.2905767,
     "ast_hash": "ea64718aaae156014f320ecb7500df51",
     "semantic_hash": "ea64718aaae156014f320ecb7500df51"
   },
   "src/game/state.js": {
-    "mtime": 1793542230.6718712,
-    "seen": 1794098622.5594184,
+    "mtime": 1794100526.2902787,
+    "seen": 1794100585.2905786,
     "ast_hash": "f32e9526b799d0d6487bba1c34f2feb9",
     "semantic_hash": "f32e9526b799d0d6487bba1c34f2feb9"
   },
   "src/game/stats.js": {
-    "mtime": 1793542230.6725316,
-    "seen": 1794098622.5594344,
+    "mtime": 1794100526.2902787,
+    "seen": 1794100585.2905803,
     "ast_hash": "4310dccd004a50173a239b8bc8b972d7",
     "semantic_hash": "4310dccd004a50173a239b8bc8b972d7"
   },
   "src/game/team.js": {
-    "mtime": 1793542248.8233807,
-    "seen": 1794098622.5594597,
+    "mtime": 1794100526.2902787,
+    "seen": 1794100585.290582,
     "ast_hash": "7fb851b77fcadfc74bef82af521cb0cf",
     "semantic_hash": "7fb851b77fcadfc74bef82af521cb0cf"
   },
   "src/game/time.js": {
-    "mtime": 1793542230.6779969,
-    "seen": 1794098622.5594776,
+    "mtime": 1794100526.2902787,
+    "seen": 1794100585.2905836,
     "ast_hash": "338de3db49718de0d549bc2a6026884b",
     "semantic_hash": "338de3db49718de0d549bc2a6026884b"
   },
   "src/main.js": {
-    "mtime": 1793542230.67855,
-    "seen": 1794098622.5594935,
+    "mtime": 1794100526.2912786,
+    "seen": 1794100585.290585,
     "ast_hash": "933491f8c9c96b827fbb6d4d045a0d19",
     "semantic_hash": "933491f8c9c96b827fbb6d4d045a0d19"
   },
   "src/ui/appicons.js": {
-    "mtime": 1793544391.6272283,
-    "seen": 1794098622.5595117,
+    "mtime": 1794100526.2912786,
+    "seen": 1794100585.290587,
     "ast_hash": "f6f13ffc2df4b733ac7cf57825a665eb",
     "semantic_hash": "f6f13ffc2df4b733ac7cf57825a665eb"
   },
   "src/ui/audio.js": {
-    "mtime": 1793542230.6811063,
-    "seen": 1794098622.559529,
+    "mtime": 1794100526.291691,
+    "seen": 1794100585.2905884,
     "ast_hash": "95f29ca5ed75f428dd18c0b0712c1749",
     "semantic_hash": "95f29ca5ed75f428dd18c0b0712c1749"
   },
   "src/ui/classroom.js": {
-    "mtime": 1793544391.630683,
-    "seen": 1794098622.559545,
+    "mtime": 1794100526.291691,
+    "seen": 1794100585.29059,
     "ast_hash": "224456f77c00387a5b1aedf5c826eb6f",
     "semantic_hash": "224456f77c00387a5b1aedf5c826eb6f"
   },
   "src/ui/creator.js": {
-    "mtime": 1793544391.6326075,
-    "seen": 1794098622.5595613,
+    "mtime": 1794100526.291691,
+    "seen": 1794100585.2905915,
     "ast_hash": "92650945edb234e83143cfaff27ba85b",
     "semantic_hash": "92650945edb234e83143cfaff27ba85b"
   },
   "src/ui/creator/title.js": {
-    "mtime": 1793542296.5832736,
-    "seen": 1794098622.559577,
+    "mtime": 1794100526.291691,
+    "seen": 1794100585.290593,
     "ast_hash": "ca1db53bc0265dd1cda90c9109722ce9",
     "semantic_hash": "ca1db53bc0265dd1cda90c9109722ce9"
   },
   "src/ui/dom.js": {
-    "mtime": 1793544391.634838,
-    "seen": 1794098622.5595949,
+    "mtime": 1794100526.291691,
+    "seen": 1794100585.2905946,
     "ast_hash": "460f238cb9ad1063deeedf59c1cd9e7b",
     "semantic_hash": "460f238cb9ad1063deeedf59c1cd9e7b"
   },
   "src/ui/game.js": {
-    "mtime": 1793542296.5900552,
-    "seen": 1794098622.5596106,
+    "mtime": 1794100526.291691,
+    "seen": 1794100585.290596,
     "ast_hash": "be20a1e270ab50279c2dbcb6df257b19",
     "semantic_hash": "be20a1e270ab50279c2dbcb6df257b19"
   },
   "src/ui/game/locations.js": {
-    "mtime": 1793542296.5905855,
-    "seen": 1794098622.5596266,
+    "mtime": 1794100526.291691,
+    "seen": 1794100585.2905977,
     "ast_hash": "2b21b650e14f00dd808f9513ca6b08d4",
     "semantic_hash": "2b21b650e14f00dd808f9513ca6b08d4"
   },
   "src/ui/game/schoolday.js": {
-    "mtime": 1793542296.5915515,
-    "seen": 1794098622.559643,
+    "mtime": 1794100526.2923412,
+    "seen": 1794100585.290599,
     "ast_hash": "c7bf0eb6a084ab73419b857776f65d67",
     "semantic_hash": "c7bf0eb6a084ab73419b857776f65d67"
   },
   "src/ui/hud.js": {
-    "mtime": 1793542296.5924673,
-    "seen": 1794098622.5596604,
+    "mtime": 1794100526.2923412,
+    "seen": 1794100585.2906008,
     "ast_hash": "449ddca3231ccf6527a11ab2013e52be",
     "semantic_hash": "449ddca3231ccf6527a11ab2013e52be"
   },
   "src/ui/input.js": {
-    "mtime": 1793542296.593746,
-    "seen": 1794098622.559677,
+    "mtime": 1794100526.2923412,
+    "seen": 1794100585.2906022,
     "ast_hash": "9cd60cd2f9cd886ac4887286dc599c7b",
     "semantic_hash": "9cd60cd2f9cd886ac4887286dc599c7b"
   },
   "src/ui/jersey.js": {
-    "mtime": 1793544391.64242,
-    "seen": 1794098622.5596924,
+    "mtime": 1794100526.2923412,
+    "seen": 1794100585.2906039,
     "ast_hash": "8e6945e8c0d1bb8dbc87060461587fa7",
     "semantic_hash": "8e6945e8c0d1bb8dbc87060461587fa7"
   },
   "src/ui/jobs.js": {
-    "mtime": 1793542296.594268,
-    "seen": 1794098622.5597086,
+    "mtime": 1794100526.2923412,
+    "seen": 1794100585.2906055,
     "ast_hash": "92eaafbb06202ccc1929483dadc33f62",
     "semantic_hash": "92eaafbb06202ccc1929483dadc33f62"
   },
   "src/ui/logo.js": {
-    "mtime": 1793542296.5957742,
-    "seen": 1794098622.5597246,
+    "mtime": 1794100526.2923412,
+    "seen": 1794100585.2906072,
     "ast_hash": "f4c0cc0de3ec78375a600d8bbb046a29",
     "semantic_hash": "f4c0cc0de3ec78375a600d8bbb046a29"
   },
   "src/ui/mapview.js": {
-    "mtime": 1793542296.5966938,
-    "seen": 1794098622.55974,
+    "mtime": 1794100526.2923412,
+    "seen": 1794100585.2906086,
     "ast_hash": "c8ec5fc1ccd43950d00d06f9ba0560ae",
     "semantic_hash": "c8ec5fc1ccd43950d00d06f9ba0560ae"
   },
   "src/ui/match.js": {
-    "mtime": 1793544391.6489296,
-    "seen": 1794098622.5597565,
+    "mtime": 1794100526.2923412,
+    "seen": 1794100585.29061,
     "ast_hash": "dac0b3108c5dcbbc32cdbd93d78c4f7e",
     "semantic_hash": "dac0b3108c5dcbbc32cdbd93d78c4f7e"
   },
   "src/ui/matchPlays.js": {
-    "mtime": 1793544391.6513414,
-    "seen": 1794098622.559772,
+    "mtime": 1794100526.2923412,
+    "seen": 1794100585.2906117,
     "ast_hash": "d67b80c48de2dd4c87cfd51b1f8f913b",
     "semantic_hash": "d67b80c48de2dd4c87cfd51b1f8f913b"
   },
   "src/ui/minigames.js": {
-    "mtime": 1793542296.599399,
-    "seen": 1794098622.559788,
+    "mtime": 1794100526.2923412,
+    "seen": 1794100585.290613,
     "ast_hash": "9a21ae0607e36c6d24d8d1ccbcc0a346",
     "semantic_hash": "9a21ae0607e36c6d24d8d1ccbcc0a346"
   },
   "src/ui/newspaper.js": {
-    "mtime": 1793542296.5998106,
-    "seen": 1794098622.5598028,
+    "mtime": 1794100526.2923412,
+    "seen": 1794100585.2906146,
     "ast_hash": "296723903d30ec4030b46f54fb54cbee",
     "semantic_hash": "296723903d30ec4030b46f54fb54cbee"
   },
   "src/ui/phone.js": {
-    "mtime": 1793542072.6993804,
-    "seen": 1794098622.5598185,
+    "mtime": 1794100526.2923412,
+    "seen": 1794100585.290616,
     "ast_hash": "00ce4207d7e35e68cc6d47729fd826af",
     "semantic_hash": "00ce4207d7e35e68cc6d47729fd826af"
   },
   "src/ui/phone/contacts.js": {
-    "mtime": 1793542150.367377,
-    "seen": 1794098622.559834,
+    "mtime": 1794100526.2923412,
+    "seen": 1794100585.2906177,
     "ast_hash": "3f165850b389d3720ab9f7b81b3de7b3",
     "semantic_hash": "3f165850b389d3720ab9f7b81b3de7b3"
   },
   "src/ui/phone/field.js": {
-    "mtime": 1793542296.6003172,
-    "seen": 1794098622.5598514,
+    "mtime": 1794100526.2933662,
+    "seen": 1794100585.2906194,
     "ast_hash": "7a3895a3f871424f211fef602eb2b7a5",
     "semantic_hash": "7a3895a3f871424f211fef602eb2b7a5"
   },
   "src/ui/phone/home.js": {
-    "mtime": 1793542296.6005874,
-    "seen": 1794098622.5598683,
+    "mtime": 1794100526.2933662,
+    "seen": 1794100585.2906213,
     "ast_hash": "ca3368e25387c33b99345f18933b27ab",
     "semantic_hash": "ca3368e25387c33b99345f18933b27ab"
   },
   "src/ui/phone/league.js": {
-    "mtime": 1793542296.6009266,
-    "seen": 1794098622.5598853,
+    "mtime": 1794100526.2933662,
+    "seen": 1794100585.2906227,
     "ast_hash": "36af19df6333e75623415498e6f84e65",
     "semantic_hash": "36af19df6333e75623415498e6f84e65"
   },
   "src/ui/phone/money.js": {
-    "mtime": 1793542296.6017592,
-    "seen": 1794098622.559902,
+    "mtime": 1794100526.2933662,
+    "seen": 1794100585.290624,
     "ast_hash": "afc9e08905afc68116508fcd0d29f5c8",
     "semantic_hash": "afc9e08905afc68116508fcd0d29f5c8"
   },
   "src/ui/phone/registry.js": {
-    "mtime": 1793542296.601985,
-    "seen": 1794098622.5599189,
+    "mtime": 1794100526.2933662,
+    "seen": 1794100585.2906256,
     "ast_hash": "ade94d3a0908aaaf33f01901003f59d7",
     "semantic_hash": "ade94d3a0908aaaf33f01901003f59d7"
   },
   "src/ui/phone/school.js": {
-    "mtime": 1793542296.6022353,
-    "seen": 1794098622.559936,
+    "mtime": 1794100526.2933662,
+    "seen": 1794100585.2906272,
     "ast_hash": "af4da7db3090e30e452f747d2913e7dd",
     "semantic_hash": "af4da7db3090e30e452f747d2913e7dd"
   },
   "src/ui/phone/settings.js": {
-    "mtime": 1793542150.379377,
-    "seen": 1794098622.5599515,
+    "mtime": 1794100526.2933662,
+    "seen": 1794100585.2906287,
     "ast_hash": "db8daede10b63172fbcd655ea02bbbbf",
     "semantic_hash": "db8daede10b63172fbcd655ea02bbbbf"
   },
   "src/ui/phone/social.js": {
-    "mtime": 1793542296.6026032,
-    "seen": 1794098622.5599678,
+    "mtime": 1794100526.2933662,
+    "seen": 1794100585.2906303,
     "ast_hash": "7157676ad8068b99cf7d216cc33c9dce",
     "semantic_hash": "7157676ad8068b99cf7d216cc33c9dce"
   },
   "src/ui/phone/team.js": {
-    "mtime": 1793542296.6041505,
-    "seen": 1794098622.5599844,
+    "mtime": 1794100526.2933662,
+    "seen": 1794100585.2906318,
     "ast_hash": "83714d08efeb2ddd61fb128009747ae6",
     "semantic_hash": "83714d08efeb2ddd61fb128009747ae6"
   },
   "src/ui/phone/training.js": {
-    "mtime": 1793542150.387377,
-    "seen": 1794098622.560002,
+    "mtime": 1794100526.2933662,
+    "seen": 1794100585.2906332,
     "ast_hash": "b4106b5142336cd1c0ee7cb2d0386b24",
     "semantic_hash": "b4106b5142336cd1c0ee7cb2d0386b24"
   },
   "src/ui/places.js": {
-    "mtime": 1793542296.605191,
-    "seen": 1794098622.5600178,
+    "mtime": 1794100526.2933662,
+    "seen": 1794100585.2906349,
     "ast_hash": "5b683eb4b74e683722ca730dc999c508",
     "semantic_hash": "5b683eb4b74e683722ca730dc999c508"
   },
   "src/ui/signup.js": {
-    "mtime": 1793542296.605392,
-    "seen": 1794098622.560033,
+    "mtime": 1794100526.2933662,
+    "seen": 1794100585.290636,
     "ast_hash": "2660395f8445f1a658e4d0c9ccbc1e1b",
     "semantic_hash": "2660395f8445f1a658e4d0c9ccbc1e1b"
   },
   "src/ui/talk.js": {
-    "mtime": 1793542296.6098874,
-    "seen": 1794098622.5600493,
+    "mtime": 1794100526.2933662,
+    "seen": 1794100585.2906375,
     "ast_hash": "0d246a4b466c6ee40fda8bf2df16bc99",
     "semantic_hash": "0d246a4b466c6ee40fda8bf2df16bc99"
   },
   "src/ui/tryout.js": {
-    "mtime": 1793542296.6106064,
-    "seen": 1794098622.5600648,
+    "mtime": 1794100526.2933662,
+    "seen": 1794100585.2906392,
     "ast_hash": "b92cc340eef1f72487aa0f028c9fd1a1",
     "semantic_hash": "b92cc340eef1f72487aa0f028c9fd1a1"
   },
   "src/ui/wait.js": {
-    "mtime": 1793542296.6108122,
-    "seen": 1794098622.5600812,
+    "mtime": 1794100526.2933662,
+    "seen": 1794100585.2906406,
     "ast_hash": "dc55d8dce95edd23e555fe13bca70d53",
     "semantic_hash": "dc55d8dce95edd23e555fe13bca70d53"
   },
   "src/world2d/arenas.js": {
-    "mtime": 1793542296.6118603,
-    "seen": 1794098622.5600975,
+    "mtime": 1794100526.2942784,
+    "seen": 1794100585.2906425,
     "ast_hash": "40d58b15b7e3e33869e908f7f328326a",
     "semantic_hash": "40d58b15b7e3e33869e908f7f328326a"
   },
   "src/world2d/build.js": {
-    "mtime": 1793544391.6716301,
-    "seen": 1794098622.5601137,
+    "mtime": 1794100526.2942784,
+    "seen": 1794100585.290644,
     "ast_hash": "5e7c17e0638836e2a4947145cb60395a",
     "semantic_hash": "5e7c17e0638836e2a4947145cb60395a"
   },
   "src/world2d/buildings.js": {
-    "mtime": 1793542098.0713794,
-    "seen": 1794098622.560129,
+    "mtime": 1794100526.2942784,
+    "seen": 1794100585.2906456,
     "ast_hash": "8925f07d7ff5dfda9eb7427cac6cd6c1",
     "semantic_hash": "8925f07d7ff5dfda9eb7427cac6cd6c1"
   },
   "src/world2d/engine.js": {
-    "mtime": 1793544391.674569,
-    "seen": 1794098622.5601454,
+    "mtime": 1794100526.2942784,
+    "seen": 1794100585.290647,
     "ast_hash": "2aa05de1d5d091e58a7211be71cac575",
     "semantic_hash": "2aa05de1d5d091e58a7211be71cac575"
   },
   "src/world2d/engine/input.js": {
-    "mtime": 1793542296.6184282,
-    "seen": 1794098622.5601609,
+    "mtime": 1794100526.2942784,
+    "seen": 1794100585.2906485,
     "ast_hash": "746f7cf692279d3b63f08b1354531f87",
     "semantic_hash": "746f7cf692279d3b63f08b1354531f87"
   },
   "src/world2d/engine/motion.js": {
-    "mtime": 1793542296.6187768,
-    "seen": 1794098622.560179,
+    "mtime": 1794100526.294922,
+    "seen": 1794100585.2906501,
     "ast_hash": "de697eef22e36cfdae2b5fb07df0d19d",
     "semantic_hash": "de697eef22e36cfdae2b5fb07df0d19d"
   },
   "src/world2d/engine/render.js": {
-    "mtime": 1793544391.6772764,
-    "seen": 1794098622.5601964,
+    "mtime": 1794100526.294922,
+    "seen": 1794100585.2906516,
     "ast_hash": "3cbd200d2128f28c9937abe8e87acc36",
     "semantic_hash": "3cbd200d2128f28c9937abe8e87acc36"
   },
   "src/world2d/engine/world.js": {
-    "mtime": 1793542098.1793795,
-    "seen": 1794098622.5602145,
+    "mtime": 1794100526.294922,
+    "seen": 1794100585.290653,
     "ast_hash": "fc31b57407c0b0c805b5b477865da869",
     "semantic_hash": "fc31b57407c0b0c805b5b477865da869"
   },
   "src/world2d/fields.js": {
-    "mtime": 1793542296.6212363,
-    "seen": 1794098622.5602307,
+    "mtime": 1794100526.294922,
+    "seen": 1794100585.2906544,
     "ast_hash": "5a84095e774d6bdb35603be73838f62f",
     "semantic_hash": "5a84095e774d6bdb35603be73838f62f"
   },
   "src/world2d/looks.js": {
-    "mtime": 1793544391.7382529,
-    "seen": 1794098622.560246,
+    "mtime": 1794100526.294922,
+    "seen": 1794100585.290656,
     "ast_hash": "3ad28f18ae6ec7b2c44d35e78f378588",
     "semantic_hash": "3ad28f18ae6ec7b2c44d35e78f378588"
   },
   "src/world2d/paint.js": {
-    "mtime": 1793544391.6820698,
-    "seen": 1794098622.5602605,
+    "mtime": 1794100526.294922,
+    "seen": 1794100585.2906573,
     "ast_hash": "3c2d3dbb459dd566fb6ba7a9d33e9ece",
     "semantic_hash": "3c2d3dbb459dd566fb6ba7a9d33e9ece"
   },
   "src/world2d/patterns.js": {
-    "mtime": 1793542296.6226823,
-    "seen": 1794098622.5602756,
+    "mtime": 1794100526.294922,
+    "seen": 1794100585.2906587,
     "ast_hash": "3247edfd5f108639b1c8ed2346e31d61",
     "semantic_hash": "3247edfd5f108639b1c8ed2346e31d61"
   },
   "src/world2d/project.js": {
-    "mtime": 1793544391.6847403,
-    "seen": 1794098622.560292,
+    "mtime": 1794100526.294922,
+    "seen": 1794100585.2906604,
     "ast_hash": "d3fecd871975946190458692a859d85e",
     "semantic_hash": "d3fecd871975946190458692a859d85e"
   },
   "src/world2d/props.js": {
-    "mtime": 1793542073.4593804,
-    "seen": 1794098622.560308,
+    "mtime": 1794100526.294922,
+    "seen": 1794100585.2906618,
     "ast_hash": "7ea03c1a8e743671d8a1d597d7f53dba",
     "semantic_hash": "7ea03c1a8e743671d8a1d597d7f53dba"
   },
   "src/world2d/props/furniture.js": {
-    "mtime": 1793542150.451377,
-    "seen": 1794098622.5603242,
+    "mtime": 1794100526.2952785,
+    "seen": 1794100585.2906635,
     "ast_hash": "f8b2f17ebdeed74525277263589054f3",
     "semantic_hash": "f8b2f17ebdeed74525277263589054f3"
   },
   "src/world2d/props/houses.js": {
-    "mtime": 1793542150.451377,
-    "seen": 1794098622.560343,
+    "mtime": 1794100526.2956953,
+    "seen": 1794100585.290665,
     "ast_hash": "e09e9e262563077f48c072f41fb9c740",
     "semantic_hash": "e09e9e262563077f48c072f41fb9c740"
   },
   "src/world2d/props/nature.js": {
-    "mtime": 1793542150.455377,
-    "seen": 1794098622.5603602,
+    "mtime": 1794100526.2956953,
+    "seen": 1794100585.2906666,
     "ast_hash": "01f907e347f81dc957db6112aed2588e",
     "semantic_hash": "01f907e347f81dc957db6112aed2588e"
   },
   "src/world2d/props/objects.js": {
-    "mtime": 1793542098.3513794,
-    "seen": 1794098622.560378,
+    "mtime": 1794100526.2956953,
+    "seen": 1794100585.290668,
     "ast_hash": "41357c1a5f85016aadcfe71d34ffeb19",
     "semantic_hash": "41357c1a5f85016aadcfe71d34ffeb19"
   },
   "src/world2d/props/playground.js": {
-    "mtime": 1793542098.3593793,
-    "seen": 1794098622.560396,
+    "mtime": 1794100526.2956953,
+    "seen": 1794100585.2906697,
     "ast_hash": "0ff28751f328f8ab184455683ffc56a5",
     "semantic_hash": "0ff28751f328f8ab184455683ffc56a5"
   },
   "src/world2d/props/school.js": {
-    "mtime": 1793542098.3753793,
-    "seen": 1794098622.5604131,
+    "mtime": 1794100526.2956953,
+    "seen": 1794100585.290671,
     "ast_hash": "48b8050eea77b31e578f34c8b229c79c",
     "semantic_hash": "48b8050eea77b31e578f34c8b229c79c"
   },
   "src/world2d/props/stores.js": {
-    "mtime": 1793542098.3833795,
-    "seen": 1794098622.5604298,
+    "mtime": 1794100526.2956953,
+    "seen": 1794100585.2906723,
     "ast_hash": "cd251186aa5a4cf4806a6b390d35309b",
     "semantic_hash": "cd251186aa5a4cf4806a6b390d35309b"
   },
   "src/world2d/props/street.js": {
-    "mtime": 1793542098.3873794,
-    "seen": 1794098622.5604467,
+    "mtime": 1794100526.2956953,
+    "seen": 1794100585.290674,
     "ast_hash": "20d3932ab37a7f9fcbf5dbbbb68d5f89",
     "semantic_hash": "20d3932ab37a7f9fcbf5dbbbb68d5f89"
   },
   "src/world2d/scenes.js": {
-    "mtime": 1793542098.3913794,
-    "seen": 1794098622.560464,
+    "mtime": 1794100526.2956953,
+    "seen": 1794100585.2906754,
     "ast_hash": "dc2c414780e044226ceab138108b0682",
     "semantic_hash": "dc2c414780e044226ceab138108b0682"
   },
   "src/world2d/scenes/common.js": {
-    "mtime": 1793542098.4033794,
-    "seen": 1794098622.5604792,
+    "mtime": 1794100526.2956953,
+    "seen": 1794100585.290677,
     "ast_hash": "7e7d41184333e2a26922c4343068a9c4",
     "semantic_hash": "7e7d41184333e2a26922c4343068a9c4"
   },
   "src/world2d/scenes/grocery.js": {
-    "mtime": 1793542098.4233794,
-    "seen": 1794098622.5604968,
+    "mtime": 1794100526.296187,
+    "seen": 1794100585.2906783,
     "ast_hash": "75ee84535476712c8cd1e612d143e6b8",
     "semantic_hash": "75ee84535476712c8cd1e612d143e6b8"
   },
   "src/world2d/scenes/home.js": {
-    "mtime": 1793542150.483377,
-    "seen": 1794098622.5605137,
+    "mtime": 1794100526.296187,
+    "seen": 1794100585.2906797,
     "ast_hash": "e9e2bcd785d0fbe5c499b97fe216df7e",
     "semantic_hash": "e9e2bcd785d0fbe5c499b97fe216df7e"
   },
   "src/world2d/scenes/library.js": {
-    "mtime": 1793542098.4953794,
-    "seen": 1794098622.560531,
+    "mtime": 1794100526.296187,
+    "seen": 1794100585.2906814,
     "ast_hash": "d3c483ea16c582c64dff045881b63088",
     "semantic_hash": "d3c483ea16c582c64dff045881b63088"
   },
   "src/world2d/scenes/mall.js": {
-    "mtime": 1793542098.5153794,
-    "seen": 1794098622.560548,
+    "mtime": 1794100526.296187,
+    "seen": 1794100585.2906828,
     "ast_hash": "77c8ff41e8c14900894c3e55c47cf699",
     "semantic_hash": "77c8ff41e8c14900894c3e55c47cf699"
   },
   "src/world2d/scenes/museum.js": {
-    "mtime": 1793544462.5784163,
-    "seen": 1794098622.5605648,
+    "mtime": 1794100526.2962785,
+    "seen": 1794100585.2906845,
     "ast_hash": "0d607dde021ca459f64db04b6f2a239f",
     "semantic_hash": "0d607dde021ca459f64db04b6f2a239f"
   },
   "src/world2d/scenes/neighborhood.js": {
-    "mtime": 1793544391.7024055,
-    "seen": 1794098622.5605812,
+    "mtime": 1794100526.2962785,
+    "seen": 1794100585.290686,
     "ast_hash": "6da1fac4f9575530236d447e6b406e8a",
     "semantic_hash": "6da1fac4f9575530236d447e6b406e8a"
   },
   "src/world2d/scenes/school.js": {
-    "mtime": 1793542098.5713794,
-    "seen": 1794098622.5605984,
+    "mtime": 1794100526.2962785,
+    "seen": 1794100585.2906876,
     "ast_hash": "426a6df1bd7e7eecf4c641950db9d557",
     "semantic_hash": "426a6df1bd7e7eecf4c641950db9d557"
   },
   "src/world2d/scenes/school/classroom.js": {
-    "mtime": 1793542098.5913794,
-    "seen": 1794098622.5606143,
+    "mtime": 1794100526.2962785,
+    "seen": 1794100585.290689,
     "ast_hash": "a353bc719f6c376e15c47f0901c9090d",
     "semantic_hash": "a353bc719f6c376e15c47f0901c9090d"
   },
   "src/world2d/scenes/school/serviceRoom.js": {
-    "mtime": 1793542150.507377,
-    "seen": 1794098622.5606344,
+    "mtime": 1794100526.296927,
+    "seen": 1794100585.2906907,
     "ast_hash": "1dcb5605a1476121509f4764f7c91e55",
     "semantic_hash": "1dcb5605a1476121509f4764f7c91e55"
   },
   "src/world2d/scenes/turning.js": {
-    "mtime": 1793542150.511377,
-    "seen": 1794098622.5606532,
+    "mtime": 1794100526.296927,
+    "seen": 1794100585.2906923,
     "ast_hash": "3292cc3ddd06ef709573ee89a7c027e9",
     "semantic_hash": "3292cc3ddd06ef709573ee89a7c027e9"
   },
   "src/world2d/scenes/venues.js": {
-    "mtime": 1793542098.6273794,
-    "seen": 1794098622.5606706,
+    "mtime": 1794100526.296927,
+    "seen": 1794100585.290694,
     "ast_hash": "00d3b0749b351e43f0722b1a24c6bb62",
     "semantic_hash": "00d3b0749b351e43f0722b1a24c6bb62"
   },
   "src/world2d/sprites.js": {
-    "mtime": 1793542098.6353793,
-    "seen": 1794098622.5606868,
+    "mtime": 1794100526.296927,
+    "seen": 1794100585.2906954,
     "ast_hash": "2d03039d4ec700f3a2a5eb7040d66707",
     "semantic_hash": "2d03039d4ec700f3a2a5eb7040d66707"
   },
   "src/world2d/textures.js": {
-    "mtime": 1793542073.8713803,
-    "seen": 1794098622.5607023,
+    "mtime": 1794100526.296927,
+    "seen": 1794100585.2906969,
     "ast_hash": "854c507b0206423d3262d16d9e842828",
     "semantic_hash": "854c507b0206423d3262d16d9e842828"
   },
   "src/world2d/three2d.js": {
-    "mtime": 1793542150.519377,
-    "seen": 1794098622.5607176,
+    "mtime": 1794100526.296927,
+    "seen": 1794100585.2906983,
     "ast_hash": "e0255f593e84e4752c14ef50d712c44d",
     "semantic_hash": "e0255f593e84e4752c14ef50d712c44d"
   },
   "tests/e2e-input.mjs": {
-    "mtime": 1793542150.523377,
-    "seen": 1794098622.5607338,
+    "mtime": 1794100526.2974212,
+    "seen": 1794100585.2906997,
     "ast_hash": "4ba66eb8d06f4855853922abea7fcdd6",
     "semantic_hash": "4ba66eb8d06f4855853922abea7fcdd6"
   },
   "tests/e2e-jobs.mjs": {
-    "mtime": 1793542150.527377,
-    "seen": 1794098622.560749,
+    "mtime": 1794100526.2977643,
+    "seen": 1794100585.2907014,
     "ast_hash": "3a900ba1328febcaa9acb37d0ea9f3d9",
     "semantic_hash": "3a900ba1328febcaa9acb37d0ea9f3d9"
   },
   "tests/e2e.mjs": {
-    "mtime": 1793542129.011378,
-    "seen": 1794098622.5607626,
+    "mtime": 1794100526.2977643,
+    "seen": 1794100585.2907028,
     "ast_hash": "0421071cc978bbca032b642ff03bdd4a",
     "semantic_hash": "0421071cc978bbca032b642ff03bdd4a"
   },
   "tests/economy.test.mjs": {
-    "mtime": 1793542098.7833793,
-    "seen": 1794098622.5607777,
+    "mtime": 1794100526.2977643,
+    "seen": 1794100585.2907045,
     "ast_hash": "b1da88d2d8ddb380a23bc01f0725dc85",
     "semantic_hash": "b1da88d2d8ddb380a23bc01f0725dc85"
   },
   "tests/helpers.mjs": {
-    "mtime": 1793542074.0033805,
-    "seen": 1794098622.5607922,
+    "mtime": 1794100526.2977643,
+    "seen": 1794100585.290706,
     "ast_hash": "30fb0f7f708cae77440edaf90457fb18",
     "semantic_hash": "30fb0f7f708cae77440edaf90457fb18"
   },
   "tests/league.test.mjs": {
-    "mtime": 1793542098.8113794,
-    "seen": 1794098622.5608058,
+    "mtime": 1794100526.2977643,
+    "seen": 1794100585.2907073,
     "ast_hash": "599a7624a0499d685033be9a128436b9",
     "semantic_hash": "599a7624a0499d685033be9a128436b9"
   },
   "tests/sim.test.mjs": {
-    "mtime": 1793542098.8353794,
-    "seen": 1794098622.5608208,
+    "mtime": 1794100526.2977643,
+    "seen": 1794100585.290709,
     "ast_hash": "1eca90e17906a6cdc7dd8a37f3944ed4",
     "semantic_hash": "1eca90e17906a6cdc7dd8a37f3944ed4"
   },
   "tests/social.test.mjs": {
-    "mtime": 1793542098.8393793,
-    "seen": 1794098622.5608354,
+    "mtime": 1794100526.2977643,
+    "seen": 1794100585.2907104,
     "ast_hash": "213b935d2e20d91657458b3d59be8dfc",
     "semantic_hash": "213b935d2e20d91657458b3d59be8dfc"
   },
   "tests/world.test.mjs": {
-    "mtime": 1793542098.8553793,
-    "seen": 1794098622.560849,
+    "mtime": 1794100526.2977643,
+    "seen": 1794100585.290712,
     "ast_hash": "d01ea3fb6be3c446cdd3efa999dfa57c",
     "semantic_hash": "d01ea3fb6be3c446cdd3efa999dfa57c"
   },
   "tools/cut_renders.py": {
-    "mtime": 1793539059.7069135,
-    "seen": 1794098622.560864,
+    "mtime": 1794100526.2977643,
+    "seen": 1794100585.2907135,
     "ast_hash": "69add7816069e35fd1c551b87706fada",
     "semantic_hash": "69add7816069e35fd1c551b87706fada"
   },
   "tools/generate_kids.py": {
-    "mtime": 1793539059.7078364,
-    "seen": 1794098622.5608811,
+    "mtime": 1794100526.2983074,
+    "seen": 1794100585.2907152,
     "ast_hash": "7a0a21f81771bd6bd27de8f6710f4cae",
     "semantic_hash": "7a0a21f81771bd6bd27de8f6710f4cae"
+  },
+  ".claude/settings.json": {
+    "mtime": 1794100526.2552795,
+    "seen": 1794100585.2904794,
+    "ast_hash": "a440882d3105da08f78f3368d5ac5555",
+    "semantic_hash": ""
+  },
+  ".github/workflows/code-graph.yml": {
+    "mtime": 1794100526.2560189,
+    "seen": 1794100585.2904851,
+    "ast_hash": "f52157883248cc370f0174123f18f8d3",
+    "semantic_hash": ""
+  },
+  "CLAUDE.md": {
+    "mtime": 1794100526.2560818,
+    "seen": 1794100585.2907171,
+    "ast_hash": "166d66e98620c4b6e56a9e9645d11555",
+    "semantic_hash": ""
+  },
+  "GAME_DESIGN.md": {
+    "mtime": 1794100526.2562795,
+    "seen": 1794100585.2907193,
+    "ast_hash": "481b6e3ec55d8a62447412268be552f1",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1794100526.2562795,
+    "seen": 1794100585.290721,
+    "ast_hash": "e9a0e9537ea076a80ef86f03de28426e",
+    "semantic_hash": ""
+  },
+  "art/3d/MODEL_SPEC.md": {
+    "mtime": 1794100526.2567787,
+    "seen": 1794100585.2907226,
+    "ast_hash": "b2e6de78129efee9f761063ca6106d36",
+    "semantic_hash": ""
+  },
+  "art/3d/render-prompts.md": {
+    "mtime": 1794100526.2572794,
+    "seen": 1794100585.2907243,
+    "ast_hash": "ac01bf43ad677628075ddc1c0842d456",
+    "semantic_hash": ""
+  },
+  "art/README.md": {
+    "mtime": 1794100526.2572794,
+    "seen": 1794100585.2907257,
+    "ast_hash": "2104fa3af328984b4eb15900204ed4ba",
+    "semantic_hash": ""
+  },
+  "index.html": {
+    "mtime": 1794100526.2872787,
+    "seen": 1794100585.2907271,
+    "ast_hash": "daffd80cfb0f49efa2b5b82b2c4d3aeb",
+    "semantic_hash": ""
+  },
+  "art/characters/adults/ADULT-CoachBriggs.svg": {
+    "mtime": 1794100526.258178,
+    "seen": 1794100585.2907283,
+    "ast_hash": "8f8aaa5d74b2e74e6691cfece7e9ec96",
+    "semantic_hash": ""
+  },
+  "art/characters/adults/ADULT-CoachDave.svg": {
+    "mtime": 1794100526.2582989,
+    "seen": 1794100585.29073,
+    "ast_hash": "9991bc7246aa06cf9d9640a6b970d5a7",
+    "semantic_hash": ""
+  },
+  "art/characters/adults/ADULT-Dad.svg": {
+    "mtime": 1794100526.2582989,
+    "seen": 1794100585.2907314,
+    "ast_hash": "1cb00c45b7596081beef1d3eeadaa6a9",
+    "semantic_hash": ""
+  },
+  "art/characters/adults/ADULT-DrOsei.svg": {
+    "mtime": 1794100526.2582989,
+    "seen": 1794100585.290733,
+    "ast_hash": "9e7917a76e8a2da72269cd82b74f79ca",
+    "semantic_hash": ""
+  },
+  "art/characters/adults/ADULT-Mom.svg": {
+    "mtime": 1794100526.2582989,
+    "seen": 1794100585.2907343,
+    "ast_hash": "dc998e2abbcb7d1f3025c1033bf9c95b",
+    "semantic_hash": ""
+  },
+  "art/characters/adults/ADULT-MrBellweather.svg": {
+    "mtime": 1794100526.2582989,
+    "seen": 1794100585.290736,
+    "ast_hash": "ace65fadb018cce4b46f0d5c6cb8602e",
+    "semantic_hash": ""
+  },
+  "art/characters/adults/ADULT-MrDabney.svg": {
+    "mtime": 1794100526.2582989,
+    "seen": 1794100585.2907374,
+    "ast_hash": "3ab70f8e317a6835f54d4fa0ebd1cc83",
+    "semantic_hash": ""
+  },
+  "art/characters/adults/ADULT-MrFussbudget.svg": {
+    "mtime": 1794100526.2582989,
+    "seen": 1794100585.290739,
+    "ast_hash": "08e1639d5a44be6993817b9e347b8862",
+    "semantic_hash": ""
+  },
+  "art/characters/adults/ADULT-MrHopper.svg": {
+    "mtime": 1794100526.2582989,
+    "seen": 1794100585.2907405,
+    "ast_hash": "66386a44e23f8fdb4896152e9a419cde",
+    "semantic_hash": ""
+  },
+  "art/characters/adults/ADULT-MrKrantz.svg": {
+    "mtime": 1794100526.2582989,
+    "seen": 1794100585.2907417,
+    "ast_hash": "d4e18edd81bc3ad6d3785056784ae755",
+    "semantic_hash": ""
+  },
+  "art/characters/adults/ADULT-MrLindqvist.svg": {
+    "mtime": 1794100526.2582989,
+    "seen": 1794100585.2907434,
+    "ast_hash": "c5ac92240b95390b6ea085580a86864f",
+    "semantic_hash": ""
+  },
+  "art/characters/adults/ADULT-MrOkonkwo.svg": {
+    "mtime": 1794100526.2582989,
+    "seen": 1794100585.2907445,
+    "ast_hash": "56e275cdceb65145bd2e408fd11b8764",
+    "semantic_hash": ""
+  },
+  "art/characters/adults/ADULT-MrPemberton.svg": {
+    "mtime": 1794100526.2582989,
+    "seen": 1794100585.2907462,
+    "ast_hash": "7a68fdc64a9c4b12bc1197b64f8404fb",
+    "semantic_hash": ""
+  },
+  "art/characters/adults/ADULT-MrPetrakis.svg": {
+    "mtime": 1794100526.2582989,
+    "seen": 1794100585.2907474,
+    "ast_hash": "3c4808f6a751954c16411bebc6acfcb5",
+    "semantic_hash": ""
+  },
+  "art/characters/adults/ADULT-MrSparks.svg": {
+    "mtime": 1794100526.2582989,
+    "seen": 1794100585.2907488,
+    "ast_hash": "045628d68240d8ee29bb23a845db2291",
+    "semantic_hash": ""
+  },
+  "art/characters/adults/ADULT-MrVance.svg": {
+    "mtime": 1794100526.2582989,
+    "seen": 1794100585.2907503,
+    "ast_hash": "7d747c698480b4b498fb276dcf3f4f60",
+    "semantic_hash": ""
+  },
+  "art/characters/adults/ADULT-MrsBramblebee.svg": {
+    "mtime": 1794100526.2582989,
+    "seen": 1794100585.2907517,
+    "ast_hash": "1fe82cbaf32f9218ac65121afb9f9f67",
+    "semantic_hash": ""
+  },
+  "art/characters/adults/ADULT-MrsDelacroix.svg": {
+    "mtime": 1794100526.2582989,
+    "seen": 1794100585.2907531,
+    "ast_hash": "3a4db21d2192ff0ecec35719802051a7",
+    "semantic_hash": ""
+  },
+  "art/characters/adults/ADULT-MrsGlitter.svg": {
+    "mtime": 1794100526.2582989,
+    "seen": 1794100585.2907546,
+    "ast_hash": "949963abf68da4b652d1ac3a5d26a8b2",
+    "semantic_hash": ""
+  },
+  "art/characters/adults/ADULT-MrsGrumbleton.svg": {
+    "mtime": 1794100526.2582989,
+    "seen": 1794100585.2907557,
+    "ast_hash": "f724b38bfb5f024ea960380a5a6a9e69",
+    "semantic_hash": ""
+  },
+  "art/characters/adults/ADULT-MrsHargrove.svg": {
+    "mtime": 1794100526.2582989,
+    "seen": 1794100585.2907574,
+    "ast_hash": "c16f1ec755b1cfcb894adb4667f9c01e",
+    "semantic_hash": ""
+  },
+  "art/characters/adults/ADULT-MrsKowalski.svg": {
+    "mtime": 1794100526.2582989,
+    "seen": 1794100585.2907586,
+    "ast_hash": "389af234ad9122bd788d543e36d72581",
+    "semantic_hash": ""
+  },
+  "art/characters/adults/ADULT-MrsPham.svg": {
+    "mtime": 1794100526.2592795,
+    "seen": 1794100585.2907603,
+    "ast_hash": "8d8af5dfef610c620cfeb7f4cff3f617",
+    "semantic_hash": ""
+  },
+  "art/characters/adults/ADULT-MrsTanaka.svg": {
+    "mtime": 1794100526.2592795,
+    "seen": 1794100585.2907617,
+    "ast_hash": "fab2e8731b2281f5252618f93d11f9f1",
+    "semantic_hash": ""
+  },
+  "art/characters/adults/ADULT-MrsWhitlock.svg": {
+    "mtime": 1794100526.2592795,
+    "seen": 1794100585.290763,
+    "ast_hash": "7e1c66eab25037fc68fd1972827810b7",
+    "semantic_hash": ""
+  },
+  "art/characters/adults/ADULT-MsAbara.svg": {
+    "mtime": 1794100526.2592795,
+    "seen": 1794100585.2907646,
+    "ast_hash": "1b663a790b2ecaff6da661633940acc1",
+    "semantic_hash": ""
+  },
+  "art/characters/adults/ADULT-MsFeatherly.svg": {
+    "mtime": 1794100526.2592795,
+    "seen": 1794100585.2907658,
+    "ast_hash": "59db7243a1adec0ae3f6c582609c3630",
+    "semantic_hash": ""
+  },
+  "art/characters/adults/ADULT-MsNakamura.svg": {
+    "mtime": 1794100526.2592795,
+    "seen": 1794100585.2907677,
+    "ast_hash": "d7ede5908d3809b70a1983198afa5158",
+    "semantic_hash": ""
+  },
+  "art/characters/adults/ADULT-MsOduya.svg": {
+    "mtime": 1794100526.2592795,
+    "seen": 1794100585.290769,
+    "ast_hash": "6eb05b39fe118456303c1de02ffe3994",
+    "semantic_hash": ""
+  },
+  "art/characters/adults/ADULT-MsPuddle.svg": {
+    "mtime": 1794100526.2592795,
+    "seen": 1794100585.2907708,
+    "ast_hash": "0ef5783767aa7da77734267e40ea56cd",
+    "semantic_hash": ""
+  },
+  "art/characters/adults/ADULT-MsRuiz.svg": {
+    "mtime": 1794100526.2592795,
+    "seen": 1794100585.2907722,
+    "ast_hash": "fddad63c56443f4867fefddadfd680e7",
+    "semantic_hash": ""
+  },
+  "art/characters/adults/ADULT-MsValdez.svg": {
+    "mtime": 1794100526.2592795,
+    "seen": 1794100585.2907739,
+    "ast_hash": "dfc5977e8d2a4e4957f17de6da5db290",
+    "semantic_hash": ""
+  },
+  "art/characters/adults/ADULT-NursePatty.svg": {
+    "mtime": 1794100526.2592795,
+    "seen": 1794100585.290775,
+    "ast_hash": "af05267d1540772e194f4b91e43d0aa7",
+    "semantic_hash": ""
+  },
+  "art/characters/adults/ADULT-PrincipalPlunkett.svg": {
+    "mtime": 1794100526.2592795,
+    "seen": 1794100585.2907765,
+    "ast_hash": "2e1d924434884a86b6c10a8e7e333772",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-001.svg": {
+    "mtime": 1794100526.2592795,
+    "seen": 1794100585.2907815,
+    "ast_hash": "a0d2d606e2b4eebf8d7231814a3ba542",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-002.svg": {
+    "mtime": 1794100526.2603612,
+    "seen": 1794100585.290783,
+    "ast_hash": "746f1775015c2984f18918743a15be42",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-003.svg": {
+    "mtime": 1794100526.2603612,
+    "seen": 1794100585.2907846,
+    "ast_hash": "93e5df79063cb88b394f8b202b4c0f2b",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-004.svg": {
+    "mtime": 1794100526.2603612,
+    "seen": 1794100585.290786,
+    "ast_hash": "27c8d7a4cb0464db705316fb344fc5d5",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-005.svg": {
+    "mtime": 1794100526.2603612,
+    "seen": 1794100585.2907872,
+    "ast_hash": "5890ef4690b2e935c5025e1f1c8383a9",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-006.svg": {
+    "mtime": 1794100526.2603612,
+    "seen": 1794100585.290789,
+    "ast_hash": "6f64619d02d9b191ce3cc22f8bb7415a",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-007.svg": {
+    "mtime": 1794100526.2603612,
+    "seen": 1794100585.29079,
+    "ast_hash": "533293643929c438bbfddbda531b4b1d",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-008.svg": {
+    "mtime": 1794100526.2603612,
+    "seen": 1794100585.2907917,
+    "ast_hash": "ed0a77d92f36499b3257cf40b70bebd6",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-009.svg": {
+    "mtime": 1794100526.2603612,
+    "seen": 1794100585.2907932,
+    "ast_hash": "7292557a1ca302a898da64e2cef99e92",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-010.svg": {
+    "mtime": 1794100526.2603612,
+    "seen": 1794100585.2907948,
+    "ast_hash": "467db36944745af9c717443d2d623d10",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-011.svg": {
+    "mtime": 1794100526.2603612,
+    "seen": 1794100585.290796,
+    "ast_hash": "d815b78a38a0591d98b966d4cf7d3f5c",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-012.svg": {
+    "mtime": 1794100526.2603612,
+    "seen": 1794100585.2907975,
+    "ast_hash": "4c26e8e26fdbc0fb7ffc6ca8ce897577",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-013.svg": {
+    "mtime": 1794100526.2603612,
+    "seen": 1794100585.2907991,
+    "ast_hash": "ece72fbe419465c83c52c7b7e42e72b5",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-014.svg": {
+    "mtime": 1794100526.2603612,
+    "seen": 1794100585.2908003,
+    "ast_hash": "1ad7ac6f1879724c58d403ec09070884",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-015.svg": {
+    "mtime": 1794100526.2603612,
+    "seen": 1794100585.290802,
+    "ast_hash": "81042ee9590b2d13ba90049c081e57e5",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-016.svg": {
+    "mtime": 1794100526.2603612,
+    "seen": 1794100585.2908032,
+    "ast_hash": "248a291ae4e85f8422529cb43124b68d",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-017.svg": {
+    "mtime": 1794100526.2612793,
+    "seen": 1794100585.2908046,
+    "ast_hash": "a3057d1f5ce52e5130900f3fe472f67d",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-018.svg": {
+    "mtime": 1794100526.2612793,
+    "seen": 1794100585.2908063,
+    "ast_hash": "2d57130c4e2f3cf54d0d4a872a7b3b2c",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-019.svg": {
+    "mtime": 1794100526.2612793,
+    "seen": 1794100585.2908077,
+    "ast_hash": "f53265474eba59e430b7841dda91e3ee",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-020.svg": {
+    "mtime": 1794100526.2612793,
+    "seen": 1794100585.2908094,
+    "ast_hash": "3c90936f4fb48ad4a8460424020bd8d8",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-021.svg": {
+    "mtime": 1794100526.2612793,
+    "seen": 1794100585.2908106,
+    "ast_hash": "e1c0cc9f4fde9602a8652a63d0adbe8f",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-022.svg": {
+    "mtime": 1794100526.2612793,
+    "seen": 1794100585.2908123,
+    "ast_hash": "f0f6243731e5a8ae2e5e12b22966716b",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-023.svg": {
+    "mtime": 1794100526.2612793,
+    "seen": 1794100585.2908134,
+    "ast_hash": "9b497a72c5ba6e731169fe532bd4d99c",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-024.svg": {
+    "mtime": 1794100526.2612793,
+    "seen": 1794100585.2908149,
+    "ast_hash": "ec775acbbc4e21bbb5d42eb14e96901a",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-025.svg": {
+    "mtime": 1794100526.2612793,
+    "seen": 1794100585.2908165,
+    "ast_hash": "1dd541313b731424f0decc155cd87b49",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-026.svg": {
+    "mtime": 1794100526.2612793,
+    "seen": 1794100585.2908177,
+    "ast_hash": "649104385108d1c42aced8ea9b10c04d",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-027.svg": {
+    "mtime": 1794100526.2612793,
+    "seen": 1794100585.2908192,
+    "ast_hash": "1736815a57c5da9fa4a363f08cde2bd8",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-028.svg": {
+    "mtime": 1794100526.2612793,
+    "seen": 1794100585.2908208,
+    "ast_hash": "f9b527fe30a17417fd4fa262707436ef",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-029.svg": {
+    "mtime": 1794100526.2612793,
+    "seen": 1794100585.290822,
+    "ast_hash": "896cae36e791355a21b321b1ceb23596",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-030.svg": {
+    "mtime": 1794100526.2612793,
+    "seen": 1794100585.2908235,
+    "ast_hash": "1cea5fcd94405f9d8e2d4e9e2bdbec97",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-031.svg": {
+    "mtime": 1794100526.2622793,
+    "seen": 1794100585.2908247,
+    "ast_hash": "ae34041665820907df6364e097f62513",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-032.svg": {
+    "mtime": 1794100526.2622793,
+    "seen": 1794100585.2908263,
+    "ast_hash": "0fd69c052f7ca2f4d5f81a4bf46e9fe0",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-033.svg": {
+    "mtime": 1794100526.2622793,
+    "seen": 1794100585.2908278,
+    "ast_hash": "0ac9c66b92f41ac59876411e902c11fe",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-034.svg": {
+    "mtime": 1794100526.2622793,
+    "seen": 1794100585.290829,
+    "ast_hash": "584e03dd0318fb8c3c43cabef9d492f4",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-035.svg": {
+    "mtime": 1794100526.2622793,
+    "seen": 1794100585.2908306,
+    "ast_hash": "542b1fc2fa555ca43723ce02eb1d764e",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-036.svg": {
+    "mtime": 1794100526.2622793,
+    "seen": 1794100585.290832,
+    "ast_hash": "393461386328e6ccb48c76e8b3051ad8",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-037.svg": {
+    "mtime": 1794100526.2622793,
+    "seen": 1794100585.2908335,
+    "ast_hash": "ebe8e7ee5fbae0f7ae6aef63dd1de14c",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-038.svg": {
+    "mtime": 1794100526.2622793,
+    "seen": 1794100585.290835,
+    "ast_hash": "d84a7e706ac1133d448f5b13cded05a7",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-039.svg": {
+    "mtime": 1794100526.2622793,
+    "seen": 1794100585.2908366,
+    "ast_hash": "942e4aa13b53f7abf969ef4c67818840",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-040.svg": {
+    "mtime": 1794100526.2622793,
+    "seen": 1794100585.2908378,
+    "ast_hash": "bb4945d9299d29ac3d791205bc1a6a22",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-041.svg": {
+    "mtime": 1794100526.2622793,
+    "seen": 1794100585.2908392,
+    "ast_hash": "4cecd672f0815318d0a9228c0b867579",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-042.svg": {
+    "mtime": 1794100526.2622793,
+    "seen": 1794100585.2908406,
+    "ast_hash": "10ca5ea4f1d9e04b07ea66a97385599b",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-043.svg": {
+    "mtime": 1794100526.2622793,
+    "seen": 1794100585.290842,
+    "ast_hash": "4c3cc839c4a527d6e01b7d335309a553",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-044.svg": {
+    "mtime": 1794100526.2622793,
+    "seen": 1794100585.2908437,
+    "ast_hash": "1d479820323ae793137deb220594f9c3",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-045.svg": {
+    "mtime": 1794100526.2632792,
+    "seen": 1794100585.2908452,
+    "ast_hash": "722ae5eadfc73fe48d15f3e4faf41c13",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-046.svg": {
+    "mtime": 1794100526.2632792,
+    "seen": 1794100585.2908468,
+    "ast_hash": "fb910b408184292638758c7d6d614a6f",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-047.svg": {
+    "mtime": 1794100526.2632792,
+    "seen": 1794100585.2908483,
+    "ast_hash": "8231721d72fb845cf5b197f6de52022c",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-048.svg": {
+    "mtime": 1794100526.2632792,
+    "seen": 1794100585.2908494,
+    "ast_hash": "29607d7df1d864f13e73162d1420867b",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-049.svg": {
+    "mtime": 1794100526.2632792,
+    "seen": 1794100585.2908509,
+    "ast_hash": "ebf462910c7de4fe342dc2abe42d4e7a",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-050.svg": {
+    "mtime": 1794100526.2632792,
+    "seen": 1794100585.2908523,
+    "ast_hash": "ab9aaa4b86031c008430d76726b1cf65",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-051.svg": {
+    "mtime": 1794100526.2632792,
+    "seen": 1794100585.2908537,
+    "ast_hash": "a80263b40ac72af8bd6183c52e9c5529",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-052.svg": {
+    "mtime": 1794100526.2632792,
+    "seen": 1794100585.2908552,
+    "ast_hash": "3982b515538ccd32fa11ad705e1cc8be",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-053.svg": {
+    "mtime": 1794100526.2632792,
+    "seen": 1794100585.2908566,
+    "ast_hash": "35485a30efac98cadb71ca7786a1e0a2",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-054.svg": {
+    "mtime": 1794100526.2632792,
+    "seen": 1794100585.290858,
+    "ast_hash": "151b3a89ebb75e68d4571e637f4bf8f4",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-055.svg": {
+    "mtime": 1794100526.2632792,
+    "seen": 1794100585.2908595,
+    "ast_hash": "2231d686b2bf875ef6da2af815e71ecb",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-056.svg": {
+    "mtime": 1794100526.2632792,
+    "seen": 1794100585.290861,
+    "ast_hash": "d1f1717e9cab9d6bd430b8022dfe08f9",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-057.svg": {
+    "mtime": 1794100526.2632792,
+    "seen": 1794100585.2908623,
+    "ast_hash": "06189c6d715c10bc7493c4338312d35d",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-058.svg": {
+    "mtime": 1794100526.2642794,
+    "seen": 1794100585.290864,
+    "ast_hash": "9a6ac6de60c1ae6fc85f932094d53607",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-059.svg": {
+    "mtime": 1794100526.2642794,
+    "seen": 1794100585.2908652,
+    "ast_hash": "b21f0bd095599bc10361cc3a54fd11b1",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-060.svg": {
+    "mtime": 1794100526.2642794,
+    "seen": 1794100585.2908666,
+    "ast_hash": "e734ffe3b65f9685bc697ef7e2fd1f15",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-061.svg": {
+    "mtime": 1794100526.2642794,
+    "seen": 1794100585.290868,
+    "ast_hash": "34a01a1178ba883a23df15e66484b4c2",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-062.svg": {
+    "mtime": 1794100526.2642794,
+    "seen": 1794100585.2908695,
+    "ast_hash": "b373bf99041de0c57313bf688b6634d9",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-063.svg": {
+    "mtime": 1794100526.2642794,
+    "seen": 1794100585.2908711,
+    "ast_hash": "1c63050aea6b398a25a46046572ad975",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-064.svg": {
+    "mtime": 1794100526.2642794,
+    "seen": 1794100585.2908726,
+    "ast_hash": "417abf7453b36b22cd1842713c22de14",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-065.svg": {
+    "mtime": 1794100526.2642794,
+    "seen": 1794100585.290874,
+    "ast_hash": "5780a8e8e3122877034dc8e9ffb38f5b",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-066.svg": {
+    "mtime": 1794100526.2642794,
+    "seen": 1794100585.2908754,
+    "ast_hash": "31481db655eef0c20711928465399cb9",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-067.svg": {
+    "mtime": 1794100526.2642794,
+    "seen": 1794100585.2908769,
+    "ast_hash": "189c18c9616388410832dc0bb926a68f",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-068.svg": {
+    "mtime": 1794100526.2642794,
+    "seen": 1794100585.2908785,
+    "ast_hash": "3a52ce2c88c5971bebc3ba2b3a5cdb3a",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-069.svg": {
+    "mtime": 1794100526.2642794,
+    "seen": 1794100585.2908797,
+    "ast_hash": "d39cd134df1c7eeec3d4812d0d5fcd60",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-070.svg": {
+    "mtime": 1794100526.2642794,
+    "seen": 1794100585.2908814,
+    "ast_hash": "035332e65a88b33c6bee73f4651c21dc",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-071.svg": {
+    "mtime": 1794100526.2642794,
+    "seen": 1794100585.2908828,
+    "ast_hash": "a6046e13c4412d263e2a5899c8a5f13c",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-072.svg": {
+    "mtime": 1794100526.2652793,
+    "seen": 1794100585.2908843,
+    "ast_hash": "25a1d96c388a14c6462e2f20f69383a1",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-073.svg": {
+    "mtime": 1794100526.2652793,
+    "seen": 1794100585.2908857,
+    "ast_hash": "4d66d316fe6b59c2517ca0c53d534013",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-074.svg": {
+    "mtime": 1794100526.2652793,
+    "seen": 1794100585.290887,
+    "ast_hash": "d28eb33bc6ccbf164832512ecc1d3b33",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-075.svg": {
+    "mtime": 1794100526.2652793,
+    "seen": 1794100585.2908888,
+    "ast_hash": "c051d89169a3e9064e686c507f8e4f76",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-076.svg": {
+    "mtime": 1794100526.2652793,
+    "seen": 1794100585.29089,
+    "ast_hash": "4eaa7ac87643ae9ddd8ade505b39df12",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-077.svg": {
+    "mtime": 1794100526.2652793,
+    "seen": 1794100585.2908914,
+    "ast_hash": "28342a2b3fbd55b7135c25a61fdfa306",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-078.svg": {
+    "mtime": 1794100526.2652793,
+    "seen": 1794100585.2908928,
+    "ast_hash": "7566c7b043e6669f2dc3e04c2fd0cf18",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-079.svg": {
+    "mtime": 1794100526.2652793,
+    "seen": 1794100585.2908943,
+    "ast_hash": "a1cd0980b536162dcf622eae6f73718b",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-080.svg": {
+    "mtime": 1794100526.2652793,
+    "seen": 1794100585.2908957,
+    "ast_hash": "cc928a22c2a80ae01bd07187dd16a53a",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-081.svg": {
+    "mtime": 1794100526.2652793,
+    "seen": 1794100585.2908971,
+    "ast_hash": "e1d81b4d0b7415d995a2e4c301caf71d",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-082.svg": {
+    "mtime": 1794100526.2652793,
+    "seen": 1794100585.2908988,
+    "ast_hash": "a8f1cbd37f6b463c09ae9a49d5192044",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-083.svg": {
+    "mtime": 1794100526.2652793,
+    "seen": 1794100585.2909002,
+    "ast_hash": "531818a219d446f93663f11144255942",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-084.svg": {
+    "mtime": 1794100526.2662792,
+    "seen": 1794100585.2909017,
+    "ast_hash": "117957870c61f89638239b64e7eb0f99",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-085.svg": {
+    "mtime": 1794100526.2662792,
+    "seen": 1794100585.290903,
+    "ast_hash": "07d5331df123cd446eb09999e37ec161",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-086.svg": {
+    "mtime": 1794100526.2662792,
+    "seen": 1794100585.2909043,
+    "ast_hash": "30669d954fe6d07a0943cb063d7f8f17",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-087.svg": {
+    "mtime": 1794100526.2662792,
+    "seen": 1794100585.290906,
+    "ast_hash": "8f035e9e0166568842fbb4299f718608",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-088.svg": {
+    "mtime": 1794100526.2662792,
+    "seen": 1794100585.2909071,
+    "ast_hash": "71a6611cf7d6060d2d11e3b46b00c83a",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-089.svg": {
+    "mtime": 1794100526.2662792,
+    "seen": 1794100585.2909086,
+    "ast_hash": "cc4f3840606274dc1c4ad1fe3ed6a96c",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-090.svg": {
+    "mtime": 1794100526.2662792,
+    "seen": 1794100585.29091,
+    "ast_hash": "33f3d9d9ca98b31e8fe023914d6a352d",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-091.svg": {
+    "mtime": 1794100526.2662792,
+    "seen": 1794100585.2909112,
+    "ast_hash": "a8ed5ef6a8b697b00cee0c6b8ec9d6d7",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-092.svg": {
+    "mtime": 1794100526.2662792,
+    "seen": 1794100585.2909129,
+    "ast_hash": "3fa57e50e0079a46ebb3bbfd8583c282",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-093.svg": {
+    "mtime": 1794100526.2662792,
+    "seen": 1794100585.290914,
+    "ast_hash": "43f17dff3ef3a19e80f2b761d05ff457",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-094.svg": {
+    "mtime": 1794100526.2662792,
+    "seen": 1794100585.2909155,
+    "ast_hash": "57fc6fc959f6b3441bc2d60062c882d7",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-095.svg": {
+    "mtime": 1794100526.2662792,
+    "seen": 1794100585.2909172,
+    "ast_hash": "5d42652a930740d05eb78a88e3e884f8",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-096.svg": {
+    "mtime": 1794100526.2662792,
+    "seen": 1794100585.2909184,
+    "ast_hash": "858af9bd811fa1397f7bd37a88d07d1b",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-097.svg": {
+    "mtime": 1794100526.2662792,
+    "seen": 1794100585.29092,
+    "ast_hash": "b2c807bc6256061f382efbb10672802c",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-098.svg": {
+    "mtime": 1794100526.2672791,
+    "seen": 1794100585.2909212,
+    "ast_hash": "d28dfda8e84aa0cd150c26c96238de3a",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-099.svg": {
+    "mtime": 1794100526.2672791,
+    "seen": 1794100585.2909226,
+    "ast_hash": "cc4ef74732b9673192084b1d0f682eae",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-100.svg": {
+    "mtime": 1794100526.2672791,
+    "seen": 1794100585.2909243,
+    "ast_hash": "9da12362581a7a15a3cb0dd20b4a9be7",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-101.svg": {
+    "mtime": 1794100526.2672791,
+    "seen": 1794100585.2909257,
+    "ast_hash": "59d23229d62628f6d51b832d30a5bafa",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-102.svg": {
+    "mtime": 1794100526.2672791,
+    "seen": 1794100585.2909272,
+    "ast_hash": "85b860e5b3a8d3ef6fc14763fa12fb71",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-103.svg": {
+    "mtime": 1794100526.2672791,
+    "seen": 1794100585.2909286,
+    "ast_hash": "a5f6e739ea53feabeb2c1e197787956b",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-104.svg": {
+    "mtime": 1794100526.2672791,
+    "seen": 1794100585.29093,
+    "ast_hash": "925a13e6a4c5602e4ee93c8576547bef",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-105.svg": {
+    "mtime": 1794100526.2672791,
+    "seen": 1794100585.2909315,
+    "ast_hash": "f466ed8b12fb13a8938bab56993f710d",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-106.svg": {
+    "mtime": 1794100526.2672791,
+    "seen": 1794100585.290933,
+    "ast_hash": "08eca80cdbdffe8f273960308468bbf7",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-107.svg": {
+    "mtime": 1794100526.2672791,
+    "seen": 1794100585.2909343,
+    "ast_hash": "6185d3098e1ae68585e4b9a7a6506bba",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-108.svg": {
+    "mtime": 1794100526.2672791,
+    "seen": 1794100585.2909355,
+    "ast_hash": "f16bebd2bb3f3180e174a3e4646dfe51",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-109.svg": {
+    "mtime": 1794100526.2672791,
+    "seen": 1794100585.2909372,
+    "ast_hash": "e7dee0d77e47f8fb776c54ee48fc0fd1",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-110.svg": {
+    "mtime": 1794100526.268279,
+    "seen": 1794100585.2909386,
+    "ast_hash": "c0001950d84a975ba1bb9c582ad80e5d",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-111.svg": {
+    "mtime": 1794100526.268279,
+    "seen": 1794100585.2909398,
+    "ast_hash": "7abb3faf3e277d84a41f6f6ae685869b",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-112.svg": {
+    "mtime": 1794100526.268279,
+    "seen": 1794100585.2909415,
+    "ast_hash": "a8051ccdd23c728e3bd48f5fbf64964e",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-113.svg": {
+    "mtime": 1794100526.268279,
+    "seen": 1794100585.2909427,
+    "ast_hash": "369ceadfaf4f41ac6387cb6deb63ed6c",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-114.svg": {
+    "mtime": 1794100526.268279,
+    "seen": 1794100585.2909443,
+    "ast_hash": "28e5cad403ab2862fe700068783600f8",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-115.svg": {
+    "mtime": 1794100526.268279,
+    "seen": 1794100585.2909455,
+    "ast_hash": "62184b166dc76a45d34a3f58491abef8",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-116.svg": {
+    "mtime": 1794100526.268279,
+    "seen": 1794100585.290947,
+    "ast_hash": "c19795cb2490ba1eb367861ff0ee7969",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-117.svg": {
+    "mtime": 1794100526.268279,
+    "seen": 1794100585.2909486,
+    "ast_hash": "c1f919f6acb9e02221485f0e99c01453",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-118.svg": {
+    "mtime": 1794100526.268279,
+    "seen": 1794100585.29095,
+    "ast_hash": "c9e7e408700cf183d0704cb46421ba63",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-119.svg": {
+    "mtime": 1794100526.268279,
+    "seen": 1794100585.2909515,
+    "ast_hash": "b1c593bdf548161543d468e4978f18bf",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-120.svg": {
+    "mtime": 1794100526.268279,
+    "seen": 1794100585.2909532,
+    "ast_hash": "0a5d4151b3d1dab6fb79aa65580bfdc8",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-121.svg": {
+    "mtime": 1794100526.268279,
+    "seen": 1794100585.2909548,
+    "ast_hash": "2d04b0981e1ded481879bf3096572071",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-122.svg": {
+    "mtime": 1794100526.268279,
+    "seen": 1794100585.2909563,
+    "ast_hash": "266a21a4415f86a32ce9cdd880d30fe8",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-123.svg": {
+    "mtime": 1794100526.2692792,
+    "seen": 1794100585.290958,
+    "ast_hash": "0504e646e0845ea669bf793dcca1bbab",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-124.svg": {
+    "mtime": 1794100526.2692792,
+    "seen": 1794100585.2909594,
+    "ast_hash": "d4f9ea535cdcdd51a8a6059bb3ed464d",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-125.svg": {
+    "mtime": 1794100526.2692792,
+    "seen": 1794100585.2909608,
+    "ast_hash": "d221489ae3592a233ce9785557be2754",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-126.svg": {
+    "mtime": 1794100526.2692792,
+    "seen": 1794100585.2909627,
+    "ast_hash": "3c14e68b7edc414b093f175eeddc613b",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-127.svg": {
+    "mtime": 1794100526.2692792,
+    "seen": 1794100585.290964,
+    "ast_hash": "c63cffe250262186b162ab8052378749",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-128.svg": {
+    "mtime": 1794100526.2692792,
+    "seen": 1794100585.2909656,
+    "ast_hash": "18d42c32f813d7e7cd500250717c146d",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-129.svg": {
+    "mtime": 1794100526.2692792,
+    "seen": 1794100585.290967,
+    "ast_hash": "78919dd0655d682b03a28cd1c4b8eee0",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-130.svg": {
+    "mtime": 1794100526.2692792,
+    "seen": 1794100585.2909684,
+    "ast_hash": "d7f51bcc7ca661ae8304b7d950c40d49",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-131.svg": {
+    "mtime": 1794100526.2692792,
+    "seen": 1794100585.29097,
+    "ast_hash": "43a945d05d9104b03e53bd04698adb53",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-132.svg": {
+    "mtime": 1794100526.2692792,
+    "seen": 1794100585.2909718,
+    "ast_hash": "fcbf0c4f4602f9e6cbd18b3155f04b29",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-133.svg": {
+    "mtime": 1794100526.2692792,
+    "seen": 1794100585.290973,
+    "ast_hash": "1024de2343d31fb057697ba13ac342b0",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-134.svg": {
+    "mtime": 1794100526.2692792,
+    "seen": 1794100585.2909744,
+    "ast_hash": "498842272db70b97425b2080fca7e05c",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-135.svg": {
+    "mtime": 1794100526.2692792,
+    "seen": 1794100585.2909758,
+    "ast_hash": "f7ae3e62bbeda79b157908cbe7e37412",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-136.svg": {
+    "mtime": 1794100526.2702792,
+    "seen": 1794100585.2909772,
+    "ast_hash": "d717c18238668fb2896cd12e0109da72",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-137.svg": {
+    "mtime": 1794100526.2702792,
+    "seen": 1794100585.290979,
+    "ast_hash": "096874e84765d62bb27a6e3f4764f36d",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-138.svg": {
+    "mtime": 1794100526.2702792,
+    "seen": 1794100585.29098,
+    "ast_hash": "aa2bbd175efb28c9241151586e9d654a",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-139.svg": {
+    "mtime": 1794100526.2702792,
+    "seen": 1794100585.2909813,
+    "ast_hash": "2f4da642fc8417652633c953176a1acb",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-140.svg": {
+    "mtime": 1794100526.2702792,
+    "seen": 1794100585.290983,
+    "ast_hash": "254a87041432a711ac9c17d0b573ecc5",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-141.svg": {
+    "mtime": 1794100526.2702792,
+    "seen": 1794100585.2909844,
+    "ast_hash": "95a734a6688221a243ecc049e7c12e56",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-142.svg": {
+    "mtime": 1794100526.2702792,
+    "seen": 1794100585.290986,
+    "ast_hash": "6e916b2397072fa2348f060310344dbc",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-143.svg": {
+    "mtime": 1794100526.2702792,
+    "seen": 1794100585.2909875,
+    "ast_hash": "6bcc78f8bb092ad9310527dd5ed58cc1",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-144.svg": {
+    "mtime": 1794100526.2702792,
+    "seen": 1794100585.2909892,
+    "ast_hash": "c327d85110f67a68e0fb85034950d2e7",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-145.svg": {
+    "mtime": 1794100526.2702792,
+    "seen": 1794100585.2909904,
+    "ast_hash": "228faef91f6c06f4eb0287eb63725530",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-146.svg": {
+    "mtime": 1794100526.2702792,
+    "seen": 1794100585.2909918,
+    "ast_hash": "2851eaa224a14e3bb91c7a8ced96488d",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-147.svg": {
+    "mtime": 1794100526.2702792,
+    "seen": 1794100585.2909932,
+    "ast_hash": "6d08d2bbb9083c0f9aecd4b016920138",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-148.svg": {
+    "mtime": 1794100526.2702792,
+    "seen": 1794100585.2909946,
+    "ast_hash": "ff8a94595640f052aa3575c6b88dc31e",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-149.svg": {
+    "mtime": 1794100526.271279,
+    "seen": 1794100585.2909963,
+    "ast_hash": "e724e4d22cd21f6796fa2f8e6b589aa8",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-150.svg": {
+    "mtime": 1794100526.271279,
+    "seen": 1794100585.2909977,
+    "ast_hash": "52f72be3040d92170d07abde32bd6c74",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-151.svg": {
+    "mtime": 1794100526.271279,
+    "seen": 1794100585.2909994,
+    "ast_hash": "da5522ef9c38f76399b62195d957dc4b",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-152.svg": {
+    "mtime": 1794100526.271279,
+    "seen": 1794100585.2910008,
+    "ast_hash": "db30668837c5077a9d1d1ab8b12329a6",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-153.svg": {
+    "mtime": 1794100526.271279,
+    "seen": 1794100585.291002,
+    "ast_hash": "f39eb54894d302f3b2f66b1342795b2b",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-154.svg": {
+    "mtime": 1794100526.271279,
+    "seen": 1794100585.2910037,
+    "ast_hash": "c343810ec642ce4bc15d17f2f701def2",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-155.svg": {
+    "mtime": 1794100526.271279,
+    "seen": 1794100585.291005,
+    "ast_hash": "bed6f0796c7a39a0a7e1f4337337fb63",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-156.svg": {
+    "mtime": 1794100526.271279,
+    "seen": 1794100585.2910066,
+    "ast_hash": "c1faa34bbb28a457680fa32b41596267",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-157.svg": {
+    "mtime": 1794100526.271279,
+    "seen": 1794100585.291008,
+    "ast_hash": "da1c165301872ac6d7e4cec39649e820",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-158.svg": {
+    "mtime": 1794100526.271279,
+    "seen": 1794100585.2910094,
+    "ast_hash": "f3730f1ac248859258aa72e21944113e",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-159.svg": {
+    "mtime": 1794100526.271279,
+    "seen": 1794100585.291011,
+    "ast_hash": "474c63c5f9058358df5e002d9d8e7017",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-160.svg": {
+    "mtime": 1794100526.271279,
+    "seen": 1794100585.2910125,
+    "ast_hash": "ff7f4c85497671e7cfccc7ecc5c346f0",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-161.svg": {
+    "mtime": 1794100526.271279,
+    "seen": 1794100585.2910142,
+    "ast_hash": "3dedfcc994f0de1c419c7d8707ae15ba",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-162.svg": {
+    "mtime": 1794100526.272279,
+    "seen": 1794100585.2910154,
+    "ast_hash": "99165c10dff72d78b9183acb7c488ff9",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-163.svg": {
+    "mtime": 1794100526.272279,
+    "seen": 1794100585.291017,
+    "ast_hash": "ec9c88132aae1400a246c7337dd656eb",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-164.svg": {
+    "mtime": 1794100526.272279,
+    "seen": 1794100585.2910182,
+    "ast_hash": "84a80e7e866ad332f2a8be4a79423124",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-165.svg": {
+    "mtime": 1794100526.272279,
+    "seen": 1794100585.2910194,
+    "ast_hash": "6cf76446e8a2c79a400a9913644f74b7",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-166.svg": {
+    "mtime": 1794100526.272279,
+    "seen": 1794100585.291021,
+    "ast_hash": "e2dba5ddcf744908ec689834368c8a6d",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-167.svg": {
+    "mtime": 1794100526.272279,
+    "seen": 1794100585.2910225,
+    "ast_hash": "6e0cae0d9fa03dfb8dd7c64e2db81e60",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-168.svg": {
+    "mtime": 1794100526.272279,
+    "seen": 1794100585.291024,
+    "ast_hash": "01d4735029dc9fdbb3820f8f26403e0d",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-169.svg": {
+    "mtime": 1794100526.272279,
+    "seen": 1794100585.2910254,
+    "ast_hash": "d5c649fc9376afb1af0b797520c0ee59",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-170.svg": {
+    "mtime": 1794100526.272279,
+    "seen": 1794100585.2910268,
+    "ast_hash": "9b03e3cd42632893a596b901d2df453f",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-171.svg": {
+    "mtime": 1794100526.272279,
+    "seen": 1794100585.2910285,
+    "ast_hash": "18242e5d57605a1df5f797939914fbb7",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-172.svg": {
+    "mtime": 1794100526.272279,
+    "seen": 1794100585.291032,
+    "ast_hash": "e4c0cfa9c973900a62432bc367fdbffd",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-173.svg": {
+    "mtime": 1794100526.272279,
+    "seen": 1794100585.2910335,
+    "ast_hash": "bfcfe2c8ccf241246a6fdfd926f11e4e",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-174.svg": {
+    "mtime": 1794100526.272279,
+    "seen": 1794100585.291035,
+    "ast_hash": "fa3372aec721680615ad8f1a07faeea0",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-175.svg": {
+    "mtime": 1794100526.272279,
+    "seen": 1794100585.2910364,
+    "ast_hash": "b298da695a81696d1a1e3774107490c5",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-176.svg": {
+    "mtime": 1794100526.273279,
+    "seen": 1794100585.2910378,
+    "ast_hash": "30882374f0014a4d5067fb15f07e0e6b",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-177.svg": {
+    "mtime": 1794100526.273279,
+    "seen": 1794100585.2910392,
+    "ast_hash": "37bf4ab6d35b535a3ef8a1eac7523713",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-178.svg": {
+    "mtime": 1794100526.273279,
+    "seen": 1794100585.2910407,
+    "ast_hash": "66197cd9381155c171029d24cfc7fd1d",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-179.svg": {
+    "mtime": 1794100526.273279,
+    "seen": 1794100585.2910423,
+    "ast_hash": "30796a03369065490bf01316f45432a7",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-180.svg": {
+    "mtime": 1794100526.273279,
+    "seen": 1794100585.2910435,
+    "ast_hash": "c77739781ce03e8086fa5404c743d06c",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-181.svg": {
+    "mtime": 1794100526.273279,
+    "seen": 1794100585.2910452,
+    "ast_hash": "c6bce7c86a15e0d8b9625281cca8f253",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-182.svg": {
+    "mtime": 1794100526.273279,
+    "seen": 1794100585.2910466,
+    "ast_hash": "92206f8e30d88e4b7a8bd3cd35764019",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-183.svg": {
+    "mtime": 1794100526.273279,
+    "seen": 1794100585.291048,
+    "ast_hash": "1209131579f9d20219993320317aabb8",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-184.svg": {
+    "mtime": 1794100526.273279,
+    "seen": 1794100585.2910492,
+    "ast_hash": "c409a158a6d2e5055366b39bc8ef7303",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-185.svg": {
+    "mtime": 1794100526.273279,
+    "seen": 1794100585.2910507,
+    "ast_hash": "e2dc54912c39f305b070c95a908b0e35",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-186.svg": {
+    "mtime": 1794100526.273279,
+    "seen": 1794100585.291052,
+    "ast_hash": "9cb1417d8de5c9244728d00d47ed4d0a",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-187.svg": {
+    "mtime": 1794100526.273279,
+    "seen": 1794100585.2910535,
+    "ast_hash": "b61d60ab29e02cc69fbf9faf226b9e87",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-188.svg": {
+    "mtime": 1794100526.274279,
+    "seen": 1794100585.2910552,
+    "ast_hash": "3495e080a6718b84dec64959443bfb5e",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-189.svg": {
+    "mtime": 1794100526.274279,
+    "seen": 1794100585.2910566,
+    "ast_hash": "ac5289ccc7990e9736ec470d4c928818",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-190.svg": {
+    "mtime": 1794100526.274279,
+    "seen": 1794100585.2910578,
+    "ast_hash": "5ef2b5e584dcf94051671f45a4493359",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-191.svg": {
+    "mtime": 1794100526.274279,
+    "seen": 1794100585.2910593,
+    "ast_hash": "74625206aee03723649850eadd23fd32",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-192.svg": {
+    "mtime": 1794100526.274279,
+    "seen": 1794100585.2910607,
+    "ast_hash": "f68380bc7938ed77500d97502fea22dd",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-193.svg": {
+    "mtime": 1794100526.274279,
+    "seen": 1794100585.291062,
+    "ast_hash": "0d7ad5f29149180ab26d90521a0fd3ec",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-194.svg": {
+    "mtime": 1794100526.274279,
+    "seen": 1794100585.2910635,
+    "ast_hash": "508c09a104c8520fe0dacc73997d1946",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-195.svg": {
+    "mtime": 1794100526.274279,
+    "seen": 1794100585.291065,
+    "ast_hash": "593cd7b80543fdb4965dca93d2096d58",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-196.svg": {
+    "mtime": 1794100526.274279,
+    "seen": 1794100585.2910664,
+    "ast_hash": "3634167c0fd6c7cb78b67de7b4cfa3b8",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-197.svg": {
+    "mtime": 1794100526.274279,
+    "seen": 1794100585.2910678,
+    "ast_hash": "71a2c1dd7b8dc8dd47aa83acfeacf9de",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-198.svg": {
+    "mtime": 1794100526.274279,
+    "seen": 1794100585.2910693,
+    "ast_hash": "0b3f7a50b52c947d05ce40b203ae67ac",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-199.svg": {
+    "mtime": 1794100526.274279,
+    "seen": 1794100585.2910705,
+    "ast_hash": "a3c96d42c7e973d222395daf8c40a945",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-200.svg": {
+    "mtime": 1794100526.274279,
+    "seen": 1794100585.291072,
+    "ast_hash": "b7ace50ddda37c61aa34710a99a8a05e",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-201.svg": {
+    "mtime": 1794100526.275279,
+    "seen": 1794100585.2910736,
+    "ast_hash": "cb182b3c1a2f7a26f9f4b5543e48f1ba",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-202.svg": {
+    "mtime": 1794100526.275279,
+    "seen": 1794100585.2910748,
+    "ast_hash": "6f24a8b36edb00477e03b552ff9918fe",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-203.svg": {
+    "mtime": 1794100526.275279,
+    "seen": 1794100585.2910764,
+    "ast_hash": "5cfcdb94135a306d41757d7f3e1cd19a",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-204.svg": {
+    "mtime": 1794100526.275279,
+    "seen": 1794100585.2910776,
+    "ast_hash": "674a53d2fa3f2ea29e188b77ba0553a5",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-205.svg": {
+    "mtime": 1794100526.275279,
+    "seen": 1794100585.2910793,
+    "ast_hash": "d89c2048d09cd9b2168e2e24769617ae",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-206.svg": {
+    "mtime": 1794100526.275279,
+    "seen": 1794100585.2910805,
+    "ast_hash": "e1ac6000ce926df2999b573cb0ba5dc8",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-207.svg": {
+    "mtime": 1794100526.275279,
+    "seen": 1794100585.291082,
+    "ast_hash": "60ace68eb1b2b4f65efbc8efc02b875e",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-208.svg": {
+    "mtime": 1794100526.275279,
+    "seen": 1794100585.2910833,
+    "ast_hash": "57f910c2618ee20ebb7c2c3018a8357f",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-209.svg": {
+    "mtime": 1794100526.275279,
+    "seen": 1794100585.2910848,
+    "ast_hash": "80e20d5fe0a0f46c97d444df1aa4676a",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-210.svg": {
+    "mtime": 1794100526.275279,
+    "seen": 1794100585.2910862,
+    "ast_hash": "624f71e63eef00f3e949cb2a9e970dfd",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-211.svg": {
+    "mtime": 1794100526.275279,
+    "seen": 1794100585.2910876,
+    "ast_hash": "e24d820057393cdfebb29d72d0562d0f",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-212.svg": {
+    "mtime": 1794100526.275279,
+    "seen": 1794100585.291089,
+    "ast_hash": "d1d33e588b914d3d5905a87b96ad90cc",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-213.svg": {
+    "mtime": 1794100526.276279,
+    "seen": 1794100585.2910907,
+    "ast_hash": "fae3bf1f77acb28e8d2d77142a45e972",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-214.svg": {
+    "mtime": 1794100526.276279,
+    "seen": 1794100585.2910926,
+    "ast_hash": "2549a74d02b9e9eeb60d74eee0a868a0",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-215.svg": {
+    "mtime": 1794100526.276279,
+    "seen": 1794100585.2910945,
+    "ast_hash": "718210cd1dbb61fcf787f7e99ce15b1b",
+    "semantic_hash": ""
+  },
+  "art/characters/kids/KID-216.svg": {
+    "mtime": 1794100526.276279,
+    "seen": 1794100585.2910962,
+    "ast_hash": "0c81b44d4f66bc4b3950f1ef7c10cea6",
+    "semantic_hash": ""
+  },
+  "art/renders/KID-057-back.webp": {
+    "mtime": 1794100526.277279,
+    "seen": 1794100585.291098,
+    "ast_hash": "82aa14c7a60bd6dead1b58b6a59256b5",
+    "semantic_hash": ""
+  },
+  "art/renders/KID-057-front.webp": {
+    "mtime": 1794100526.277778,
+    "seen": 1794100585.2910998,
+    "ast_hash": "854e770d97d0c22c8135e8488d35d336",
+    "semantic_hash": ""
+  },
+  "art/renders/KID-079-back.webp": {
+    "mtime": 1794100526.277778,
+    "seen": 1794100585.2911022,
+    "ast_hash": "6a92b5fa64a418a5b18592689700eef6",
+    "semantic_hash": ""
+  },
+  "art/renders/KID-079-front.webp": {
+    "mtime": 1794100526.277778,
+    "seen": 1794100585.2911036,
+    "ast_hash": "25861f9e194e0a950b1ad0f8423453ab",
+    "semantic_hash": ""
+  },
+  "art/renders/KID-083-back.webp": {
+    "mtime": 1794100526.277778,
+    "seen": 1794100585.291105,
+    "ast_hash": "ec850018d79d24e0d45a76282ddf850c",
+    "semantic_hash": ""
+  },
+  "art/renders/KID-083-front.webp": {
+    "mtime": 1794100526.277778,
+    "seen": 1794100585.2911062,
+    "ast_hash": "e419f968809ff46778b9217507b9d46b",
+    "semantic_hash": ""
+  },
+  "art/renders/KID-120-back.webp": {
+    "mtime": 1794100526.277778,
+    "seen": 1794100585.2911077,
+    "ast_hash": "4e77a2aab2136fcaf800f32c165dd25c",
+    "semantic_hash": ""
+  },
+  "art/renders/KID-120-front.webp": {
+    "mtime": 1794100526.277778,
+    "seen": 1794100585.291109,
+    "ast_hash": "d244b05c13572a7a6cd3df20ca1267b4",
+    "semantic_hash": ""
+  },
+  "art/renders/KID-122-back.webp": {
+    "mtime": 1794100526.277778,
+    "seen": 1794100585.2911105,
+    "ast_hash": "c973655307414d94689bfa03b7b73909",
+    "semantic_hash": ""
+  },
+  "art/renders/KID-122-front.webp": {
+    "mtime": 1794100526.277778,
+    "seen": 1794100585.2911117,
+    "ast_hash": "3b96269765cdaaf502aedca278b6c196",
+    "semantic_hash": ""
+  },
+  "art/renders/KID-145-back.webp": {
+    "mtime": 1794100526.277778,
+    "seen": 1794100585.2911131,
+    "ast_hash": "630711aac359229458ace767715f85bf",
+    "semantic_hash": ""
+  },
+  "art/renders/KID-145-front.webp": {
+    "mtime": 1794100526.277778,
+    "seen": 1794100585.2911146,
+    "ast_hash": "4be58e4fb57f675d214b0d14887fac6d",
+    "semantic_hash": ""
+  },
+  "art/renders/KID-201-back.webp": {
+    "mtime": 1794100526.277778,
+    "seen": 1794100585.2911158,
+    "ast_hash": "3a7ff9e2b417058fed195605b5f571f2",
+    "semantic_hash": ""
+  },
+  "art/renders/KID-201-front.webp": {
+    "mtime": 1794100526.277778,
+    "seen": 1794100585.291117,
+    "ast_hash": "4f63f49203f8bc726df19e1409d55c34",
+    "semantic_hash": ""
+  },
+  "art/renders/KID-211-back.webp": {
+    "mtime": 1794100526.277778,
+    "seen": 1794100585.2911186,
+    "ast_hash": "b02af52e2e8b8296bbbe2d31fb9bac99",
+    "semantic_hash": ""
+  },
+  "art/renders/KID-211-front.webp": {
+    "mtime": 1794100526.277778,
+    "seen": 1794100585.29112,
+    "ast_hash": "3731d21d120eb2acfa9301466aca4dad",
+    "semantic_hash": ""
+  },
+  "package-lock.json": {
+    "mtime": 1794100526.2872787,
+    "seen": 1794100585.2911215,
+    "ast_hash": "fd7d329413b443aaa2f294faf0d4cd1d",
+    "semantic_hash": ""
   }
 }
